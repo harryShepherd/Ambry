@@ -10,5 +10,7 @@
 - **Murdo Wallace**
 
 
-[Branches Guidelines](BRANCHES.md)
+[Branches Guidelines](docs/BRANCHES.md)
+
+[Code of Conduct](docs/CODE_OF_CONDUCT.md)
 
