@@ -1,4 +1,4 @@
-name: Test Workflow
+name: A workflow for my Hello World App
 on: push
 
 jobs:
@@ -21,8 +21,8 @@ jobs:
       - name: Build with Maven
         run: mvn package
       - name: Build
-        run: docker build -t Ambry_Docker .
+        run: docker build -t ambry .
       - name: Run image
-        run: docker run --network Ambry-Bridge --name Ambry_Container Ambry_Docker
+        run: docker run --network Ambry-Bridge --name ambrycontainer ambry
       - name: view logs
-        run: docker logs Ambry_Container
+        run: docker logs ambrycontainer
