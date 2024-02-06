@@ -12,4 +12,4 @@
 
 [Branches Guidelines](docs/BRANCHES.md)
 [Code of Conduct](docs/CODE_OF_CONDUCT.md)
-
+[Coursework Specification](docs/CWSPECS.md)
