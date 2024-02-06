@@ -1,24 +1,4 @@
-
-# Coursework Assessment Details
-
-## Coursework Proforma
-
-| Module number | SET08103-SET08403 |
-| Module title | Software Engineering Methods |
-| Module leader | Andreas Steyven |
-| Tutor with responsibility for this Assessment. Student's first point of contact. | As above. |
-| Assessment | Project |
-| Weighting | 60% of module assessment |
-| Size and/or time limits for assessment | See description below. |
-| Deadline of submission | Your attention is drawn to the penalties for late submissions.  See details below. |
-| Arrangements for submission | Coursework to be submitted via Moodle and GitHub. |
-| Assessment Regulations | All assessments are subject to the University Regulations |
-| The requirements for the assessment | See below. |
-| Special instructions | N/A |
-| Return of work and feedback | Face-to-face via code reviews and via Moodle. |
-| Assessment criteria | See below. |
-
-## Coursework Specification
+# Coursework Specification
 
 You will work on the project as a Scrum team.  Details on Scrum are provided in [Unit 01 (b)](../units/unit01/unit01b.md), including an FAQ on how to apply Scrum in the module.
 
