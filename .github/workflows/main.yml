@@ -13,11 +13,16 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Compile with Maven
-        run: mvn compile
-      - name: Build Docker Image
-        run: docker build -t semimage .
+      - name: Setup network
+        run: |
+          docker network create --driver bridge ambry-bridge
+          docker pull mongo
+          docker run -d --name mongo-dbserver --network ambry-bridge mongo
+      - name: Build with Maven
+        run: mvn package
+      - name: Build
+        run: docker build -t ambry .
       - name: Run image
-        run: docker run --name semcontainer -d semimage
+        run: docker run --network ambry-bridge --name ambrycontainer ambry
       - name: view logs
-        run: docker logs semcontainer
+        run: docker logs ambrycontainer
