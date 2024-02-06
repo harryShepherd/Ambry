@@ -13,3 +13,4 @@
 [Branches Guidelines](docs/BRANCHES.md)
 [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 [Coursework Specification](docs/CWSPECS.md)
+[Kanban Board (zube.io)](https://zube.io/group-18/ambry/w/workspace-1/kanban)
