@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.Ambry.App</mainClass>
+                            <mainClass>com.napier.Ambry.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
