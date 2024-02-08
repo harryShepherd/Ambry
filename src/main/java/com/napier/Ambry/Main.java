@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args)
     {
         // Create new Application Instance
-        App a = new App();
+        Database a = new Database();
 
         // Connect to database
         a.connect();

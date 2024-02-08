@@ -2,7 +2,7 @@ package com.napier.Ambry;
 
 import java.sql.*;
 
-public class App
+public class Database
 {
     /**
      * Connection to MySQL database.
