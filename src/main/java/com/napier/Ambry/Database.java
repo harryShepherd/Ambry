@@ -1,3 +1,10 @@
+/**
+ * Filename:    Database.java
+ * Author:      Harry Shepherd
+ * Last Edited: 10/2/2024 @ 19:02
+ * Purpose:     This class acts as a 'middleman' between you and the database, allowing you to
+ *              connect, disconnect & interact with it.
+ */
 package com.napier.Ambry;
 
 import java.sql.*;
