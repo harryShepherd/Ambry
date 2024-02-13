@@ -1,7 +1,7 @@
 /**
  * Filename:    Country.java
  * Author:      Murdo Wallace
- * Last Edited: 13/2/2024 @ 14:28
+ * Last Edited: 13/2/2024 @ 14:47
  * Purpose:     This class exists to store information about the country item
  *              found in world.sql
  */
@@ -13,16 +13,16 @@ public class Country {
     private String Name;
     private String Continent;
     private String Region;
-    private String SurfaceArea;
-    private String IndepYear;
-    private String Population;
-    private String LifeExpectancy;
-    private String GNP;
-    private String GNPOld;
+    private float SurfaceArea;
+    private int IndepYear;
+    private int Population;
+    private float LifeExpectancy;
+    private float GNP;
+    private float GNPOld;
     private String LocalName;
     private String GovernmentForm;
     private String HeadOfState;
-    private String Capital;
+    private int Capital;
     private String Code2;
 
     // Getter and setter for code
@@ -58,50 +58,50 @@ public class Country {
     }
 
     // Getter and setter for SurfaceArea
-    public String getSurfaceArea() {
+    public float getSurfaceArea() {
         return SurfaceArea;
     }
-    public void setSurfaceArea(String newSurfaceArea) {
+    public void setSurfaceArea(float newSurfaceArea) {
         this.SurfaceArea = newSurfaceArea;
     }
 
     // Getter and setter for IndepYear
-    public String getIndepYear() {
+    public int getIndepYear() {
         return IndepYear;
     }
-    public void setIndepYear(String newIndepYear) {
+    public void setIndepYear(int newIndepYear) {
         this.IndepYear = newIndepYear;
     }
 
     // Getter and setter for Population
-    public String getPopulation() {
+    public int getPopulation() {
         return Population;
     }
-    public void setPopulation(String newPopulation) {
+    public void setPopulation(int newPopulation) {
         this.Population = newPopulation;
     }
 
     // Getter and setter for LifeExpectancy
-    public String getLifeExpectancy() {
+    public float getLifeExpectancy() {
         return LifeExpectancy;
     }
-    public void setLifeExpectancy(String newLifeExpectancy) {
+    public void setLifeExpectancy(float newLifeExpectancy) {
         this.LifeExpectancy = newLifeExpectancy;
     }
 
     // Getter and setter for GNP
-    public String getGNP() {
+    public float getGNP() {
         return GNP;
     }
-    public void setGNP(String newGNP) {
+    public void setGNP(float newGNP) {
         this.GNP = newGNP;
     }
 
     // Getter and setter for GNPOld
-    public String getGNPOld() {
+    public float getGNPOld() {
         return GNPOld;
     }
-    public void setGNPOld(String newGNPOld) {
+    public void setGNPOld(float newGNPOld) {
         this.GNPOld = newGNPOld;
     }
 
@@ -130,10 +130,10 @@ public class Country {
     }
 
     // Getter and setter for Capital
-    public String getCapital() {
+    public int getCapital() {
         return Capital;
     }
-    public void setCapital(String newCapital) {
+    public void setCapital(int newCapital) {
         this.Capital = newCapital;
     }
 
