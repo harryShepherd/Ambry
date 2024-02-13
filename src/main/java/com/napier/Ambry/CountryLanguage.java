@@ -1,3 +1,11 @@
+/**
+ * Filename:    CountryLanguage.java
+ * Author:      Murdo Wallace
+ * Last Edited: 13/2/2024 @ 14:50
+ * Purpose:     This class exists to store information about the countrylanguage item
+ *              found in world.sql
+ */
+
 package com.napier.Ambry;
 
 public class CountryLanguage {
@@ -20,7 +28,7 @@ public class CountryLanguage {
     public String getLanguage() {
         return Language;
     }
-    public void setLanguage(String newCountryCode) {
+    public void setLanguage(String newLanguage) {
         this.Language = newLanguage;
     }
 
@@ -34,7 +42,7 @@ public class CountryLanguage {
     }
 
     // Getter and setter for Percentage
-    public String stePercentage() {
+    public float stePercentage() {
         return Percentage;
     }
     public void setPercentage(float newPercentage) {
