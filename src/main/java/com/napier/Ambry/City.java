@@ -1,3 +1,11 @@
+/**
+ * Filename:    CountryLanguage.java
+ * Author:      Cameron Smith
+ * Last Edited: 14/2/2024 @ 18:00
+ * Purpose:     This class exists to store information about the city item
+ *              found in world.sql
+ */
+
 package com.napier.Ambry;
 
 public class City {
