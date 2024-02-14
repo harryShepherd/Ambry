@@ -2,7 +2,7 @@ version: '3'
 services:
   # Application Dockerfile is in same folder which is .
   app:
-    build: .
+   build: .
 
   # db is is db folder
   db:

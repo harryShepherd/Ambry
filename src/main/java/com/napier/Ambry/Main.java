@@ -3,6 +3,13 @@ package com.napier.Ambry;
 public class Main {
     public static void main(String[] args)
     {
-        System.out.println("Hello World!");
+        // Create new Application Instance
+        Database a = new Database();
+
+        // Connect to database
+        a.connect();
+
+        // Disconnect from database
+        a.disconnect();
     }
 }
