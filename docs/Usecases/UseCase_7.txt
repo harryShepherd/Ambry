@@ -1,0 +1,29 @@
+Use Case: #7 Epic 7
+
+Characteristics
+	- Population of people, people living in cities, and people not living in cities in each X
+	- MYSQL
+	- primary task
+	- Pre exististing link to Database
+	- all subtasks are completed
+	- Nothing is printed to the command line before the final code review
+	- Primary actor
+	- User request report from our system
+Main Sucess Scenario
+	-	
+Extensions
+	-
+Sub-Variations
+	-The population of people, people living in cities, and people not living in cities in each country
+	--Display the  population of people, people living in cities, and people not living in cities in each region
+	-The population of people, people living in cities, and people not living in cities in each continent.
+
+Related Information (Optional)
+	- High priority
+
+Open Issues (optional)
+	-
+Schedule
+	- Lab of week 12
+	- 
+
