@@ -7,11 +7,15 @@ public class Main {
     {
         // Create new Application Instance
         Database a = new Database();
-
         // Connect to database
         a.connect();
 
-        ArrayList<Country> countries = a.getAllCountries();
+
+        ArrayList<Country> topN = Country.TopNWorld(10);
+        for (int i = 0; i < topN.size(); i++) {
+            System.out.println(topN.get(i).getName() + ": " + topN.get(i).getPopulation());
+        }
+
 
         // Disconnect from database
         a.disconnect();

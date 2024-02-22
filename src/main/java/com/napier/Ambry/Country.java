@@ -8,6 +8,9 @@
 
 package com.napier.Ambry;
 
+import java.sql.*;
+import java.util.ArrayList;
+
 public class Country {
     private String code;
     private String Name;
@@ -147,6 +150,32 @@ public class Country {
 
 
 
+    public static ArrayList<Country> TopNWorld(int n){
+        //Scanner myScanner = new Scanner(System.in);
+        ArrayList<Country> TopCountries = new ArrayList<Country>();
+        //int n;
 
+        //System.out.println("Enter the number of countries you wish to display.");
+        //n = myScanner.nextInt();
 
+        try{
+            Statement stmt = Database.con.createStatement();
+            String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
+
+            ResultSet rset = stmt.executeQuery(select);
+            while(rset.next()){
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                country.setPopulation(rset.getInt("country.Population"));
+                TopCountries.add(country);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return TopCountries;
+    }
 }
