@@ -151,7 +151,11 @@ public class Country {
 
 
     public static ArrayList<Country> TopNWorld(int n){
+        //Created by: Cameron Smith
+        //Epic 2, Task #5
+
         //Scanner myScanner = new Scanner(System.in);
+        //Stores the countries that meet the required criteria.
         ArrayList<Country> TopCountries = new ArrayList<Country>();
         //int n;
 
@@ -159,10 +163,15 @@ public class Country {
         //n = myScanner.nextInt();
 
         try{
+            //Stores the statement
             Statement stmt = Database.con.createStatement();
+            //Stores the query to be sent to the database.
             String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
 
+            //Executes the query stored in select.
             ResultSet rset = stmt.executeQuery(select);
+            //Returns country code, name, continent, region, and population.
+                //Stores the above values in the TopCountries ArrayList which stores the countries meeting the criteria.
             while(rset.next()){
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
