@@ -13,13 +13,6 @@ public class Main {
 
         ArrayList<Country> countries = a.getAllCountries();
 
-        System.out.println("Size of countries list: ");
-        System.out.println(countries.size());
-
-        for(int i =0; i < countries.size(); i++) {
-            System.out.println(countries.get(i).getName());
-        }
-
         // Disconnect from database
         a.disconnect();
     }
