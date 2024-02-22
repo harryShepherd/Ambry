@@ -176,8 +176,6 @@ public class Country {
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
                 country.setName(rset.getString("country.Name"));
-                country.setContinent(rset.getString("country.Continent"));
-                country.setRegion(rset.getString("country.Region"));
                 country.setPopulation(rset.getInt("country.Population"));
                 TopCountries.add(country);
             }
