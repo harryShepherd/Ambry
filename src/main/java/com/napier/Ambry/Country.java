@@ -7,8 +7,8 @@
  */
 
 package com.napier.Ambry;
-import java.util.ArrayList;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Country {
     private String code;
@@ -227,6 +227,4 @@ public class Country {
         }
         return Countries;
     }
-
-
 }
