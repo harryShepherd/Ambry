@@ -7,6 +7,7 @@
  */
 
 package com.napier.Ambry;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -147,84 +148,43 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    /**
-     * Epic1: Countries by Largest population to Smallest
-     * All the countries in the world organised by largest population to smallest.
-     * Murdo Wallace / Cameron Smith
-     */
-    public static ArrayList<Country> getAllCountryLargeToSmall() {
-        //connects to the database
-        String select = "SELECT * FROM country ORDER BY population";
-        return CountryStandard(select);
-    }
-    /**
-     * Epic1: All the countries in a continent organised by largest population to smallest.
-     * returns All the countries in a continent organised by largest population to smallest.
-     * Murdo Wallace / Harry Shepherd / Cameron Smith
-     */
-    public static ArrayList<Country> getAllCountryPerContinent(String cont) {
-        String select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY population";
-        return CountryStandard(select);
-    }
-    /**
-     * Epic1: All the countries in a region organised by largest population to smallest.
-     * All the countries in a region organised by largest population to smallest.
-     * Murdo Wallace / Cameron Smith
-     */
-    public static ArrayList<Country> getAllCountryPerRegion(String cont) {
-        String select = "SELECT * FROM country WHERE Region ='" + cont + "'ORDER BY population";
-        return CountryStandard(select);
-    }
-    /**
-     * Epic1: All the countries in a region organised by largest population to smallest.
-     * All the countries in a region organised by largest population to smallest.
-     * Murdo Wallace | Harry Shepherd  / Cameron Smith
-     */
-    public static String getCountry(String CountryCode){
-        String countryName = null;
-        try {
 
+
+    public static ArrayList<Country> TopNWorld(int n){
+        //Created by: Cameron Smith
+        //Epic 2, Task #5
+
+        //Scanner myScanner = new Scanner(System.in);
+        //Stores the countries that meet the required criteria.
+        ArrayList<Country> TopCountries = new ArrayList<Country>();
+        //int n;
+
+        //System.out.println("Enter the number of countries you wish to display.");
+        //n = myScanner.nextInt();
+
+        try{
+            //Stores the statement
             Statement stmt = Database.con.createStatement();
-            String str_select =
-                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
-            ResultSet rset = stmt.executeQuery(str_select);
+            //Stores the query to be sent to the database.
+            String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
 
-            while (rset.next()) {
-                countryName = (rset.getString("country.Name"));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return countryName;
-    }
-
-    public static ArrayList<Country> CountryStandard(String select) {
-        //Stores all countries returned by the input SQL statement.
-        ArrayList<Country> Countries = new ArrayList<Country>();
-
-        try {
-            //Creates an SQL statement.
-            Statement stmt = Database.con.createStatement();
+            //Executes the query stored in select.
             ResultSet rset = stmt.executeQuery(select);
-            //Executes the SQL statement input by a seperate function.
-
-            //Creates a new country, stores all relevant values.
-            while (rset.next()) {
+            //Returns country code, name, continent, region, and population.
+                //Stores the above values in the TopCountries ArrayList which stores the countries meeting the criteria.
+            while(rset.next()){
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
                 country.setName(rset.getString("country.Name"));
                 country.setContinent(rset.getString("country.Continent"));
                 country.setRegion(rset.getString("country.Region"));
                 country.setPopulation(rset.getInt("country.Population"));
-                country.setCapital(rset.getInt("country.Capital"));
-
-                Countries.add(country);
+                TopCountries.add(country);
             }
         } catch (SQLException e) {
-            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
-        return Countries;
+
+        return TopCountries;
     }
 }
