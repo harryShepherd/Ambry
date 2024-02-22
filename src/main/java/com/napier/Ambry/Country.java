@@ -8,6 +8,10 @@
 
 package com.napier.Ambry;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 public class Country {
     private String code;
     private String Name;
@@ -45,7 +49,7 @@ public class Country {
     public String getContinent() {
         return Continent;
     }
-    public void setnewContinent(String newContinent) {
+    public void setContinent(String newContinent) {
         this.Continent = newContinent;
     }
 
@@ -145,8 +149,43 @@ public class Country {
         this.Code2 = newCode2;
     }
 
+    /**
+     * Epic1: Countries by Largest population to Smallest
+     * All the countries in the world organised by largest population to smallest.
+     * Murdo Wallace
+     */
+    public static ArrayList<Country> getAllCountryLargeToSmall() {
+        try {
+            Statement stmt = Database.con.createStatement();
 
+            String str_select =
+                    "SELECT * FROM country ORDER BY population";
 
+            ResultSet rset = stmt.executeQuery(str_select);
 
+            ArrayList<Country> countries = new ArrayList<Country>();
 
+            while (rset.next()) {
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                countries.add(country);
+            }
+            return countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed");
+            return null;
+        }
+
+    }
 }
+
+
+
+
+
+
