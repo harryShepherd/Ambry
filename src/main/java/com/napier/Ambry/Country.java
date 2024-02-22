@@ -45,7 +45,7 @@ public class Country {
     public String getContinent() {
         return Continent;
     }
-    public void setnewContinent(String newContinent) {
+    public void setContinent(String newContinent) {
         this.Continent = newContinent;
     }
 
