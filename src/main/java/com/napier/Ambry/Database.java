@@ -85,7 +85,7 @@ public class Database
             Statement stmt = con.createStatement();
 
             String str_select =
-                    "SELECT * FROM country";
+                    "SELECT * FROM country ";
 
             ResultSet rset = stmt.executeQuery(str_select);
             ArrayList<Country> countries = new ArrayList<Country>();
@@ -93,7 +93,7 @@ public class Database
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
                 country.setName(rset.getString("country.Name"));
-                country.setnewContinent(rset.getString("country.Continent"));
+                country.setContinent(rset.getString("country.Continent"));
                 country.setRegion(rset.getString("country.Region"));
                 countries.add(country);
             }
