@@ -7,11 +7,21 @@ public class Main {
     {
         // Create new Application Instance
         Database a = new Database();
-
         // Connect to database
         a.connect();
 
-        ArrayList<Country> countries = a.getAllCountries();
+
+        ArrayList<Country> topN = Country.TopNWorld();
+        System.out.println("Top Populated Countries in the World: ");
+        for (int i = 0; i < topN.size(); i++) {
+            System.out.println("Country: " + topN.get(i).getName() + ": " + topN.get(i).getPopulation());
+        }
+
+        topN = Country.TopNContinent();
+        System.out.println("Continent: " + topN.get(0).getContinent());
+        for (int i = 0; i < topN.size(); i++) {
+            System.out.println(topN.get(i).getName() + ": " + topN.get(i).getPopulation());
+        }
 
         // Disconnect from database
         a.disconnect();
