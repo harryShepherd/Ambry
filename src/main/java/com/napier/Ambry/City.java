@@ -7,6 +7,8 @@
  */
 
 package com.napier.Ambry;
+import java.util.ArrayList;
+import java.sql.*;
 
 public class City {
     //Stores the City ID
@@ -59,5 +61,32 @@ public class City {
     public void setPopulation(int setPopulation){
         //Sets the city's Population from the input.
         this.population = setPopulation;
+    }
+
+    public static ArrayList<City> WorldCities (){
+        ArrayList<City> Cities = new ArrayList<City>();
+
+        try{
+            //Stores the statement
+            Statement stmt = Database.con.createStatement();
+            //Stores the query to be sent to the database.
+            String select = "SELECT * FROM city ORDER BY population DESC";
+
+            //Executes the query stored in select.
+            ResultSet rset = stmt.executeQuery(select);
+            //Returns country code, name, continent, region, and population.
+            //Stores the above values in the TopCountries ArrayList which stores the countries meeting the criteria.
+            while(rset.next()){
+                City city = new City();
+                city.setName(rset.getString("city.Name"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                Cities.add(city);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return Cities;
     }
 }
