@@ -183,12 +183,12 @@ public class Country {
 
     }
 
-    public static ArrayList<Country> getAllCountryPerContinent() {
+    public static ArrayList<Country> getAllCountryPerContinent(String cont) {
         try {
             Statement stmt = Database.con.createStatement();
 
             String str_select =
-                    "SELECT * FROM country ORDER BY population GROUP BY Continent";
+                    "SELECT * FROM co quntry WHERE Continent='" + cont + "'ORDER BY population";
 
             ResultSet rset = stmt.executeQuery(str_select);
 

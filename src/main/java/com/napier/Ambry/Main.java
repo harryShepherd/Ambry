@@ -16,7 +16,7 @@ public class Main {
             System.out.print(print.get(i).getName() + "\n");
         }
     */
-        ArrayList<Country> print2 = Country.getAllCountryPerContinent();
+        ArrayList<Country> print2 = Country.getAllCountryPerContinent("Asia");
 
         for(int i = 0; i < print2.size(); i++){
             System.out.print(print2.get(i).getName() + "\n");
