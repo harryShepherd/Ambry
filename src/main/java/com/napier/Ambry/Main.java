@@ -29,6 +29,15 @@ public class Main {
             System.out.print(print2.get(i).getName() + "\n");
         }
 
+        System.out.print("\n");
+        ArrayList<Country> print3 = Country.getAllCountryPerRegion("Caribbean");
+        System.out.print("getAllCountryPerRegion: \n");
+        System.out.print("\n");
+        //prints all of arraylist print2
+        for(int i = 0; i < print3.size(); i++){
+            System.out.print(print3.get(i).getName() + "\n");
+        }
+
 
 
         // Disconnect from database
