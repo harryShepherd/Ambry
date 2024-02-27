@@ -10,11 +10,18 @@ public class Main {
         // Connect to database
         a.connect();
 
-        ArrayList<Country> print = Country.getAllCountryLargeToSmall();
-
+       // ArrayList<Country> print = Country.getAllCountryLargeToSmall();
+        /*
         for(int i = 0; i < print.size(); i++){
             System.out.print(print.get(i).getName() + "\n");
         }
+    */
+        ArrayList<Country> print2 = Country.getAllCountryPerContinent();
+
+        for(int i = 0; i < print2.size(); i++){
+            System.out.print(print2.get(i).getName() + "\n");
+        }
+
 
 
         // Disconnect from database

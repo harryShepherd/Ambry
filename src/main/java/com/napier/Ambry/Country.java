@@ -182,6 +182,35 @@ public class Country {
         }
 
     }
+
+    public static ArrayList<Country> getAllCountryPerContinent() {
+        try {
+            Statement stmt = Database.con.createStatement();
+
+            String str_select =
+                    "SELECT * FROM country ORDER BY population GROUP BY Continent";
+
+            ResultSet rset = stmt.executeQuery(str_select);
+
+            ArrayList<Country> countries = new ArrayList<Country>();
+
+            while (rset.next()) {
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                countries.add(country);
+            }
+            return countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed");
+            return null;
+        }
+
+    }
 }
 
 
