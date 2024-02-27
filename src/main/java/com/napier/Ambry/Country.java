@@ -153,14 +153,13 @@ public class Country {
 
 
 
-    public static ArrayList<Country> TopNWorld(){
+    public static ArrayList<Country> TopNWorld(int n){
         //Created by: Cameron Smith
         //Epic 2, Task #5
 
         //Stores the countries that meet the required criteria.
         ArrayList<Country> TopCountries = new ArrayList<Country>();
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-        int n = 0;
 
         /*
         System.out.println("How many countries would you like to display?");
@@ -170,8 +169,6 @@ public class Country {
             throw new RuntimeException(e);
         }
         */
-
-        n = 10;
 
         try{
             //Stores the statement
@@ -198,14 +195,12 @@ public class Country {
 
         return TopCountries;
     }
-    public static ArrayList<Country> TopNContinent(){
+    public static ArrayList<Country> TopNContinent(int n, String continent){
         //Created by: Cameron Smith
         //Epic 2, Task #6
 
         //Stores the top N countries by population in a continent.
         ArrayList<Country> TopCountries = new ArrayList<Country>();
-        int n=0;
-        String continent = null;
 
         /*
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
@@ -225,13 +220,43 @@ public class Country {
         }
         */
 
-        n = 10;
-        continent = "Europe";
         try{
             //Stores the statement
             Statement stmt = Database.con.createStatement();
             //Stores the query to be sent to the database.
             String select = "SELECT * FROM country WHERE country.continent='" + continent + "' ORDER BY population DESC LIMIT " + n;
+
+            //Executes the query stored in select.
+            ResultSet rset = stmt.executeQuery(select);
+            //Returns country code, name, continent, region, and population.
+            //Stores the above values in the TopCountries ArrayList which stores the countries meeting the criteria.
+            while(rset.next()){
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setRegion(rset.getString("country.Continent"));
+                country.setPopulation(rset.getInt("country.Population"));
+                TopCountries.add(country);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return TopCountries;
+    }
+
+    public static ArrayList<Country> TopNRegion (int n, String region){
+        //Created by: Cameron Smith
+        //Epic 2, Task #7
+
+        //Stores the top N countries by population in a continent.
+        ArrayList<Country> TopCountries = new ArrayList<Country>();
+
+        try{
+            //Stores the statement
+            Statement stmt = Database.con.createStatement();
+            //Stores the query to be sent to the database.
+            String select = "SELECT * FROM country WHERE country.region='" + region + "' ORDER BY population DESC LIMIT " + n;
 
             //Executes the query stored in select.
             ResultSet rset = stmt.executeQuery(select);
