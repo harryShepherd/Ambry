@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/Epic2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2cJZrfD89Whts1G9vyKDBHrY0Vw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Docker.Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Maven.Ambry [clean].executor": "Run",
+    "Maven.Ambry [compile].executor": "Run",
+    "Maven.Ambry [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Code Repository/Software Engineering Methods/Coursework/Ambry",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-temurin-17.0.10-f644763e9732-8a10ee56" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="" />
+      <created>1707831841441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707831841441</updated>
+      <workItem from="1707831842573" duration="124000" />
+      <workItem from="1707832061089" duration="268000" />
+      <workItem from="1707845005428" duration="1964000" />
+      <workItem from="1708604086564" duration="12160000" />
+      <workItem from="1709036698819" duration="2227000" />
+      <workItem from="1709042263919" duration="2390000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
+      <option name="closed" value="true" />
+      <created>1707845943905</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707845943905</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
+      <option name="closed" value="true" />
+      <created>1707846560000</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707846560000</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding.">
+      <option name="closed" value="true" />
+      <created>1708610851759</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708610851759</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding.">
+      <option name="closed" value="true" />
+      <created>1708610868939</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708610868939</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding.">
+      <option name="closed" value="true" />
+      <created>1708611165622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708611165622</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed information returns from function which were irrelevant to final functionality.">
+      <option name="closed" value="true" />
+      <created>1708612393437</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708612393437</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region.">
+      <option name="closed" value="true" />
+      <created>1709038095816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709038095816</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables." />
+    <MESSAGE value="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding." />
+    <MESSAGE value="Removed information returns from function which were irrelevant to final functionality." />
+    <MESSAGE value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
+    <option name="LAST_COMMIT_MESSAGE" value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
+  </component>
+</project>
