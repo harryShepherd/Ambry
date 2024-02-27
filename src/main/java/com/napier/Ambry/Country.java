@@ -188,7 +188,7 @@ public class Country {
             Statement stmt = Database.con.createStatement();
 
             String str_select =
-                    "SELECT * FROM co quntry WHERE Continent='" + cont + "'ORDER BY population";
+                    "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY population";
 
             ResultSet rset = stmt.executeQuery(str_select);
 
