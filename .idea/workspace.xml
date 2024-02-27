@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="" />
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Added WorldCities, no input required.">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ambry-0.1.0.1-jar-with-dependencies.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +53,8 @@
     "Maven.Ambry [package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feature/Epic3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Code Repository/Software Engineering Methods/Coursework/Ambry",
     "node.js.detected.package.eslint": "true",
@@ -117,6 +123,7 @@
       <workItem from="1708604086564" duration="12160000" />
       <workItem from="1709036698819" duration="2227000" />
       <workItem from="1709042263919" duration="2390000" />
+      <workItem from="1709045008690" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
       <option name="closed" value="true" />
@@ -174,7 +181,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709038095816</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added WorldCities, no input required.">
+      <option name="closed" value="true" />
+      <created>1709045063021</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709045063021</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added WorldCities, no input required.">
+      <option name="closed" value="true" />
+      <created>1709045073357</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709045073357</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +219,7 @@
     <MESSAGE value="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding." />
     <MESSAGE value="Removed information returns from function which were irrelevant to final functionality." />
     <MESSAGE value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
-    <option name="LAST_COMMIT_MESSAGE" value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
+    <MESSAGE value="Added WorldCities, no input required." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added WorldCities, no input required." />
   </component>
 </project>
