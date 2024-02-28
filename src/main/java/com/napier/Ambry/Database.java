@@ -15,7 +15,9 @@ public class Database
     /**
      * Connection to MySQL database.
      */
-    public Connection con = null;
+  
+    public static Connection con = null;
+
 
     /**
      * Connect to the MySQL database.

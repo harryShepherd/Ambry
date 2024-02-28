@@ -8,6 +8,10 @@
 
 package com.napier.Ambry;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 public class Country {
     private String code;
     private String Name;
@@ -145,5 +149,115 @@ public class Country {
         this.Code2 = newCode2;
     }
 
+    /**
+     * Epic1: Countries by Largest population to Smallest
+     * All the countries in the world organised by largest population to smallest.
+     * Murdo Wallace
+     */
+    public static ArrayList<Country> getAllCountryLargeToSmall() {
+        //connects to the database
+        try {
+            Statement stmt = Database.con.createStatement();
+            //sql statement to return All the countries in the world organised by largest population to smallest.
+            String str_select =
+                    "SELECT * FROM country ORDER BY population";
 
+            ResultSet rset = stmt.executeQuery(str_select);
+            //arraylist to store sql output
+            ArrayList<Country> countries = new ArrayList<Country>();
+            //while we still have a result
+            while (rset.next()) {
+                // insert result into country instance
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                // add result to arraylist
+                countries.add(country);
+            }
+            return countries;
+
+            //prints error message of we cannot connect to database
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed");
+            return null;
+        }
+
+    }
+    /**
+     * Epic1: All the countries in a continent organised by largest population to smallest.
+     * returns All the countries in a continent organised by largest population to smallest.
+     * Murdo Wallace / Harry Shepherd
+     */
+    public static ArrayList<Country> getAllCountryPerContinent(String cont) {
+        //connects to the database
+        try {
+            Statement stmt = Database.con.createStatement();
+            //sql statement to return All the countries in a continent organised by largest population to smallest
+            String str_select =
+                    "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY population";
+
+            ResultSet rset = stmt.executeQuery(str_select);
+
+            //arraylist to store sql output
+            ArrayList<Country> countries = new ArrayList<Country>();
+            //while we still have a result
+            while (rset.next()) {
+                // insert result into country instance
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                // add result to arraylist
+                countries.add(country);
+            }
+            return countries;
+        //prints error message of we cannot connect to database
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed");
+            return null;
+        }
+
+    }
+    /**
+     * Epic1: All the countries in a region organised by largest population to smallest.
+     * All the countries in a region organised by largest population to smallest.
+     * Murdo Wallace
+     */
+    public static ArrayList<Country> getAllCountryPerRegion(String cont) {
+        //connects to the database
+        try {
+            Statement stmt = Database.con.createStatement();
+            //sql statement to return All the countries in a continent organised by largest population to smallest
+            String str_select =
+                    "SELECT * FROM country WHERE Region ='" + cont + "'ORDER BY population";
+
+            ResultSet rset = stmt.executeQuery(str_select);
+
+            //arraylist to store sql output
+            ArrayList<Country> countries = new ArrayList<Country>();
+            //while we still have a result
+            while (rset.next()) {
+                // insert result into country instance
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                // add result to arraylist
+                countries.add(country);
+            }
+            return countries;
+            //prints error message of we cannot connect to database
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed");
+            return null;
+        }
+
+    }
 }

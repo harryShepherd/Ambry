@@ -10,6 +10,8 @@
 - **Sam Wilson-Perkins**
 - **Murdo Wallace**
 
+-Our primary agent is a representative of the United Nation Department of Economic and Social Affairs
+
 [Branches Guidelines](docs/BRANCHES.md)
 [Code of Conduct](docs/CODE_OF_CONDUCT.md)
 [Coursework Specification](docs/CWSPECS.md)

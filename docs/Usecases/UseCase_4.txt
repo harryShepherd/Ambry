@@ -1,0 +1,36 @@
+Use Case: #4 Epic 4
+
+Characteristics
+	- Goal in Context: Top N populated cities in X where N is provided by the user
+	- Scope: MySQL
+	- Level: Primary Task
+	- Preconditions: The world database being uploaded and accessible.
+	- Success Condition: Returning the relevant info.
+	- Fail Condition: Returning irrelevant or incorrect info.
+	- Primary Actor: 
+	- Trigger: User requests relevant report from the system.
+Main Sucess Scenario
+	- 
+Extensions
+	- 
+Sub-Variations
+	- Top N populated cities in the world.
+	- Top N populated cities in a continent.
+	- Top N populated cities in a region.
+	- Top N populated cities in a country.
+	- Top N populated cities in a district.
+Related Information (Optional)
+	- Priority: High
+	- Performance Target: 
+	- Frequency:
+	- Superordinate Use Case: N/A
+	- Subordinate Use Case: N/A
+	- Channel to Primary Actor: Java access to the database.
+	- Secondary Actors: N/A
+	- Channel to Secondary Actors: N/A
+Open Issues (optional)
+	- No frame of reference for performance target.
+	- No frame of reference for frequency of use.
+	- No specific primary actor defined yet.
+Schedule
+	- Due Date: Lab of Week 12 (to be narrowed down).

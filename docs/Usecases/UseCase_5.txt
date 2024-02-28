@@ -1,0 +1,29 @@
+Use Case: #5 Epic 5
+
+Characteristics
+	- Print All cities in X organised by Largest Population to Smallest to the command line
+	- MYSQL
+	- primary task
+	- Pre exististing link to Database
+	- all subtasks are completed
+	- Nothing is printed to the command line before the final code review
+	- Primary actor
+	- User request report from our system
+Main Sucess Scenario
+	-	
+Extensions
+	-
+Sub-Variations
+	-All the capital cities in a continent organised by largest population to smallest.
+	-All the capital cities in a region organised by largest to smallest.
+	-All the capital cities in X organised by largest population to smallest.
+
+Related Information (Optional)
+	- High priority
+
+Open Issues (optional)
+	-
+Schedule
+	- Lab of week 12
+	- 
+
