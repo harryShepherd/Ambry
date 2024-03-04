@@ -146,4 +146,32 @@ public class City {
 
         return Cities;
     }
+
+    public static ArrayList<City> CountryCities(String country){
+        ArrayList<City> Cities = new ArrayList<City>();
+
+        try{
+            //Stores the statement
+            Statement stmt = Database.con.createStatement();
+            //Stores the query to be sent to the database.
+            String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country = '" + country + "' ORDER BY city.population DESC";
+
+            //Executes the query stored in select.
+            ResultSet rset = stmt.executeQuery(select);
+            //Returns country code, name, continent, region, and population.
+            //Stores the above values in the TopCountries ArrayList which stores the countries meeting the criteria.
+            while(rset.next()){
+                City city = new City();
+                city.setName(rset.getString("city.Name"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                Cities.add(city);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return Cities;
+
+    }
 }
