@@ -8,6 +8,13 @@
 
 package com.napier.Ambry;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 public class City {
     //Stores the City ID
     private int ID;
@@ -60,4 +67,71 @@ public class City {
         //Sets the city's Population from the input.
         this.population = setPopulation;
     }
+
+    /**
+     * Epic4: Top populated cities
+     * Top N populated cities in a world, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    public static ArrayList<City> TopNPopCitiesInWorld(int n){
+
+        //Stores the countries that meet the required criteria.
+        ArrayList<City> TopCities = new ArrayList<City>();
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+
+        /*
+        System.out.println("How many cities would you like to display?");
+        try {
+            n = Integer.parseInt(read.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        */
+
+        try{
+            //Stores the statement
+            Statement stmt = Database.con.createStatement();
+            //Stores the query to be sent to the database.
+            String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + n;
+
+            //Executes the query stored in select.
+            ResultSet rset = stmt.executeQuery(select);
+            //Returns city code, name, continent, region, and population.
+            //Stores the above values in the TopCities ArrayList which stores the cities meeting the criteria.
+            while(rset.next()){
+                City city = new City();
+                city.setID(rset.getInt("city.ID"));
+                city.setName(rset.getString("city.Name"));
+                city.setPopulation(rset.getInt("city.Population"));
+                city.setDistrict(rset.getString("city.District"));
+
+                TopCities.add(city);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return TopCities;
+    }
+
+    /**
+     * Epic4: Top N populated cities in a continent, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /**
+     * Epic4: Top N populated cities in a region, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /**
+     * Epic4: Top N populated cities in a country, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /**
+     * Epic4: Top N populated cities in a district, with N provided by user
+     * Sam Wilson-Perkins
+     */
 }
