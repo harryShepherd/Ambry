@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Added RegionCities, some error-checking needed">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Added CountryCities, returns the cities in an input country.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
@@ -208,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709558607456</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added CountryCities, returns the cities in an input country.">
+      <option name="closed" value="true" />
+      <created>1709559091580</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709559091580</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +240,7 @@
     <MESSAGE value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
     <MESSAGE value="Added WorldCities, no input required." />
     <MESSAGE value="Added RegionCities, some error-checking needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added RegionCities, some error-checking needed" />
+    <MESSAGE value="Added CountryCities, returns the cities in an input country." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CountryCities, returns the cities in an input country." />
   </component>
 </project>

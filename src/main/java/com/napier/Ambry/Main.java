@@ -26,6 +26,11 @@ public class Main {
         for (int i = 0; i < Cities.size(); i++) {
             System.out.println("City: " + Cities.get(i).getName() + ": " + Cities.get(i).getPopulation());
         }
+        Cities=City.DistrictCities("Zuid-Holland");
+        System.out.println("Populated Cities in the District: ");
+        for (int i = 0; i < Cities.size(); i++) {
+            System.out.println("City: " + Cities.get(i).getName() + ": " + Cities.get(i).getPopulation());
+        }
 
         // Disconnect from database
         a.disconnect();
