@@ -8,6 +8,11 @@
 
 package com.napier.Ambry;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 public class Country {
     private String code;
     private String Name;
@@ -141,12 +146,34 @@ public class Country {
     public String getCode2() {
         return Code2;
     }
+
     public void setCode2(String newCode2) {
         this.Code2 = newCode2;
     }
 
+    public static ArrayList<Country> CityStandard(String select){
+        ArrayList<Country> Countries = new ArrayList<Country>();
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+
+            while (rset.next()) {
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                country.setPopulation(rset.getInt("country.Population"));
+                country.setCapital(rset.getInt("country.Capital"));
 
 
+                Countries.add(country);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
-
+        return Countries;
+    }
 }
