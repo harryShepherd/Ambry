@@ -7,7 +7,6 @@
     <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Added WorldCities, no input required.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Ambry-0.1.0.1-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ambry-0.1.0.1-jar-with-dependencies.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
