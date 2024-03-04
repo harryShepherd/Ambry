@@ -127,7 +127,7 @@ public class City {
             //Stores the statement
             Statement stmt = Database.con.createStatement();
             //Stores the query to be sent to the database.
-            String select = "SELECT * FROM country WHERE region = '" + region + "' ORDER BY population DESC";
+            String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
 
             //Executes the query stored in select.
             ResultSet rset = stmt.executeQuery(select);
