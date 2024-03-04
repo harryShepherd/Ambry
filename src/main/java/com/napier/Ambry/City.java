@@ -64,40 +64,31 @@ public class City {
     }
 
     public static ArrayList<City> WorldCities (){
-        ArrayList<City> Cities = new ArrayList<City>();
-
+        //Stores the query to be sent to the database.
         String select = "SELECT * FROM city ORDER BY population DESC";
-        Cities = CityStandard(select);
 
-        return Cities;
+        return CityStandard(select);
     }
 
     public static ArrayList<City> RegionCities(String region){
-        ArrayList<City> Cities = new ArrayList<City>();
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
-        Cities = CityStandard(select);
 
-        return Cities;
+        return CityStandard(select);
     }
 
     public static ArrayList<City> CountryCities(String country){
-        ArrayList<City> Cities = new ArrayList<City>();
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '" + country + "' ORDER BY city.population DESC";
-        Cities = CityStandard(select);
 
-        return Cities;
-
+        return CityStandard(select);
     }
 
     public static ArrayList<City> DistrictCities(String district) {
-        ArrayList<City> Cities = new ArrayList<City>();
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city WHERE District = '" + district + "' ORDER BY population DESC";
-        Cities = CityStandard(select);
 
-        return Cities;
+        return CityStandard(select);
     }
 
     public static ArrayList<City> CityStandard(String select){
