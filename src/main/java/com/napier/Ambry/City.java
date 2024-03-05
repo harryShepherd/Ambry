@@ -122,12 +122,16 @@ public class City {
     }
 
     public static ArrayList<City> CityStandard(String select){
+        //Stores the Cities relevant to the input SQL statement
         ArrayList<City> Cities = new ArrayList<City>();
 
         try {
+            //Creates the statement as an SQL statement.
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
+            //Executes the query to return all values to be stored.
 
+            //Creates a new city and stores the relevant values before adding it to the ArrayList.
             while (rset.next()) {
                 City city = new City();
                 city.setName(rset.getString("city.Name"));
@@ -138,6 +142,7 @@ public class City {
                 Cities.add(city);
             }
         } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
 
