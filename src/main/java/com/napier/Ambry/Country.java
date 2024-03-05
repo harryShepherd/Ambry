@@ -148,6 +148,8 @@ public class Country {
         this.Code2 = newCode2;
     }
 
+    public static String getCountryCode(String CountryCode){
+        String counrtyName = null;
     /**
      * Epic1: Countries by Largest population to Smallest
      * All the countries in the world organised by largest population to smallest.
@@ -181,7 +183,7 @@ public class Country {
      * All the countries in a region organised by largest population to smallest.
      * Murdo Wallace | Harry Shepherd  / Cameron Smith
      */
-    public static String getCountry(String CountryCode){
+    public static String getCountry(String CountryCode) {
         String countryName = null;
         try {
 
@@ -205,10 +207,14 @@ public class Country {
         ArrayList<Country> Countries = new ArrayList<Country>();
 
         try {
+
             Statement stmt = Database.con.createStatement();
-            ResultSet rset = stmt.executeQuery(select);
+            String str_select =
+                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
+            ResultSet rset = stmt.executeQuery(str_select);
 
             while (rset.next()) {
+                counrtyName = (rset.getString("country.Name"));
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
                 country.setName(rset.getString("country.Name"));
@@ -224,6 +230,6 @@ public class Country {
             throw new RuntimeException(e);
         }
 
-        return Countries;
+        return counrtyName;
     }
 }
