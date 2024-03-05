@@ -152,12 +152,16 @@ public class Country {
     }
 
     public static ArrayList<Country> CityStandard(String select){
+        //Stores all countries returned by the input SQL statement.
         ArrayList<Country> Countries = new ArrayList<Country>();
 
         try {
+            //Creates an SQL statement.
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
+            //Executes the SQL statement input by a seperate function.
 
+            //Creates a new country, stores all relevant values.
             while (rset.next()) {
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
@@ -167,10 +171,10 @@ public class Country {
                 country.setPopulation(rset.getInt("country.Population"));
                 country.setCapital(rset.getInt("country.Capital"));
 
-
                 Countries.add(country);
             }
         } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
 
