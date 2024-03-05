@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Modified to eliminate redundant ArrayLists.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="https://github.com/harryShepherd/Ambry/issues/47&#10;&#10;Added a function to get country name form its code">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Ambry-0.1.0.1-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ambry-0.1.0.1-jar-with-dependencies.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -130,7 +128,7 @@
       <workItem from="1709567499865" duration="12000" />
       <workItem from="1709567860687" duration="244000" />
       <workItem from="1709568731993" duration="1725000" />
-      <workItem from="1709640088088" duration="3608000" />
+      <workItem from="1709640088088" duration="3836000" />
     </task>
     <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
       <option name="closed" value="true" />
@@ -252,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709569991308</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="https://github.com/harryShepherd/Ambry/issues/47&#10;&#10;Added a function to get country name form its code">
+      <option name="closed" value="true" />
+      <created>1709643804691</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709643804691</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +286,7 @@
     <MESSAGE value="Added DistrictCities, returns the cities in an input district." />
     <MESSAGE value="Modified every function to utilise a new function named CityStandard which consolidates code used repeatedly and takes only the SQL statement as an input." />
     <MESSAGE value="Modified to eliminate redundant ArrayLists." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified to eliminate redundant ArrayLists." />
+    <MESSAGE value="https://github.com/harryShepherd/Ambry/issues/47&#10;&#10;Added a function to get country name form its code" />
+    <option name="LAST_COMMIT_MESSAGE" value="https://github.com/harryShepherd/Ambry/issues/47&#10;&#10;Added a function to get country name form its code" />
   </component>
 </project>
