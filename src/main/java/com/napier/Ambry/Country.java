@@ -148,8 +148,34 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    public static String getCountryCode(String CountryCode){
+    public static String getCountryCode(String CountryCode) {
         String counrtyName = null;
+        try {
+
+            Statement stmt = Database.con.createStatement();
+            String str_select =
+                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
+            ResultSet rset = stmt.executeQuery(str_select);
+
+            while (rset.next()) {
+                Country country = new Country();
+                country.setCode(rset.getString("country.Code"));
+                country.setName(rset.getString("country.Name"));
+                country.setContinent(rset.getString("country.Continent"));
+                country.setRegion(rset.getString("country.Region"));
+                country.setPopulation(rset.getInt("country.Population"));
+                country.setCapital(rset.getInt("country.Capital"));
+
+
+                Countries.add(country);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return counrtyName;
+    }
+
     /**
      * Epic1: Countries by Largest population to Smallest
      * All the countries in the world organised by largest population to smallest.
@@ -207,37 +233,6 @@ public class Country {
         ArrayList<Country> Countries = new ArrayList<Country>();
 
         try {
-
-            Statement stmt = Database.con.createStatement();
-            String str_select =
-                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
-            ResultSet rset = stmt.executeQuery(str_select);
-
-            while (rset.next()) {
-                counrtyName = (rset.getString("country.Name"));
-                Country country = new Country();
-                country.setCode(rset.getString("country.Code"));
-                country.setName(rset.getString("country.Name"));
-                country.setContinent(rset.getString("country.Continent"));
-                country.setRegion(rset.getString("country.Region"));
-                country.setPopulation(rset.getInt("country.Population"));
-                country.setCapital(rset.getInt("country.Capital"));
-
-
-                Countries.add(country);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return counrtyName;
-    }
-
-    public static ArrayList<Country> CityStandard(String select){
-        //Stores all countries returned by the input SQL statement.
-        ArrayList<Country> Countries = new ArrayList<Country>();
-
-        try {
             //Creates an SQL statement.
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
@@ -259,4 +254,6 @@ public class Country {
             //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
+        return Countries;
+    }
 }
