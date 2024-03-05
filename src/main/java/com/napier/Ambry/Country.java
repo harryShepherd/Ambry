@@ -11,7 +11,6 @@ package com.napier.Ambry;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class Country {
     private String code;
@@ -151,33 +150,22 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    public static ArrayList<Country> CityStandard(String select){
-        //Stores all countries returned by the input SQL statement.
-        ArrayList<Country> Countries = new ArrayList<Country>();
-
+    public static String getCountryCode(String CountryCode){
+        String counrtyName = null;
         try {
-            //Creates an SQL statement.
+
             Statement stmt = Database.con.createStatement();
-            ResultSet rset = stmt.executeQuery(select);
-            //Executes the SQL statement input by a seperate function.
+            String str_select =
+                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
+            ResultSet rset = stmt.executeQuery(str_select);
 
-            //Creates a new country, stores all relevant values.
             while (rset.next()) {
-                Country country = new Country();
-                country.setCode(rset.getString("country.Code"));
-                country.setName(rset.getString("country.Name"));
-                country.setContinent(rset.getString("country.Continent"));
-                country.setRegion(rset.getString("country.Region"));
-                country.setPopulation(rset.getInt("country.Population"));
-                country.setCapital(rset.getInt("country.Capital"));
-
-                Countries.add(country);
+                counrtyName = (rset.getString("country.Name"));
             }
         } catch (SQLException e) {
-            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
 
-        return Countries;
+        return counrtyName;
     }
 }
