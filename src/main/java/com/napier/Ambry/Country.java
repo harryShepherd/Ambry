@@ -11,6 +11,7 @@ package com.napier.Ambry;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Country {
     private String code;
@@ -169,7 +170,7 @@ public class Country {
         return counrtyName;
     }
 
-    public static ArrayList<Country> CityStandard(String select){
+    public static ArrayList<Country> CityStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<Country> Countries = new ArrayList<Country>();
 
@@ -195,4 +196,7 @@ public class Country {
             //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
+        return Countries;
+    }
 }
+
