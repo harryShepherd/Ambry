@@ -68,32 +68,6 @@ public class City {
         this.population = setPopulation;
     }
 
-    /*
-     * Epic4: Top populated cities
-     * Top N populated cities in a world, with N provided by user
-     * Sam Wilson-Perkins
-     */
-
-    /*
-     * Epic4: Top N populated cities in a continent, with N provided by user
-     * Sam Wilson-Perkins
-     */
-
-    /*
-     * Epic4: Top N populated cities in a region, with N provided by user
-     * Sam Wilson-Perkins
-     */
-
-    /*
-     * Epic4: Top N populated cities in a country, with N provided by user
-     * Sam Wilson-Perkins
-     */
-
-    /*
-     * Epic4: Top N populated cities in a district, with N provided by user
-     * Sam Wilson-Perkins
-     */
-
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
         ArrayList<City> Cities = new ArrayList<City>();
@@ -122,4 +96,30 @@ public class City {
 
         return Cities;
     }
+
+    /*
+     * Epic4: Top populated cities
+     * Top N populated cities in a world, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /*
+     * Epic4: Top N populated cities in a continent, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /*
+     * Epic4: Top N populated cities in a region, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /*
+     * Epic4: Top N populated cities in a country, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    /*
+     * Epic4: Top N populated cities in a district, with N provided by user
+     * Sam Wilson-Perkins
+     */
 }
