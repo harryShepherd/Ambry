@@ -180,7 +180,7 @@ public class Country {
      * All the countries in a region organised by largest population to smallest.
      * Murdo Wallace | Harry Shepherd  / Cameron Smith
      */
-    public static String getCountryCode(String CountryCode){
+    public static String getCountry(String CountryCode){
         String countryName = null;
         try {
 
