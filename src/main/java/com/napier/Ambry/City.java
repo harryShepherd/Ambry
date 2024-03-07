@@ -62,7 +62,7 @@ public class City {
         this.population = setPopulation;
     }
 
-    //Epic 5: The top N populated capital cities in a continent where N is provided by the user.
+    //Epic 6: The top N populated capital cities in a continent where N is provided by the user.
     //Murdo Wallace
     //Last edited 07/03/2024
     //takes in a continent as a string and the limit of cities show as a string
@@ -72,6 +72,18 @@ public class City {
                 "FROM city INNER JOIN country ON country.capital = city.ID " +
                 " WHERE country.Continent = '" + continent
                 + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
+    //Epic 6:The top N populated capital cities in the world where N is provided by the user.
+    //Murdo Wallace
+    //Last edited 07/03/2024
+    //Outputs capitals cities ordered by population. Takes in a string that will determine the limit of the output
+    public static ArrayList<City> WorldCapitals(int N) {
+        //Stores the query to be sent to the database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.capital = city.ID ORDER BY city.population DESC LIMIT " + N;
 
         return CityStandard(select);
     }
