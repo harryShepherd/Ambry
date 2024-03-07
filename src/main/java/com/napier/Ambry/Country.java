@@ -151,7 +151,26 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    public static ArrayList<Country> CityStandard(String select){
+    public static String getCountryCode(String CountryCode){
+        String counrtyName = null;
+        try {
+
+            Statement stmt = Database.con.createStatement();
+            String str_select =
+                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
+            ResultSet rset = stmt.executeQuery(str_select);
+
+            while (rset.next()) {
+                counrtyName = (rset.getString("country.Name"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return counrtyName;
+    }
+
+    public static ArrayList<Country> CityStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<Country> Countries = new ArrayList<Country>();
 
@@ -177,7 +196,7 @@ public class Country {
             //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
-
         return Countries;
     }
 }
+
