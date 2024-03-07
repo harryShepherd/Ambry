@@ -35,7 +35,7 @@ public class Main {
 
 
         */
-        ArrayList<City> print = City.WorldCapitals( 30);
+        ArrayList<City> print = City.RegionCapitals( "Caribbean",30);
         System.out.print("WorldCapitals: \n");
         System.out.print("\n");
         //prints all of arraylist print2
