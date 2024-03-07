@@ -68,70 +68,58 @@ public class City {
         this.population = setPopulation;
     }
 
-    /**
+    /*
      * Epic4: Top populated cities
      * Top N populated cities in a world, with N provided by user
      * Sam Wilson-Perkins
      */
 
-    public static ArrayList<City> TopNPopCitiesInWorld(int n){
-
-        //Stores the countries that meet the required criteria.
-        ArrayList<City> TopCities = new ArrayList<City>();
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-
-        /*
-        System.out.println("How many cities would you like to display?");
-        try {
-            n = Integer.parseInt(read.readLine());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        */
-
-        try{
-            //Stores the statement
-            Statement stmt = Database.con.createStatement();
-            //Stores the query to be sent to the database.
-            String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + n;
-
-            //Executes the query stored in select.
-            ResultSet rset = stmt.executeQuery(select);
-            //Returns city code, name, continent, region, and population.
-            //Stores the above values in the TopCities ArrayList which stores the cities meeting the criteria.
-            while(rset.next()){
-                City city = new City();
-                city.setID(rset.getInt("city.ID"));
-                city.setName(rset.getString("city.Name"));
-                city.setPopulation(rset.getInt("city.Population"));
-                city.setDistrict(rset.getString("city.District"));
-
-                TopCities.add(city);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return TopCities;
-    }
-
-    /**
+    /*
      * Epic4: Top N populated cities in a continent, with N provided by user
      * Sam Wilson-Perkins
      */
 
-    /**
+    /*
      * Epic4: Top N populated cities in a region, with N provided by user
      * Sam Wilson-Perkins
      */
 
-    /**
+    /*
      * Epic4: Top N populated cities in a country, with N provided by user
      * Sam Wilson-Perkins
      */
 
-    /**
+    /*
      * Epic4: Top N populated cities in a district, with N provided by user
      * Sam Wilson-Perkins
      */
+
+    public static ArrayList<City> CityStandard(String select){
+        //Stores the Cities relevant to the input SQL statement
+        ArrayList<City> Cities = new ArrayList<City>();
+
+        try {
+            //Creates the statement as an SQL statement.
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            //Executes the query to return all values to be stored.
+
+            //Creates a new city and stores the relevant values before adding it to the ArrayList.
+            while (rset.next()) {
+                City city = new City();
+                city.setName(rset.getString("city.Name"));
+                city.setCountryCode(rset.getString("city.CountryCode"));
+                //Need to store Country but can only access via CountryCode
+                city.setDistrict(rset.getString("city.District"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                Cities.add(city);
+            }
+        } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+            throw new RuntimeException(e);
+        }
+
+        return Cities;
+    }
 }
