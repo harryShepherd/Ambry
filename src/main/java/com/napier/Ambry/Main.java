@@ -10,7 +10,8 @@ public class Main {
         // Connect to database
         a.connect();
         //creating an arraylist to store the output of getAllCountryLargeToSmall
-       ArrayList<Country> print = Country.getAllCountryLargeToSmall();
+
+       /*
         //prints all of arraylist print
         System.out.print("getAllCountryLargeToSmall: \n");
         System.out.print("\n");
@@ -31,11 +32,15 @@ public class Main {
 
         System.out.print("\n");
         ArrayList<Country> print3 = Country.getAllCountryPerRegion("Caribbean");
-        System.out.print("getAllCountryPerRegion: \n");
+
+
+        */
+        ArrayList<City> print = City.ContinentCapitals("Asia", 30);
+        System.out.print("ContinentCapitals: \n");
         System.out.print("\n");
         //prints all of arraylist print2
-        for(int i = 0; i < print3.size(); i++){
-            System.out.print(print3.get(i).getName() + "\n");
+        for(int i = 0; i < print.size(); i++){
+            System.out.print(print.get(i).getName() + "\n");
         }
 
 
