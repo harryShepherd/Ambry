@@ -95,6 +95,16 @@ public class City {
 
         return CityStandard(select);
     }
+    // Epic 3 - All the cities in a continent organised by largest population to smallest.
+    //Murdo Wallace
+    //Last edited 07/03/2024
+    //takes in a string for the continent and returns all cities within that continent organised by population
+    public static ArrayList<City> ContinentCity(String continent) {
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '" + continent+ "'ORDER BY city.population DESC";
+
+        return CityStandard(select);
+    }
 
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
