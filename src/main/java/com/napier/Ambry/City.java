@@ -106,7 +106,7 @@ public class City {
                 City city = new City();
                 city.setName(rset.getString("city.Name"));
                 city.setCountryCode(rset.getString("city.CountryCode"));
-                //Need to store Country
+                //Need to store Country but can only access via CountryCode
                 city.setDistrict(rset.getString("city.District"));
                 city.setPopulation(rset.getInt("city.Population"));
 
