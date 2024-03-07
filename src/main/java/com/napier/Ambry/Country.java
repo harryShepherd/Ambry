@@ -148,8 +148,8 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    public static String getCountryCode(String CountryCode) {
-        String counrtyName = null;
+    public static String getCountryCode(String CountryCode){
+        String countryName = null;
         try {
 
             Statement stmt = Database.con.createStatement();
@@ -158,6 +158,7 @@ public class Country {
             ResultSet rset = stmt.executeQuery(str_select);
 
             while (rset.next()) {
+                countryName = (rset.getString("country.Name"));
                 Country country = new Country();
                 country.setCode(rset.getString("country.Code"));
                 country.setName(rset.getString("country.Name"));
@@ -173,7 +174,7 @@ public class Country {
             throw new RuntimeException(e);
         }
 
-        return counrtyName;
+        return countryName;
     }
 
     /**
@@ -228,6 +229,7 @@ public class Country {
         return countryName;
     }
 
+
     public static ArrayList<Country> CountryStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<Country> Countries = new ArrayList<Country>();
@@ -257,3 +259,4 @@ public class Country {
         return Countries;
     }
 }
+
