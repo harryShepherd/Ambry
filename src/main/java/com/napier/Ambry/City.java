@@ -63,6 +63,8 @@ public class City {
         this.population = setPopulation;
     }
 
+    // Epic 3 - All cities organised by population descending.
+    // All cities in the world organised by largest population to smallest.
     public static ArrayList<City> WorldCities (){
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city ORDER BY population DESC";
@@ -70,6 +72,7 @@ public class City {
         return CityStandard(select);
     }
 
+    // Epic 3 - All cities in a region organised by largest population to smallest.
     public static ArrayList<City> RegionCities(String region){
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
@@ -77,6 +80,7 @@ public class City {
         return CityStandard(select);
     }
 
+    // Epic 3 - All cities in a country organised by largest population to smallest.
     public static ArrayList<City> CountryCities(String country){
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '" + country + "' ORDER BY city.population DESC";
@@ -84,6 +88,7 @@ public class City {
         return CityStandard(select);
     }
 
+    // Epic 3 - All cities in a district organised by largest population to smallest.
     public static ArrayList<City> DistrictCities(String district) {
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city WHERE District = '" + district + "' ORDER BY population DESC";
