@@ -1,5 +1,5 @@
 /**
- * Filename:    CountryLanguage.java
+ * Filename:    City.java
  * Author:      Cameron Smith
  * Last Edited: 14/2/2024 @ 18:00
  * Purpose:     This class exists to store information about the city item
@@ -61,6 +61,49 @@ public class City {
     public void setPopulation(int setPopulation){
         //Sets the city's Population from the input.
         this.population = setPopulation;
+    }
+
+    // Epic 3 - All cities organised by population descending.
+    // All cities in the world organised by largest population to smallest.
+    public static ArrayList<City> WorldCities (){
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city ORDER BY population DESC";
+
+        return CityStandard(select);
+    }
+
+    // Epic 3 - All cities in a region organised by largest population to smallest.
+    public static ArrayList<City> RegionCities(String region){
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
+
+        return CityStandard(select);
+    }
+
+    // Epic 3 - All cities in a country organised by largest population to smallest.
+    public static ArrayList<City> CountryCities(String country){
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '" + country + "' ORDER BY city.population DESC";
+
+        return CityStandard(select);
+    }
+
+    // Epic 3 - All cities in a district organised by largest population to smallest.
+    public static ArrayList<City> DistrictCities(String district) {
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city WHERE District = '" + district + "' ORDER BY population DESC";
+
+        return CityStandard(select);
+    }
+    // Epic 3 - All the cities in a continent organised by largest population to smallest.
+    //Murdo Wallace
+    //Last edited 07/03/2024
+    //takes in a string for the continent and returns all cities within that continent organised by population
+    public static ArrayList<City> ContinentCity(String continent) {
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '" + continent+ "'ORDER BY city.population DESC";
+
+        return CityStandard(select);
     }
 
     public static ArrayList<City> CityStandard(String select){

@@ -143,6 +143,7 @@ public class Country {
     public String getCode2() {
         return Code2;
     }
+
     public void setCode2(String newCode2) {
         this.Code2 = newCode2;
     }
