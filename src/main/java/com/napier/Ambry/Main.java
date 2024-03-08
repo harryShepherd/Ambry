@@ -1,47 +1,35 @@
 package com.napier.Ambry;
 
 import java.util.ArrayList;
-import java.sql.*;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         // Create new Application Instance
         Database a = new Database();
-
         // Connect to database
         a.connect();
-        //creating an arraylist to store the output of getAllCountryLargeToSmall
-       ArrayList<Country> print = Country.getAllCountryLargeToSmall();
-        //prints all of arraylist print
-        System.out.print("getAllCountryLargeToSmall: \n");
-        System.out.print("\n");
-        for(int i = 0; i < print.size(); i++){
-            System.out.print(print.get(i).getName() + "\n");
-        }
-        System.out.print("\n");
 
-        //creating an arraylist to store the output of getAllCountryPerContinent
-        //where the continent is asia
-        ArrayList<Country> print2 = Country.getAllCountryPerContinent("Asia");
-        System.out.print("getAllCountryPerContinent: \n");
-        System.out.print("\n");
-        //prints all of arraylist print2
-        for(int i = 0; i < print2.size(); i++){
-            System.out.print(print2.get(i).getName() + "\n");
+
+        ArrayList<Country> topN = Country.TopNWorld(10);
+        System.out.println("Top Populated Countries in the World: ");
+        for (int i = 0; i < topN.size(); i++) {
+            System.out.println("Country: " + topN.get(i).getName() + ": " + topN.get(i).getPopulation());
         }
 
-        System.out.print("\n");
-        ArrayList<Country> print3 = Country.getAllCountryPerRegion("Caribbean");
-        System.out.print("getAllCountryPerRegion: \n");
-        System.out.print("\n");
-        //prints all of arraylist print2
-        for(int i = 0; i < print3.size(); i++){
-            System.out.print(print3.get(i).getName() + "\n");
+        topN = Country.TopNContinent(10, "Europe");
+        System.out.println("Continent: " + topN.get(0).getContinent());
+        for (int i = 0; i < topN.size(); i++) {
+            System.out.println(topN.get(i).getName() + ": " + topN.get(i).getPopulation());
         }
 
-
+        topN = Country.TopNRegion(10, "Caribbean");
+        System.out.println("Region: " + topN.get(0).getRegion());
+        for (int i = 0; i < topN.size(); i++) {
+            System.out.println(topN.get(i).getName() + ": " + topN.get(i).getPopulation());
+        }
 
         // Disconnect from database
         a.disconnect();
     }
 }
-

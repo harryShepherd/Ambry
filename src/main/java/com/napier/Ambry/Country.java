@@ -147,40 +147,28 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    /**
-     * Epic1: Countries by Largest population to Smallest
-     * All the countries in the world organised by largest population to smallest.
-     * Murdo Wallace / Cameron Smith
-     */
-    public static ArrayList<Country> getAllCountryLargeToSmall() {
-        //connects to the database
-        String select = "SELECT * FROM country ORDER BY population";
+    public static ArrayList<Country> TopNWorld(int n){
+        //Created by: Cameron Smith
+        //Epic 2, Task #5
+
+        String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
         return CountryStandard(select);
     }
-    /**
-     * Epic1: All the countries in a continent organised by largest population to smallest.
-     * returns All the countries in a continent organised by largest population to smallest.
-     * Murdo Wallace / Harry Shepherd / Cameron Smith
-     */
-    public static ArrayList<Country> getAllCountryPerContinent(String cont) {
-        String select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY population";
+    public static ArrayList<Country> TopNContinent(int n, String continent){
+        //Created by: Cameron Smith
+        //Epic 2, Task #6
+        String select = "SELECT * FROM country WHERE country.continent='" + continent + "' ORDER BY population DESC LIMIT " + n;
         return CountryStandard(select);
     }
-    /**
-     * Epic1: All the countries in a region organised by largest population to smallest.
-     * All the countries in a region organised by largest population to smallest.
-     * Murdo Wallace / Cameron Smith
-     */
-    public static ArrayList<Country> getAllCountryPerRegion(String cont) {
-        String select = "SELECT * FROM country WHERE Region ='" + cont + "'ORDER BY population";
+
+    public static ArrayList<Country> TopNRegion (int n, String region){
+        //Created by: Cameron Smith
+        //Epic 2, Task #7
+        String select = "SELECT * FROM country WHERE country.region='" + region + "' ORDER BY population DESC LIMIT " + n;
         return CountryStandard(select);
     }
-    /**
-     * Epic1: All the countries in a region organised by largest population to smallest.
-     * All the countries in a region organised by largest population to smallest.
-     * Murdo Wallace | Harry Shepherd  / Cameron Smith
-     */
-    public static String getCountry(String CountryCode){
+
+    public static String getCountryCode(String CountryCode){
         String countryName = null;
         try {
 
@@ -227,6 +215,4 @@ public class Country {
         }
         return Countries;
     }
-
-
 }
