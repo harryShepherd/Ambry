@@ -148,7 +148,7 @@ public class Country {
         this.Code2 = newCode2;
     }
 
-    public static String getCountryCode(String CountryCode){
+    public static String getCountryCode(String CountryCode) {
         String countryName = null;
         try {
 
@@ -259,4 +259,3 @@ public class Country {
         return Countries;
     }
 }
-
