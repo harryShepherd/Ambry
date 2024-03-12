@@ -48,4 +48,65 @@ public class MyTest {
 
     @Test
     void unitContinentCity(){}
+
+
+
+
+
+    @Test
+    void unitCityID(){}
+
+    @Test
+    void unitCityName(){}
+
+    @Test
+    void unitCityCountryCode(){}
+
+    @Test
+    void unitCityDistrict(){}
+
+    @Test
+    void unitCityPopulation(){}
+
+    @Test
+    void unitCountryCode(){}
+
+    @Test
+    void unitCountryName(){}
+
+    @Test
+    void unitCountryContinent(){}
+
+    @Test
+    void unitCountryRegion(){}
+
+    @Test
+    void unitCountrySurfaceArea(){}
+
+    @Test
+    void unitCountryIndepYear(){}
+
+    @Test
+    void unitCountryPopulation(){}
+
+    @Test
+    void unitCountryGNP(){}
+
+    @Test
+    void unitCountryGNPOld(){}
+
+    @Test
+    void unitCountryLocalName(){}
+
+    @Test
+    void unitCountryGovernmentForm(){}
+
+    @Test
+    void unitCountryHeadOfState(){}
+
+    @Test
+    void unitCountryCapital(){}
+
+    @Test
+    void unitCountryCode2(){}
 }
