@@ -8,8 +8,13 @@ public class Main {
         // Create new Application Instance
         Database a = new Database();
 
-        // Connect to database
-        a.connect("localhost:33060", 30000);
+        if(args.length < 1) {
+            // Debugging
+            a.connect("localhost:33060", 30000);
+        } else {
+            // Live
+            a.connect("db:3306", 30000);
+        }
 
         ArrayList<Country> countries = a.getAllCountries();
 
