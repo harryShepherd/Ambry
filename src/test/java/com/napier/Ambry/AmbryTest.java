@@ -1,15 +1,11 @@
-import com.napier.Ambry.City;
-import com.napier.Ambry.Country;
-import com.napier.Ambry.Database;
+package com.napier.Ambry;
+
 import org.junit.jupiter.api.*;
 
-import java.sql.SQLException;
-
 import static com.napier.Ambry.City.*;
-import static com.napier.Ambry.Country.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MyTest {
+public class AmbryTest {
     @BeforeAll
     static void init(){
         Database db = new Database();
