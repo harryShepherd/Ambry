@@ -10,7 +10,8 @@ public class AmbryTest {
     static void init(){
         Database db = new Database();
 
-        db.connect("localhost:33060", 30000);
+        //db.connect("localhost:33060", 30000);
+        db.connect("db:3306", 30000);
     }
 
     @Test
