@@ -172,8 +172,8 @@ public class Country {
      * All the countries in a region organised by largest population to smallest.
      * Murdo Wallace / Cameron Smith
      */
-    public static ArrayList<Country> getAllCountryPerRegion(String cont) {
-        String select = "SELECT * FROM country WHERE Region ='" + cont + "'ORDER BY population";
+    public static ArrayList<Country> getAllCountryPerRegion(String region) {
+        String select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population";
         return CountryStandard(select);
     }
 
