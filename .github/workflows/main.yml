@@ -17,7 +17,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Unit Tests
-        run: mvn -Dtest=com.napier.Ambry AmbryTest
+        run: mvn -Dtest=com.napier.Ambry.AmbryTest test
 
   build:
     name: Build Application
