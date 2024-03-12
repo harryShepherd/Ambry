@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Checked Country and City standard for null">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="&#10;&#10;Added a function to get country name form its code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ambry-0.1.0.1-jar-with-dependencies.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +21,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="feature/UnitTesting" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -31,6 +29,15 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="develop" />
+        <option value="master" />
+        <option value="release" />
+      </list>
+    </option>
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -53,6 +60,9 @@
     "Docker.Dockerfile.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "JUnit.MyTest.executor": "Run",
+    "JUnit.MyTest.unitCheckCountryStandard.executor": "Run",
+    "JUnit.MyTest.unitCheckNull.executor": "Run",
+    "JUnit.MyTest.unitContinentCity.executor": "Run",
     "Maven.Ambry [clean].executor": "Run",
     "Maven.Ambry [compile].executor": "Run",
     "Maven.Ambry [package].executor": "Run",
@@ -72,7 +82,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.MyTest">
+  <component name="RunManager" selected="JUnit.MyTest.unitContinentCity">
     <configuration name="MyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ambry" />
       <option name="PACKAGE_NAME" value="" />
@@ -82,14 +92,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="buildOnly" value="true" />
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
+    <configuration name="MyTest.unitCheckCountryStandard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ambry" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="unitCheckCountryStandard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.unitCheckNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ambry" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="unitCheckNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.unitContinentCity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ambry" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="unitContinentCity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
@@ -112,15 +143,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.MyTest.unitCheckCountryStandard" />
+      <item itemvalue="JUnit.MyTest.unitCheckNull" />
+      <item itemvalue="JUnit.MyTest.unitContinentCity" />
       <item itemvalue="JUnit.MyTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyTest.unitContinentCity" />
+        <item itemvalue="JUnit.MyTest.unitCheckCountryStandard" />
+        <item itemvalue="JUnit.MyTest.unitCheckNull" />
         <item itemvalue="JUnit.MyTest" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -297,15 +332,7 @@
       <option name="project" value="LOCAL" />
       <updated>1709813101221</updated>
     </task>
-    <task id="LOCAL-00019" summary="Removed unit tests checking getters and setters">
-      <option name="closed" value="true" />
-      <created>1710248389698</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1710248389698</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,9 +363,6 @@
     <MESSAGE value="https://github.com/harryShepherd/Ambry/issues/47&#10;&#10;Added a function to get country name form its code" />
     <MESSAGE value="Added CountryCode storage" />
     <MESSAGE value="&#10;&#10;Added a function to get country name form its code" />
-    <MESSAGE value="Pushing to be able to pull" />
-    <MESSAGE value="Removed unit tests checking getters and setters" />
-    <MESSAGE value="Checked Country and City standard for null" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checked Country and City standard for null" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;Added a function to get country name form its code" />
   </component>
 </project>

@@ -30,6 +30,7 @@ public class MyTest {
         assertEquals(null, CityStandard(""));
     }
 
+
     @Test
     void unitGetAllCountryLargeToSmall(){}
 
@@ -49,17 +50,32 @@ public class MyTest {
     void unitTopNRegion(){}
 
     @Test
-    void unitWorldCities(){}
+    void unitWorldCities(){
+        assertNotEquals(null, WorldCities());
+
+    }
 
     @Test
-    void unitRegionCities(){}
+    void unitRegionCities(){
+        assertNotEquals(null, RegionCities(""));
+    }
 
     @Test
-    void unitCountryCities(){}
+    void unitCountryCities(){
+        assertNotEquals(null, CountryCities(""));
+    }
 
     @Test
-    void unitDistrictCities(){}
+    void unitDistrictCities(){
+        assertNotEquals(null, DistrictCities(""));
+    }
+
 
     @Test
-    void unitContinentCity(){}
+    void unitContinentCity()
+    {
+        assertNotEquals(null, ContinentCity(""));
+    }
 }
+
+
