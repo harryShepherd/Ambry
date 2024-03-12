@@ -1,0 +1,17 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" default=\"true\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 5178bd4eb517dc24eadc36d839ab04c5805e0ad4)
++++ b/.idea/misc.xml	(date 1710241971253)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" default="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="temurin-17" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
