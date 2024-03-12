@@ -2,6 +2,7 @@ import com.napier.Ambry.Database;
 import org.junit.jupiter.api.*;
 
 import static com.napier.Ambry.City.*;
+import static com.napier.Ambry.Country.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MyTest {
@@ -20,10 +21,14 @@ public class MyTest {
     void unitCheckNull(){}
 
     @Test
-    void unitCheckCountryStandard(){}
+    void unitCheckCountryStandard(){
+        assertEquals(null, CountryStandard(""));
+    }
 
     @Test
-    void unitCheckCityStandard(){}
+    void unitCheckCityStandard(){
+        assertEquals(null, CityStandard(""));
+    }
 
     @Test
     void unitGetAllCountryLargeToSmall(){}
