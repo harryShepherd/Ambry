@@ -9,7 +9,7 @@ public class Main {
         Database a = new Database();
 
         // Connect to database
-        a.connect();
+        a.connect("localhost:33060", 30000);
 
         ArrayList<Country> countries = a.getAllCountries();
 
