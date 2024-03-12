@@ -1,5 +1,9 @@
+import com.napier.Ambry.City;
+import com.napier.Ambry.Country;
 import com.napier.Ambry.Database;
 import org.junit.jupiter.api.*;
+
+import java.sql.SQLException;
 
 import static com.napier.Ambry.City.*;
 import static com.napier.Ambry.Country.*;
@@ -12,33 +16,39 @@ public class MyTest {
 
         db.connect("localhost:33060", 30000);
     }
-    @Test
-    void unitTest() {
-        assertEquals(null, CityStandard(""));
-    }
 
     @Test
     void unitCheckNull(){}
 
+    // Harry
     @Test
-    void unitCheckCountryStandard(){
-        assertEquals(null, CountryStandard(""));
+    void unitCheckCountryStandard() {
+        // Check if CountryStandard throws an error if given an empty string
+        assertThrows(Exception.class, () -> Country.CountryStandard(""));
     }
 
+    // Harry
     @Test
     void unitCheckCityStandard(){
-        assertEquals(null, CityStandard(""));
+        // Check if CityStandard throws an error if given an empty string
+        assertThrows(Exception.class, () -> City.CityStandard(""));
     }
 
 
     @Test
-    void unitGetAllCountryLargeToSmall(){}
+    void unitGetAllCountryLargeToSmall() {
+        assertNotNull(Country.getAllCountryLargeToSmall(), "getAllCountryLargeToSmall() Not Null!");
+    }
 
     @Test
-    void unitGetAllCountryPerContinent(){}
+    void unitGetAllCountryPerContinent() {
+        assertNotNull(Country.getAllCountryPerContinent("Asia"), "getAllCountryPerContinent() Not Null");
+    }
 
     @Test
-    void unitGetAllCountryPerRegion(){}
+    void unitGetAllCountryPerRegion() {
+        assertNotNull(Country.getAllCountryPerRegion("Southern Europe"), "getAllCountryPerRegion() Not Null");
+    }
 
     @Test
     void unitTopNWorld(){}
