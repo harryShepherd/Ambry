@@ -1,6 +1,7 @@
 package com.napier.Ambry;
 
 import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AmbryIntegrationTest {
 
@@ -14,7 +15,10 @@ public class AmbryIntegrationTest {
 
     @Test
     void testCountryStandard() {
-        Country.CountryStandard("SELECT * FROM country LIMIT 1");
+        assertEquals(
+                "Aruba",
+                Country.CountryStandard("SELECT * FROM country LIMIT 1").get(0).getName()
+        );
     }
 
 }
