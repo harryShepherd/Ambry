@@ -16,8 +16,6 @@ public class Main {
             a.connect("db:3306", 30000);
         }
 
-        ArrayList<Country> countries = a.getAllCountries();
-
         // Disconnect from database
         a.disconnect();
     }
