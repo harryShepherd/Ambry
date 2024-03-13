@@ -34,4 +34,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Unit Tests
-        run: mvn -Dtest=com.napier.Ambry.AmbryTest test -e
+        run: |
+          mvn package -DskipTests
+          docker-compose up
+          mvn -Dtest=com.napier.Ambry.AmbryTest test -e
