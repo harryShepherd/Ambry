@@ -40,4 +40,9 @@ public class AmbryIntegrationTest {
         );
     }
 
+    @Test
+    void testGetAllCountryLargeToSmall() {
+        assertEquals("China", Country.getAllCountryLargeToSmall().get(0).getName());
+    }
+
 }
