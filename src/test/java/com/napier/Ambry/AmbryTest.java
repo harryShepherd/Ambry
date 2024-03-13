@@ -1,7 +1,6 @@
 package com.napier.Ambry;
 
 import org.junit.jupiter.api.*;
-
 import static com.napier.Ambry.City.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,8 +8,6 @@ public class AmbryTest {
     @BeforeAll
     static void init(){
         // Runs on start
-        Database db = new Database();
-        db.connect("db:3306", 30000);
     }
 
     @Test
@@ -92,40 +89,6 @@ public class AmbryTest {
         // testing if CityStandard correctly throws an error
         assertThrows(RuntimeException.class, () -> City.CityStandard(""));
     }
-
-    @Test
-    void unitGetAllCountryLargeToSmall() {}
-
-    @Test
-    void unitGetAllCountryPerContinent() {}
-
-    @Test
-    void unitGetAllCountryPerRegion() {}
-
-    @Test
-    void unitTopNWorld(){}
-
-    @Test
-    void unitTopNContinent(){}
-
-    @Test
-    void unitTopNRegion(){}
-
-    @Test
-    void unitWorldCities(){}
-
-    @Test
-    void unitRegionCities(){}
-
-    @Test
-    void unitCountryCities(){}
-
-    @Test
-    void unitDistrictCities(){}
-
-
-    @Test
-    void unitContinentCity() {}
 }
 
 
