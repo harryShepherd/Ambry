@@ -35,11 +35,11 @@ jobs:
       - name: Integration Tests
         run: |
           docker build -t database ./db 
-          docker run --name world -dp 33060:3306 database
+          docker run --name ambry-db -dp 33060:3306 database
           mvn -Dtest=com.napier.Ambry.AmbryTest test
-          docker stop world
-          docker rm world
-          docker image rm world
+          docker stop ambry-db
+          docker rm ambry-db
+          docker image rm ambry-db
   UnitTests:
     name: Unit Tests
     runs-on: ubuntu-20.04
