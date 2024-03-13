@@ -187,15 +187,15 @@ import java.sql.*;
     public static ArrayList&lt;Country&gt; TopNContinent(int n, String continent){
         //Created by: Cameron Smith
         //Epic 2, Task #6
-<span class="nc" id="L190">        String select = &quot;SELECT * FROM country WHERE country.continent='&quot; + continent + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
-<span class="nc" id="L191">        return CountryStandard(select);</span>
+<span class="fc" id="L190">        String select = &quot;SELECT * FROM country WHERE country.continent='&quot; + continent + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
+<span class="fc" id="L191">        return CountryStandard(select);</span>
     }
 
     public static ArrayList&lt;Country&gt; TopNRegion (int n, String region){
         //Created by: Cameron Smith
         //Epic 2, Task #7
-<span class="nc" id="L197">        String select = &quot;SELECT * FROM country WHERE country.region='&quot; + region + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
-<span class="nc" id="L198">        return CountryStandard(select);</span>
+<span class="fc" id="L197">        String select = &quot;SELECT * FROM country WHERE country.region='&quot; + region + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
+<span class="fc" id="L198">        return CountryStandard(select);</span>
     }
 
     // what is this

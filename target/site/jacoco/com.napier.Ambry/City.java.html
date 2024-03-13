@@ -67,33 +67,33 @@ import java.sql.*;
     // All cities in the world organised by largest population to smallest.
     public static ArrayList&lt;City&gt; WorldCities (){
         //Stores the query to be sent to the database.
-<span class="nc" id="L70">        String select = &quot;SELECT * FROM city ORDER BY population DESC&quot;;</span>
+<span class="fc" id="L70">        String select = &quot;SELECT * FROM city ORDER BY population DESC&quot;;</span>
 
-<span class="nc" id="L72">        return CityStandard(select);</span>
+<span class="fc" id="L72">        return CityStandard(select);</span>
     }
 
     // Epic 3 - All cities in a region organised by largest population to smallest.
     public static ArrayList&lt;City&gt; RegionCities(String region){
         //Stores the query to be sent to the database.
-<span class="nc" id="L78">        String select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '&quot; + region + &quot;' ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L78">        String select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '&quot; + region + &quot;' ORDER BY city.population DESC&quot;;</span>
 
-<span class="nc" id="L80">        return CityStandard(select);</span>
+<span class="fc" id="L80">        return CityStandard(select);</span>
     }
 
     // Epic 3 - All cities in a country organised by largest population to smallest.
     public static ArrayList&lt;City&gt; CountryCities(String country){
         //Stores the query to be sent to the database.
-<span class="nc" id="L86">        String select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '&quot; + country + &quot;' ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L86">        String select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '&quot; + country + &quot;' ORDER BY city.population DESC&quot;;</span>
 
-<span class="nc" id="L88">        return CityStandard(select);</span>
+<span class="fc" id="L88">        return CityStandard(select);</span>
     }
 
     // Epic 3 - All cities in a district organised by largest population to smallest.
     public static ArrayList&lt;City&gt; DistrictCities(String district) {
         //Stores the query to be sent to the database.
-<span class="nc" id="L94">        String select = &quot;SELECT * FROM city WHERE District = '&quot; + district + &quot;' ORDER BY population DESC&quot;;</span>
+<span class="fc" id="L94">        String select = &quot;SELECT * FROM city WHERE District = '&quot; + district + &quot;' ORDER BY population DESC&quot;;</span>
 
-<span class="nc" id="L96">        return CityStandard(select);</span>
+<span class="fc" id="L96">        return CityStandard(select);</span>
     }
     // Epic 3 - All the cities in a continent organised by largest population to smallest.
     //Murdo Wallace
@@ -101,9 +101,9 @@ import java.sql.*;
     //takes in a string for the continent and returns all cities within that continent organised by population
     public static ArrayList&lt;City&gt; ContinentCity(String continent) {
         //Stores the query to be sent to the database.
-<span class="nc" id="L104">        String select = &quot;SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '&quot; + continent+ &quot;'ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L104">        String select = &quot;SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '&quot; + continent+ &quot;'ORDER BY city.population DESC&quot;;</span>
 
-<span class="nc" id="L106">        return CityStandard(select);</span>
+<span class="fc" id="L106">        return CityStandard(select);</span>
     }
 
     public static ArrayList&lt;City&gt; CityStandard(String select){
