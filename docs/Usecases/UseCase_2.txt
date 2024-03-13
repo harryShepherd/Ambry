@@ -1,0 +1,32 @@
+Use Case: #2 Epic 2
+
+Characteristics
+	- Goal in Context: Prints the top N populated countries in X where N is provided by the user.
+	- Scope: MySQL
+	- Level: Primary Task
+	- Preconditions: Database is accessible
+	- Success Condition: All subtasks are complete
+	- Fail Condition: Nothing is printed to the command line before the final code review
+	- Primary Actor: United Nations
+	- Trigger: User request report from our system
+Main Sucess Scenario
+	- 
+Extensions
+	- 
+Sub-Variations
+	- The top N populated countries in the world where N is provided by the user.
+	- The top N populated countries in a continent where N is provided by the user.
+	- The top N populated countries in a region where N is provided by the user.
+Related Information (Optional)
+	- Priority: High Priority
+	- Performance Target:
+	- Frequency:
+	- Superordinate Use Case:
+	- Subordinate Use Case:
+	- Channel to Primary Actor:
+	- Secondary Actors:
+	- Channel to Secondary Actors:
+Open Issues (optional)
+
+Schedule
+	- Lab of week 12
