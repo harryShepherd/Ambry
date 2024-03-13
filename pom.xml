@@ -6,7 +6,7 @@
 
     <groupId>com.napier.Ambry</groupId>
     <artifactId>Ambry</artifactId>
-    <version>0.1.0.1</version>
+    <version>0.1.0.4</version>
 
     <dependencies>
         <dependency>
