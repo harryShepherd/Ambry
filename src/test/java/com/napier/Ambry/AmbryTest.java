@@ -78,6 +78,12 @@ public class AmbryTest {
         assertEquals(5.3F, cl.getPercentage());
     }
 
+    /*
+    Harry
+        I don't think we really need these here, but not entirely sure just yet,
+        so im gonna just comment them out.
+        They'll be in AmbryIntegrationTest.java
+
     @Test
     void countryStandardTest() {
         // testing if CountryStandard correctly throws an error
@@ -89,6 +95,7 @@ public class AmbryTest {
         // testing if CityStandard correctly throws an error
         assertThrows(RuntimeException.class, () -> City.CityStandard(""));
     }
+    */
 }
 
 
