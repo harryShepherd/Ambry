@@ -155,7 +155,7 @@ public class Country {
      */
     public static ArrayList<Country> getAllCountryLargeToSmall() {
         //connects to the database
-        String select = "SELECT * FROM country ORDER BY population";
+        String select = "SELECT * FROM country ORDER BY Population DESC";
         return CountryStandard(select);
     }
     /**
@@ -164,7 +164,7 @@ public class Country {
      * Murdo Wallace / Harry Shepherd / Cameron Smith
      */
     public static ArrayList<Country> getAllCountryPerContinent(String cont) {
-        String select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY population";
+        String select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY Population DESC";
         return CountryStandard(select);
     }
     /**
@@ -173,7 +173,7 @@ public class Country {
      * Murdo Wallace / Cameron Smith
      */
     public static ArrayList<Country> getAllCountryPerRegion(String region) {
-        String select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population";
+        String select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population DESC";
         return CountryStandard(select);
     }
 
