@@ -42,7 +42,7 @@ public class CountryLanguage {
     }
 
     // Getter and setter for Percentage
-    public float stePercentage() {
+    public float setPercentage() {
         return Percentage;
     }
     public void setPercentage(float newPercentage) {
