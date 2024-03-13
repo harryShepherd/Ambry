@@ -9,6 +9,8 @@ public class AmbryTest {
     @BeforeAll
     static void init(){
         // Runs on start
+        Database db = new Database();
+        db.connect("db:3306", 30000);
     }
 
     @Test
@@ -65,31 +67,40 @@ public class AmbryTest {
         assertEquals("AU", country.getCode2());
     }
 
-    // Harry
-    @Test
-    void unitCheckCountryStandard() {
-    }
+    void getCountryLanguageTest() {
+        CountryLanguage cl = new CountryLanguage();
 
-    // Harry
-    @Test
-    void unitCheckCityStandard(){
-    }
+        cl.setCountryCode("ABW");
+        cl.setLanguage("Dutch");
+        cl.setIsOfficial("T");
+        cl.setPercentage(5.3F);
 
-
-    @Test
-    void unitGetAllCountryLargeToSmall() {
-
-    }
-
-    @Test
-    void unitGetAllCountryPerContinent() {
-
+        assertEquals("ABW", cl.getCountryCode());
+        assertEquals("Dutch", cl.getLanguage());
+        assertEquals("T", cl.getIsOfficial());
+        assertEquals(5.3F, cl.getPercentage());
     }
 
     @Test
-    void unitGetAllCountryPerRegion() {
-
+    void countryStandardTest() {
+        // testing if CountryStandard correctly throws an error
+        assertThrows(RuntimeException.class, () -> Country.CountryStandard(""));
     }
+
+    @Test
+    void cityStandardTest() {
+        // testing if CityStandard correctly throws an error
+        assertThrows(RuntimeException.class, () -> City.CityStandard(""));
+    }
+
+    @Test
+    void unitGetAllCountryLargeToSmall() {}
+
+    @Test
+    void unitGetAllCountryPerContinent() {}
+
+    @Test
+    void unitGetAllCountryPerRegion() {}
 
     @Test
     void unitTopNWorld(){}
@@ -101,26 +112,20 @@ public class AmbryTest {
     void unitTopNRegion(){}
 
     @Test
-    void unitWorldCities(){
-    }
+    void unitWorldCities(){}
 
     @Test
-    void unitRegionCities(){
-    }
+    void unitRegionCities(){}
 
     @Test
-    void unitCountryCities(){
-    }
+    void unitCountryCities(){}
 
     @Test
-    void unitDistrictCities(){
-    }
+    void unitDistrictCities(){}
 
 
     @Test
-    void unitContinentCity()
-    {
-    }
+    void unitContinentCity() {}
 }
 
 
