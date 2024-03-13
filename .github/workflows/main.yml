@@ -19,7 +19,27 @@ jobs:
         run: |
           mvn package -DskipTests
           docker-compose up --abort-on-container-exit # Stop all services on finish
-
+  IntegrationTests:
+    name: Integration Tests
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Integration Tests
+        run: |
+          docker build -t database ./db 
+          docker run --name world -dp 33060:3306 database
+          mvn -Dtest=com.napier.Ambry.AmbryTest test
+          docker stop world
+          docker rm world
+          docker image rm world
   UnitTests:
     name: Unit Tests
     runs-on: ubuntu-20.04
