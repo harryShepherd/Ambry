@@ -64,6 +64,7 @@ public class AmbryTest {
         assertEquals("AU", country.getCode2());
     }
 
+    @Test
     void getCountryLanguageTest() {
         CountryLanguage cl = new CountryLanguage();
 
