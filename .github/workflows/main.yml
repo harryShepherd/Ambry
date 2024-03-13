@@ -36,5 +36,4 @@ jobs:
       - name: Unit Tests
         run: |
           mvn package -DskipTests
-          docker-compose up
           mvn -Dtest=com.napier.Ambry.AmbryTest test -e
