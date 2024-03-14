@@ -1,7 +1,8 @@
 /**
- * Filename:    CountryLanguage.java
+ * Filename:    City.java
  * Author:      Cameron Smith
- * Last Edited: 14/2/2024 @ 18:00
+ * Edited by:   Sam Wilson-Perkins
+ * Last Edited: 14/3/2024 @ 12:16
  * Purpose:     This class exists to store information about the city item
  *              found in world.sql
  */
