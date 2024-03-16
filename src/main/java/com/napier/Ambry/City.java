@@ -63,12 +63,31 @@ public class City {
         this.population = setPopulation;
     }
 
+    /*
+        Epic 5, task 1
+        Created by: Cameron
+        Date: 16/03/2024
+    */
     public static ArrayList<City> CapitalWorld(){
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
         return CityStandard(select);
     }
+    /*
+        Epic 5, task 2
+        Created by: Cameron
+        Date: 16/03/2024
+    */
     public static ArrayList<City> CapitalContinent(String continent){
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '" + continent + "' ORDER BY city.population DESC";
+        return CityStandard(select);
+    }
+    /*
+        Epic 5, task 3
+        Created by: Cameron
+        Date: 16/03/2024
+    */
+    public static ArrayList<City> CapitalRegion(String region){
+        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '" + region + "' ORDER BY city.population DESC";
         return CityStandard(select);
     }
 
