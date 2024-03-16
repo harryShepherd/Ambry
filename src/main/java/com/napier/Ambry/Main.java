@@ -10,8 +10,14 @@ public class Main {
         // Connect to database
         a.connect();
         //creating an arraylist to store the output of Cities
-        ArrayList<City> Cities = City.CapitalWorld();
-        System.out.println("Populated Cities in the World: ");
+
+        ArrayList<City> Cities = City.CapitalWorld();/*
+        System.out.println("Capital Cities in the World: ");
+        for (int i = 0; i < Cities.size(); i++) {
+            System.out.println("City: " + Cities.get(i).getName() + ": " + Cities.get(i).getPopulation());
+        }*/
+        System.out.println("Capital Cities in the Continent: ");
+        Cities = City.CapitalContinent("Europe");
         for (int i = 0; i < Cities.size(); i++) {
             System.out.println("City: " + Cities.get(i).getName() + ": " + Cities.get(i).getPopulation());
         }

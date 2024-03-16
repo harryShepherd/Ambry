@@ -67,6 +67,10 @@ public class City {
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
         return CityStandard(select);
     }
+    public static ArrayList<City> CapitalContinent(String continent){
+        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '" + continent + "' ORDER BY city.population DESC";
+        return CityStandard(select);
+    }
 
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
