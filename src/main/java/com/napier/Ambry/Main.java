@@ -9,37 +9,15 @@ public class Main {
 
         // Connect to database
         a.connect();
-        //creating an arraylist to store the output of getAllCountryLargeToSmall
-       ArrayList<Country> print = Country.getAllCountryLargeToSmall();
-        //prints all of arraylist print
-        System.out.print("getAllCountryLargeToSmall: \n");
+        //creating an arraylist to store the output of TopCityWorld
+
+        ArrayList<City> print = City.TopCityWorld(10);
+        System.out.print("Top populated cities in the world: \n");
         System.out.print("\n");
+        //Prints all of arraylist print
         for(int i = 0; i < print.size(); i++){
             System.out.print(print.get(i).getName() + "\n");
         }
-        System.out.print("\n");
-
-        //creating an arraylist to store the output of getAllCountryPerContinent
-        //where the continent is asia
-        ArrayList<Country> print2 = Country.getAllCountryPerContinent("Asia");
-        System.out.print("getAllCountryPerContinent: \n");
-        System.out.print("\n");
-        //prints all of arraylist print2
-        for(int i = 0; i < print2.size(); i++){
-            System.out.print(print2.get(i).getName() + "\n");
-        }
-
-        System.out.print("\n");
-        ArrayList<Country> print3 = Country.getAllCountryPerRegion("Caribbean");
-        System.out.print("getAllCountryPerRegion: \n");
-        System.out.print("\n");
-        //prints all of arraylist print2
-        for(int i = 0; i < print3.size(); i++){
-            System.out.print(print3.get(i).getName() + "\n");
-        }
-
-
-
         // Disconnect from database
         a.disconnect();
     }

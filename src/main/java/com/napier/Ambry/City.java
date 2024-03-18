@@ -103,6 +103,12 @@ public class City {
      * Top N populated cities in a world, with N provided by user
      * Sam Wilson-Perkins
      */
+    public static ArrayList<City> TopCityWorld (int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
 
     /*
      * Epic4: Top N populated cities in a continent, with N provided by user
