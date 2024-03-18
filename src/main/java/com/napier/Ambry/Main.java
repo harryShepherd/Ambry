@@ -11,8 +11,8 @@ public class Main {
         a.connect();
         //creating an arraylist to store the output of TopCityWorld
 
-        ArrayList<City> print = City.TopCityWorld(5);
-        System.out.print("Top N populated cities in the world: \n");
+        ArrayList<City> print = City.TopCitiesWorld(5);
+        System.out.println("Top N populated cities in the world, where N is 5: \n");
         System.out.print("\n");
         //Prints all of arraylist print
         for(int i = 0; i < print.size(); i++){

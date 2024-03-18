@@ -103,7 +103,7 @@ public class City {
      * Top N populated cities in a world, with N provided by user
      * Sam Wilson-Perkins
      */
-    public static ArrayList<City> TopCityWorld (int N){
+    public static ArrayList<City> TopCitiesWorld (int N){
         //Stores query that gets sent to database.
         String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + N;
 
@@ -114,6 +114,16 @@ public class City {
      * Epic4: Top N populated cities in a continent, with N provided by user
      * Sam Wilson-Perkins
      */
+    public static ArrayList<City> TopCitiesContinent (String continent, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                " WHERE country.Continent = '" + continent
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+
+        return CityStandard(select);
+    }
 
     /*
      * Epic4: Top N populated cities in a region, with N provided by user
