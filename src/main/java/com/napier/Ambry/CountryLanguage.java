@@ -48,4 +48,5 @@ public class CountryLanguage {
     public void setPercentage(float newPercentage) {
         this.Percentage = newPercentage;
     }
+
 }
