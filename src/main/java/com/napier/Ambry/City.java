@@ -1,5 +1,5 @@
 /**
- * Filename:    CountryLanguage.java
+ * Filename:    City.java
  * Author:      Cameron Smith
  * Last Edited: 14/2/2024 @ 18:00
  * Purpose:     This class exists to store information about the city item
