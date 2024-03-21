@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Trying to connect to database">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Adding epic 5 stuff">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CityReports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CityReports.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +30,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "harryShepherd"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9993a4ae-9b17-4dcb-b5b8-75466f8eb226" />
+        <option name="url" value="https://github.com/harryShepherd/Ambry" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -360,7 +374,8 @@
     <MESSAGE value="Removed unit tests checking getters and setters" />
     <MESSAGE value="Checked Country and City standard for null" />
     <MESSAGE value="Trying to connect to database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to connect to database" />
+    <MESSAGE value="Adding epic 5 stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding epic 5 stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
