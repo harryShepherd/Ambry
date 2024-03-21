@@ -121,7 +121,6 @@ public class City {
                 " WHERE country.Continent = '" + continent
                 + "' ORDER BY city.population DESC LIMIT " + N;
 
-
         return CityStandard(select);
     }
 
@@ -129,6 +128,17 @@ public class City {
      * Epic4: Top N populated cities in a region, with N provided by user
      * Sam Wilson-Perkins
      */
+
+    public static ArrayList<City> TopCitiesRegion (String region, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                " WHERE country.Region = '" + region
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select)
+                ;
+    }
 
     /*
      * Epic4: Top N populated cities in a country, with N provided by user
