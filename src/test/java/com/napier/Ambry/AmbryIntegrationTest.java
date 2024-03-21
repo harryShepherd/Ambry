@@ -1,8 +1,6 @@
 package com.napier.Ambry;
 
 import org.junit.jupiter.api.*;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,12 +18,12 @@ public class AmbryIntegrationTest {
     @Test
     void testCountryStandard() {
         // Test to see if an error is thrown given a blank input
-        assertThrows(RuntimeException.class, () -> Country.CountryStandard(""));
+        assertThrows(RuntimeException.class, () -> CountryReports.CountryStandard(""));
 
         // Test to see if SQL statements execute correctly, and return expected output
         assertEquals(
                 "Aruba",
-                Country.CountryStandard("SELECT * FROM country LIMIT 1").get(0).getName()
+                CountryReports.CountryStandard("SELECT * FROM country LIMIT 1").get(0).getName()
         );
     }
 
@@ -34,37 +32,37 @@ public class AmbryIntegrationTest {
         // Test to see if an error is thrown given a blank input
         assertThrows(
                 RuntimeException.class,
-                () -> City.CityStandard("")
+                () -> CityReports.CityStandard("")
         );
 
         // Test to see if SQL statements execute correctly, and return expected output
         assertEquals(
                 "Kabul",
-                City.CityStandard("SELECT * FROM city LIMIT 1").get(0).getName()
+                CityReports.CityStandard("SELECT * FROM city LIMIT 1").get(0).getName()
         );
     }
 
     @Test
     void testGetAllCountryLargeToSmall() {
-        // Test to see if results are as exected
-        assertEquals("China", Country.getAllCountryLargeToSmall().get(0).getName());
+        // Test to see if results are as expected
+        assertEquals("China", CountryReports.getAllCountryLargeToSmall().get(0).getName());
     }
 
     @Test
     void testGetAllCountryPerContinent() {
         // Test to see if results are as expected
-        assertEquals("Australia", Country.getAllCountryPerContinent("Oceania").get(0).getName());
+        assertEquals("Australia", CountryReports.getAllCountryPerContinent("Oceania").get(0).getName());
     }
 
     @Test
     void testGetAllCountryPerRegion() {
         // Test to see if results are as expected
-        assertEquals("United States", Country.getAllCountryPerRegion("North America").get(0).getName());
+        assertEquals("United States", CountryReports.getAllCountryPerRegion("North America").get(0).getName());
     }
 
     @Test
     void testTopNWorld() {
-        ArrayList<Country> arr = Country.TopNWorld(10);
+        ArrayList<Country> arr = CountryReports.TopNWorld(10);
         // Test to see if result is as big as we expect
         assertEquals(10, arr.size());
         // Test to see if results are as expected
@@ -73,7 +71,7 @@ public class AmbryIntegrationTest {
 
     @Test
     void testTopNContinent() {
-        ArrayList<Country> arr = Country.TopNContinent(10, "Oceania");
+        ArrayList<Country> arr = CountryReports.TopNContinent(10, "Oceania");
         // Test to see if result is as big as we expect
         assertEquals(10, arr.size());
         // Test to see if results are as expected
@@ -82,7 +80,7 @@ public class AmbryIntegrationTest {
 
     @Test
     void testTopNRegion() {
-        ArrayList<Country> arr = Country.TopNRegion(3, "North America");
+        ArrayList<Country> arr = CountryReports.TopNRegion(3, "North America");
         // Test to see if result is as big as we expect
         assertEquals(3, arr.size());
         // Test to see if results are as expected
@@ -92,29 +90,29 @@ public class AmbryIntegrationTest {
     @Test
     void testWorldCities() {
         // Test to see if results are as expected
-        assertEquals("Mumbai (Bombay)", City.WorldCities().get(0).getName());
+        assertEquals("Mumbai (Bombay)", CityReports.WorldCities().get(0).getName());
     }
 
     @Test
     void testRegionCities() {
         // Test to see if results are as expected
-        assertEquals("Berlin", City.RegionCities("Western Europe").get(0).getName());
+        assertEquals("Berlin", CityReports.RegionCities("Western Europe").get(0).getName());
     }
 
     @Test
     void testCountryCities() {
         // Test to see if results are as expected
-        assertEquals("London", City.CountryCities("United Kingdom").get(0).getName());
+        assertEquals("London", CityReports.CountryCities("United Kingdom").get(0).getName());
     }
 
     @Test
     void testDistrictCities() {
         // Test to see if results are as expected
-        assertEquals("Boston", City.DistrictCities("Massachusetts").get(0).getName());
+        assertEquals("Boston", CityReports.DistrictCities("Massachusetts").get(0).getName());
     }
 
     @Test
     void testContinentCities() {
-        assertEquals("Mumbai (Bombay)", City.ContinentCity("Asia").get(0).getName());
+        assertEquals("Mumbai (Bombay)", CityReports.ContinentCity("Asia").get(0).getName());
     }
 }
