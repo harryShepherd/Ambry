@@ -1,7 +1,8 @@
 /**
  * Filename:    City.java
  * Author:      Cameron Smith
- * Last Edited: 14/2/2024 @ 18:00
+ * Edited by:   Sam Wilson-Perkins
+ * Last Edited: 14/3/2024 @ 12:16
  * Purpose:     This class exists to store information about the city item
  *              found in world.sql
  */
@@ -9,6 +10,13 @@
 package com.napier.Ambry;
 import java.util.ArrayList;
 import java.sql.*;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class City {
     //Stores the City ID
@@ -62,4 +70,103 @@ public class City {
         //Sets the city's Population from the input.
         this.population = setPopulation;
     }
+
+    public static ArrayList<City> CityStandard(String select){
+        //Stores the Cities relevant to the input SQL statement
+        ArrayList<City> Cities = new ArrayList<City>();
+
+        try {
+            //Creates the statement as an SQL statement.
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            //Executes the query to return all values to be stored.
+
+            //Creates a new city and stores the relevant values before adding it to the ArrayList.
+            while (rset.next()) {
+                City city = new City();
+                city.setName(rset.getString("city.Name"));
+                city.setCountryCode(rset.getString("city.CountryCode"));
+                //Need to store Country but can only access via CountryCode
+                city.setDistrict(rset.getString("city.District"));
+                city.setPopulation(rset.getInt("city.Population"));
+
+                Cities.add(city);
+            }
+        } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+            throw new RuntimeException(e);
+        }
+
+        return Cities;
+    }
+
+    /*
+     * Epic4: Top populated cities
+     * Top N populated cities in a world, with N provided by user
+     * Sam Wilson-Perkins
+     */
+    public static ArrayList<City> TopCitiesWorld (int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
+    /*
+     * Epic4: Top N populated cities in a continent, with N provided by user
+     * Sam Wilson-Perkins
+     */
+    public static ArrayList<City> TopCitiesContinent (String continent, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                " WHERE country.Continent = '" + continent
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
+    /*
+     * Epic4: Top N populated cities in a region, with N provided by user
+     * Sam Wilson-Perkins
+     */
+
+    public static ArrayList<City> TopCitiesRegion (String region, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                " WHERE country.Region = '" + region
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
+    /*
+     * Epic4: Top N populated cities in a country, with N provided by user
+     * Sam Wilson-Perkins
+     */
+    public static ArrayList<City> TopCitiesCountry (String country, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                " WHERE country.name = '" + country
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
+
+    /*
+     * Epic4: Top N populated cities in a district, with N provided by user
+     * Sam Wilson-Perkins
+     */
+    public static ArrayList<City> TopCitiesDistrict (String district, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city WHERE district = '" + district
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
 }
