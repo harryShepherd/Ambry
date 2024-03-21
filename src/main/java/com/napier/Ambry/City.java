@@ -158,4 +158,13 @@ public class City {
      * Epic4: Top N populated cities in a district, with N provided by user
      * Sam Wilson-Perkins
      */
+    public static ArrayList<City> TopCitiesDistrict (String district, int N){
+        //Stores query that gets sent to database.
+        String select = "SELECT * " +
+                "FROM city WHERE district = '" + district
+                + "' ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
 }
