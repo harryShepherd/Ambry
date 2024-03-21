@@ -23,7 +23,10 @@ public class CityReports {
     // Epic 3 - All cities in a region organised by largest population to smallest.
     public static ArrayList<City> RegionCities(String region){
         //Stores the query to be sent to the database.
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
+        String select = "";
+        if(region != null) {
+            select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
+        }
 
         return CityStandard(select);
     }
@@ -31,15 +34,20 @@ public class CityReports {
     // Epic 3 - All cities in a country organised by largest population to smallest.
     public static ArrayList<City> CountryCities(String country){
         //Stores the query to be sent to the database.
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '" + country + "' ORDER BY city.population DESC";
-
+        String select = "";
+        if(country != null) {
+            select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '" + country + "' ORDER BY city.population DESC";
+        }
         return CityStandard(select);
     }
 
     // Epic 3 - All cities in a district organised by largest population to smallest.
     public static ArrayList<City> DistrictCities(String district) {
         //Stores the query to be sent to the database.
-        String select = "SELECT * FROM city WHERE District = '" + district + "' ORDER BY population DESC";
+        String select = "";
+        if(district != null) {
+            select = "SELECT * FROM city WHERE District = '" + district + "' ORDER BY population DESC";
+        }
 
         return CityStandard(select);
     }
@@ -49,8 +57,10 @@ public class CityReports {
     //takes in a string for the continent and returns all cities within that continent organised by population
     public static ArrayList<City> ContinentCity(String continent) {
         //Stores the query to be sent to the database.
-        String select = "SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '" + continent+ "'ORDER BY city.population DESC";
-
+        String select = "";
+        if(continent != null) {
+            select = "SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '" + continent + "'ORDER BY city.population DESC";
+        }
         return CityStandard(select);
     }
 
@@ -62,8 +72,10 @@ public class CityReports {
      */
     public static ArrayList<City> TopCitiesWorld (int N){
         //Stores query that gets sent to database.
-        String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0) {
+            select = "SELECT * FROM city ORDER BY population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -73,11 +85,13 @@ public class CityReports {
      */
     public static ArrayList<City> TopCitiesContinent (String continent, int N){
         //Stores query that gets sent to database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
-                " WHERE country.Continent = '" + continent
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0 && continent != null) {
+            select = "SELECT * " +
+                    "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                    " WHERE country.Continent = '" + continent
+                    + "' ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -88,11 +102,13 @@ public class CityReports {
 
     public static ArrayList<City> TopCitiesRegion (String region, int N){
         //Stores query that gets sent to database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
-                " WHERE country.Region = '" + region
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0 && region != null) {
+            select = "SELECT * " +
+                    "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                    " WHERE country.Region = '" + region
+                    + "' ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -102,11 +118,13 @@ public class CityReports {
      */
     public static ArrayList<City> TopCitiesCountry (String country, int N){
         //Stores query that gets sent to database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
-                " WHERE country.name = '" + country
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0 && country != null) {
+            select = "SELECT * " +
+                    "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                    " WHERE country.name = '" + country
+                    + "' ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -117,10 +135,12 @@ public class CityReports {
      */
     public static ArrayList<City> TopCitiesDistrict (String district, int N){
         //Stores query that gets sent to database.
-        String select = "SELECT * " +
-                "FROM city WHERE district = '" + district
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0 && district != null) {
+            select = "SELECT * " +
+                    "FROM city WHERE district = '" + district
+                    + "' ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -131,25 +151,35 @@ public class CityReports {
         Date: 16/03/2024
     */
     public static ArrayList<City> CapitalWorld(){
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
+        String select = "";
+        select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
+
         return CityStandard(select);
     }
+
     /*
         Epic 5, task 2
         Created by: Cameron
         Date: 16/03/2024
     */
     public static ArrayList<City> CapitalContinent(String continent){
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '" + continent + "' ORDER BY city.population DESC";
+        String select = "";
+        if(continent != null) {
+            select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '" + continent + "' ORDER BY city.population DESC";
+        }
         return CityStandard(select);
     }
+
     /*
         Epic 5, task 3
         Created by: Cameron
         Date: 16/03/2024
     */
     public static ArrayList<City> CapitalRegion(String region){
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '" + region + "' ORDER BY city.population DESC";
+        String select = "";
+        if(region != null) {
+            select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '" + region + "' ORDER BY city.population DESC";
+        }
         return CityStandard(select);
     }
 
@@ -159,11 +189,13 @@ public class CityReports {
     //takes in a continent as a string and the limit of cities show as a string
     public static ArrayList<City> ContinentCapitals(String continent, int N) {
         //Stores the query to be sent to the database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.capital = city.ID " +
-                " WHERE country.Continent = '" + continent
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0 && continent != null) {
+            select = "SELECT * " +
+                    "FROM city INNER JOIN country ON country.capital = city.ID " +
+                    " WHERE country.Continent = '" + continent
+                    + "' ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -173,9 +205,11 @@ public class CityReports {
     //Outputs capitals cities ordered by population. Takes in a string that will determine the limit of the output
     public static ArrayList<City> WorldCapitals(int N) {
         //Stores the query to be sent to the database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.capital = city.ID ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0) {
+            select = "SELECT * " +
+                    "FROM city INNER JOIN country ON country.capital = city.ID ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
@@ -185,17 +219,19 @@ public class CityReports {
     ///takes in a continent as a string and the limit of cities show as a string
     public static ArrayList<City> RegionCapitals(String Region, int N) {
         //Stores the query to be sent to the database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.capital = city.ID " +
-                " WHERE country.Region = '" + Region
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
+        String select = "";
+        if(N > 0 && Region != null) {
+            select = "SELECT * " +
+                    "FROM city INNER JOIN country ON country.capital = city.ID " +
+                    " WHERE country.Region = '" + Region
+                    + "' ORDER BY city.population DESC LIMIT " + N;
+        }
         return CityStandard(select);
     }
 
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
-        ArrayList<City> Cities = new ArrayList<City>();
+        ArrayList<City> Cities = new ArrayList<>();
 
         try {
             //Creates the statement as an SQL statement.
