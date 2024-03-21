@@ -70,130 +70,43 @@ public class City {
         this.population = setPopulation;
     }
 
-    public static ArrayList<City> CityStandard(String select){
-        //Stores the Cities relevant to the input SQL statement
-        ArrayList<City> Cities = new ArrayList<City>();
-
-        try {
-            //Creates the statement as an SQL statement.
-            Statement stmt = Database.con.createStatement();
-            ResultSet rset = stmt.executeQuery(select);
-            //Executes the query to return all values to be stored.
-
-            //Creates a new city and stores the relevant values before adding it to the ArrayList.
-            while (rset.next()) {
-                City city = new City();
-                city.setName(rset.getString("city.Name"));
-                city.setCountryCode(rset.getString("city.CountryCode"));
-                //Need to store Country but can only access via CountryCode
-                city.setDistrict(rset.getString("city.District"));
-                city.setPopulation(rset.getInt("city.Population"));
-
-                Cities.add(city);
-            }
-        } catch (SQLException e) {
-            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
-            throw new RuntimeException(e);
-        }
-
-        return Cities;
-    }
-
-    /*
-     * Epic4: Top populated cities
-     * Top N populated cities in a world, with N provided by user
-     * Sam Wilson-Perkins
-     */
-    public static ArrayList<City> TopCitiesWorld (int N){
-        //Stores query that gets sent to database.
-        String select = "SELECT * FROM city ORDER BY population DESC LIMIT " + N;
-
-        return CityStandard(select);
-    }
-
-    /*
-     * Epic4: Top N populated cities in a continent, with N provided by user
-     * Sam Wilson-Perkins
-     */
-    public static ArrayList<City> TopCitiesContinent (String continent, int N){
-        //Stores query that gets sent to database.
+    //Task 24 (Epic 6): The top N populated capital cities in a continent where N is provided by the user.
+    //Murdo Wallace
+    //Last edited 07/03/2024
+    //takes in a continent as a string and the limit of cities show as a string
+    public static ArrayList<City> ContinentCapitals(String continent, int N) {
+        //Stores the query to be sent to the database.
         String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
+                "FROM city INNER JOIN country ON country.capital = city.ID " +
                 " WHERE country.Continent = '" + continent
                 + "' ORDER BY city.population DESC LIMIT " + N;
 
         return CityStandard(select);
     }
 
-    /*
-     * Epic4: Top N populated cities in a region, with N provided by user
-     * Sam Wilson-Perkins
-     */
-
-    public static ArrayList<City> TopCitiesRegion (String region, int N){
-        //Stores query that gets sent to database.
+    //Task 26 (Epic 6):The top N populated capital cities in the world where N is provided by the user.
+    //Murdo Wallace
+    //Last edited 07/03/2024
+    //Outputs capitals cities ordered by population. Takes in a string that will determine the limit of the output
+    public static ArrayList<City> WorldCapitals(int N) {
+        //Stores the query to be sent to the database.
         String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
-                " WHERE country.Region = '" + region
+                "FROM city INNER JOIN country ON country.capital = city.ID ORDER BY city.population DESC LIMIT " + N;
+
+        return CityStandard(select);
+    }
+
+    //Task 41 (epic 6)The top N populated capital cities in a region where N is provided by the user.
+    //Murdo Wallace
+    //Last edited 07/03/2024
+    ///takes in a continent as a string and the limit of cities show as a string
+    public static ArrayList<City> RegionCapitals(String Region, int N) {
+        //Stores the query to be sent to the database.
+        String select = "SELECT * " +
+                "FROM city INNER JOIN country ON country.capital = city.ID " +
+                " WHERE country.Region = '" + Region
                 + "' ORDER BY city.population DESC LIMIT " + N;
 
-        return CityStandard(select);
-    }
-
-    /*
-     * Epic4: Top N populated cities in a country, with N provided by user
-     * Sam Wilson-Perkins
-     */
-    public static ArrayList<City> TopCitiesCountry (String country, int N){
-        //Stores query that gets sent to database.
-        String select = "SELECT * " +
-                "FROM city INNER JOIN country ON country.Code = city.CountryCode " +
-                " WHERE country.name = '" + country
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
-        return CityStandard(select);
-    }
-
-
-    /*
-     * Epic4: Top N populated cities in a district, with N provided by user
-     * Sam Wilson-Perkins
-     */
-    public static ArrayList<City> TopCitiesDistrict (String district, int N){
-        //Stores query that gets sent to database.
-        String select = "SELECT * " +
-                "FROM city WHERE district = '" + district
-                + "' ORDER BY city.population DESC LIMIT " + N;
-
-        return CityStandard(select);
-    }
-
-
-    /*
-        Epic 5, task 1
-        Created by: Cameron
-        Date: 16/03/2024
-    */
-    public static ArrayList<City> CapitalWorld(){
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
-        return CityStandard(select);
-    }
-    /*
-        Epic 5, task 2
-        Created by: Cameron
-        Date: 16/03/2024
-    */
-    public static ArrayList<City> CapitalContinent(String continent){
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '" + continent + "' ORDER BY city.population DESC";
-        return CityStandard(select);
-    }
-    /*
-        Epic 5, task 3
-        Created by: Cameron
-        Date: 16/03/2024
-    */
-    public static ArrayList<City> CapitalRegion(String region){
-        String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '" + region + "' ORDER BY city.population DESC";
         return CityStandard(select);
     }
 
@@ -225,5 +138,4 @@ public class City {
 
         return Cities;
     }
-
 }
