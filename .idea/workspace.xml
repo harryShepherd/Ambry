@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Added epic 6 stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryReports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryReports.java" afterDir="false" />
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="tidy up">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711025775781</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="tidy up">
+      <option name="closed" value="true" />
+      <created>1711025943876</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1711025943876</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +392,8 @@
     <MESSAGE value="Trying to connect to database" />
     <MESSAGE value="Adding epic 5 stuff" />
     <MESSAGE value="Added epic 6 stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added epic 6 stuff" />
+    <MESSAGE value="tidy up" />
+    <option name="LAST_COMMIT_MESSAGE" value="tidy up" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

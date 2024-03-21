@@ -7,9 +7,6 @@ public class Main {
         // Create new Application Instance
         Database a = new Database();
 
-        // Connect to database
-        a.connect();
-
         if(args.length < 1) {
             // Debugging
             a.connect("localhost:33060", 30000);
