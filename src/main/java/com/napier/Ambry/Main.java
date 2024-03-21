@@ -11,8 +11,8 @@ public class Main {
         a.connect();
 
         //creating an arraylist to store the output of TopCitesWorld
-        ArrayList<City> print = City.TopCitiesRegion("Caribbean", 5);
-        System.out.println("Top N populated cities in the Caribbean, where N is 5: \n");
+        ArrayList<City> print = City.TopCitiesCountry("United Kingdom", 5);
+        System.out.println("Top N populated cities in Scotland, where N is 5: \n");
         System.out.print("\n");
         //Prints all of arraylist print
         for(int i = 0; i < print.size(); i++){
