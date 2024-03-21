@@ -27,7 +27,10 @@ public class CountryReports {
      * Murdo Wallace / Harry Shepherd / Cameron Smith
      */
     public static ArrayList<Country> getAllCountryPerContinent(String cont) {
-        String select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY Population DESC";
+        String select = "";
+        if(cont != null) {
+            select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY Population DESC";
+        }
         return CountryStandard(select);
     }
     /**
@@ -36,7 +39,10 @@ public class CountryReports {
      * Murdo Wallace / Cameron Smith
      */
     public static ArrayList<Country> getAllCountryPerRegion(String region) {
-        String select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population DESC";
+        String select = "";
+        if(region != null) {
+            select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population DESC";
+        }
         return CountryStandard(select);
     }
 
@@ -48,7 +54,10 @@ public class CountryReports {
         //Created by: Cameron Smith
         //Epic 2, Task #5
 
-        String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
+        String select = "";
+        if(n > 0) {
+            select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
+        }
         return CountryStandard(select);
     }
 
@@ -59,7 +68,10 @@ public class CountryReports {
     public static ArrayList<Country> TopNContinent(int n, String continent){
         //Created by: Cameron Smith
         //Epic 2, Task #6
-        String select = "SELECT * FROM country WHERE country.continent='" + continent + "' ORDER BY population DESC LIMIT " + n;
+        String select = "";
+        if(n > 0 && continent != null) {
+            select = "SELECT * FROM country WHERE country.continent='" + continent + "' ORDER BY population DESC LIMIT " + n;
+        }
         return CountryStandard(select);
     }
 
@@ -70,7 +82,10 @@ public class CountryReports {
     public static ArrayList<Country> TopNRegion (int n, String region){
         //Created by: Cameron Smith
         //Epic 2, Task #7
-        String select = "SELECT * FROM country WHERE country.region='" + region + "' ORDER BY population DESC LIMIT " + n;
+        String select = "";
+        if(n > 0 && region != null) {
+            select = "SELECT * FROM country WHERE country.region='" + region + "' ORDER BY population DESC LIMIT " + n;
+        }
         return CountryStandard(select);
     }
 
