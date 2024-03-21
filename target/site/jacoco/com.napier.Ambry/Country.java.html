@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Country.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">Country.java</span></div><h1>Country.java</h1><pre class="source lang-java linenums">/**
+ * Filename:    Country.java
+ * Author:      Murdo Wallace
+ * Last Edited: 13/2/2024 @ 14:47
+ * Purpose:     This class exists to store information about the country item
+ *              found in world.sql
+ */
+
+package com.napier.Ambry;
+import java.util.ArrayList;
+import java.sql.*;
+
+<span class="fc" id="L13">public class Country {</span>
+    private String code;
+    private String Name;
+    private String Continent;
+    private String Region;
+    private float SurfaceArea;
+    private int IndepYear;
+    private int Population;
+    private float LifeExpectancy;
+    private float GNP;
+    private float GNPOld;
+    private String LocalName;
+    private String GovernmentForm;
+    private String HeadOfState;
+    private int Capital;
+    private String Code2;
+
+    // Getter and setter for code
+    public String getCode() {
+<span class="fc" id="L32">        return code;</span>
+    }
+    public void setCode(String newCode) {
+<span class="fc" id="L35">        this.code = newCode;</span>
+<span class="fc" id="L36">    }</span>
+
+    // Getter and setter for name
+    public String getName() {
+<span class="fc" id="L40">        return Name;</span>
+    }
+    public void setName(String newName) {
+<span class="fc" id="L43">        this.Name = newName;</span>
+<span class="fc" id="L44">    }</span>
+
+    // Getter and setter for Continent
+    public String getContinent() {
+<span class="fc" id="L48">        return Continent;</span>
+    }
+    public void setContinent(String newContinent) {
+<span class="fc" id="L51">        this.Continent = newContinent;</span>
+<span class="fc" id="L52">    }</span>
+
+    // Getter and setter for Region
+    public String getRegion() {
+<span class="fc" id="L56">        return Region;</span>
+    }
+    public void setRegion(String newRegion) {
+<span class="fc" id="L59">        this.Region = newRegion;</span>
+<span class="fc" id="L60">    }</span>
+
+    // Getter and setter for SurfaceArea
+    public float getSurfaceArea() {
+<span class="fc" id="L64">        return SurfaceArea;</span>
+    }
+    public void setSurfaceArea(float newSurfaceArea) {
+<span class="fc" id="L67">        this.SurfaceArea = newSurfaceArea;</span>
+<span class="fc" id="L68">    }</span>
+
+    // Getter and setter for IndepYear
+    public int getIndepYear() {
+<span class="fc" id="L72">        return IndepYear;</span>
+    }
+    public void setIndepYear(int newIndepYear) {
+<span class="fc" id="L75">        this.IndepYear = newIndepYear;</span>
+<span class="fc" id="L76">    }</span>
+
+    // Getter and setter for Population
+    public int getPopulation() {
+<span class="fc" id="L80">        return Population;</span>
+    }
+    public void setPopulation(int newPopulation) {
+<span class="fc" id="L83">        this.Population = newPopulation;</span>
+<span class="fc" id="L84">    }</span>
+
+    // Getter and setter for LifeExpectancy
+    public float getLifeExpectancy() {
+<span class="fc" id="L88">        return LifeExpectancy;</span>
+    }
+    public void setLifeExpectancy(float newLifeExpectancy) {
+<span class="fc" id="L91">        this.LifeExpectancy = newLifeExpectancy;</span>
+<span class="fc" id="L92">    }</span>
+
+    // Getter and setter for GNP
+    public float getGNP() {
+<span class="fc" id="L96">        return GNP;</span>
+    }
+    public void setGNP(float newGNP) {
+<span class="fc" id="L99">        this.GNP = newGNP;</span>
+<span class="fc" id="L100">    }</span>
+
+    // Getter and setter for GNPOld
+    public float getGNPOld() {
+<span class="fc" id="L104">        return GNPOld;</span>
+    }
+    public void setGNPOld(float newGNPOld) {
+<span class="fc" id="L107">        this.GNPOld = newGNPOld;</span>
+<span class="fc" id="L108">    }</span>
+
+    // Getter and setter for LocalName
+    public String getLocalName() {
+<span class="fc" id="L112">        return LocalName;</span>
+    }
+    public void setLocalName(String newLocalName) {
+<span class="fc" id="L115">        this.LocalName = newLocalName;</span>
+<span class="fc" id="L116">    }</span>
+
+    // Getter and setter for GovernmentForm
+    public String getGovernmentForm() {
+<span class="fc" id="L120">        return GovernmentForm;</span>
+    }
+    public void setGovernmentForm(String newGovernmentForm) {
+<span class="fc" id="L123">        this.GovernmentForm = newGovernmentForm;</span>
+<span class="fc" id="L124">    }</span>
+
+    // Getter and setter for HeadOfState
+    public String getHeadOfState() {
+<span class="fc" id="L128">        return HeadOfState;</span>
+    }
+    public void setHeadOfState(String newHeadOfState) {
+<span class="fc" id="L131">        this.HeadOfState = newHeadOfState;</span>
+<span class="fc" id="L132">    }</span>
+
+    // Getter and setter for Capital
+    public int getCapital() {
+<span class="fc" id="L136">        return Capital;</span>
+    }
+    public void setCapital(int newCapital) {
+<span class="fc" id="L139">        this.Capital = newCapital;</span>
+<span class="fc" id="L140">    }</span>
+
+    // Getter and setter for Code2
+    public String getCode2() {
+<span class="fc" id="L144">        return Code2;</span>
+    }
+
+    public void setCode2(String newCode2) {
+<span class="fc" id="L148">        this.Code2 = newCode2;</span>
+<span class="fc" id="L149">    }</span>
+
+    /**
+     * Epic1: Countries by Largest population to Smallest
+     * All the countries in the world organised by largest population to smallest.
+     * Murdo Wallace / Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; getAllCountryLargeToSmall() {
+        //connects to the database
+<span class="fc" id="L158">        String select = &quot;SELECT * FROM country ORDER BY Population DESC&quot;;</span>
+<span class="fc" id="L159">        return CountryStandard(select);</span>
+    }
+    /**
+     * Epic1: All the countries in a continent organised by largest population to smallest.
+     * returns All the countries in a continent organised by largest population to smallest.
+     * Murdo Wallace / Harry Shepherd / Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; getAllCountryPerContinent(String cont) {
+<span class="fc" id="L167">        String select = &quot;SELECT * FROM country WHERE Continent='&quot; + cont + &quot;'ORDER BY Population DESC&quot;;</span>
+<span class="fc" id="L168">        return CountryStandard(select);</span>
+    }
+    /**
+     * Epic1: All the countries in a region organised by largest population to smallest.
+     * All the countries in a region organised by largest population to smallest.
+     * Murdo Wallace / Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; getAllCountryPerRegion(String region) {
+<span class="fc" id="L176">        String select = &quot;SELECT * FROM country WHERE Region ='&quot; + region + &quot;'ORDER BY population DESC&quot;;</span>
+<span class="fc" id="L177">        return CountryStandard(select);</span>
+    }
+
+    public static ArrayList&lt;Country&gt; TopNWorld(int n){
+        //Created by: Cameron Smith
+        //Epic 2, Task #5
+
+<span class="fc" id="L184">        String select = &quot;SELECT * FROM country ORDER BY population DESC LIMIT &quot; + n;</span>
+<span class="fc" id="L185">        return CountryStandard(select);</span>
+    }
+    public static ArrayList&lt;Country&gt; TopNContinent(int n, String continent){
+        //Created by: Cameron Smith
+        //Epic 2, Task #6
+<span class="fc" id="L190">        String select = &quot;SELECT * FROM country WHERE country.continent='&quot; + continent + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
+<span class="fc" id="L191">        return CountryStandard(select);</span>
+    }
+
+    public static ArrayList&lt;Country&gt; TopNRegion (int n, String region){
+        //Created by: Cameron Smith
+        //Epic 2, Task #7
+<span class="fc" id="L197">        String select = &quot;SELECT * FROM country WHERE country.region='&quot; + region + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
+<span class="fc" id="L198">        return CountryStandard(select);</span>
+    }
+
+    // what is this
+    public static String getCountryCode(String CountryCode){
+<span class="nc" id="L203">        String countryName = null;</span>
+        try {
+
+<span class="nc" id="L206">            Statement stmt = Database.con.createStatement();</span>
+<span class="nc" id="L207">            String str_select =</span>
+                    &quot;SELECT Name FROM country WHERE country.code = '&quot; + CountryCode + &quot;'&quot;;
+<span class="nc" id="L209">            ResultSet rset = stmt.executeQuery(str_select);</span>
+
+<span class="nc bnc" id="L211" title="All 2 branches missed.">            while (rset.next()) {</span>
+<span class="nc" id="L212">                countryName = (rset.getString(&quot;country.Name&quot;));</span>
+            }
+<span class="nc" id="L214">        } catch (SQLException e) {</span>
+<span class="nc" id="L215">            throw new RuntimeException(e);</span>
+<span class="nc" id="L216">        }</span>
+
+<span class="nc" id="L218">        return countryName;</span>
+    }
+
+    public static ArrayList&lt;Country&gt; CountryStandard(String select) {
+        //Stores all countries returned by the input SQL statement.
+<span class="fc" id="L223">        ArrayList&lt;Country&gt; Countries = new ArrayList&lt;Country&gt;();</span>
+
+        try {
+            //Creates an SQL statement.
+<span class="fc" id="L227">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L228">            ResultSet rset = stmt.executeQuery(select);</span>
+            //Executes the SQL statement input by a seperate function.
+
+            //Creates a new country, stores all relevant values.
+<span class="fc bfc" id="L232" title="All 2 branches covered.">            while (rset.next()) {</span>
+<span class="fc" id="L233">                Country country = new Country();</span>
+<span class="fc" id="L234">                country.setCode(rset.getString(&quot;country.Code&quot;));</span>
+<span class="fc" id="L235">                country.setName(rset.getString(&quot;country.Name&quot;));</span>
+<span class="fc" id="L236">                country.setContinent(rset.getString(&quot;country.Continent&quot;));</span>
+<span class="fc" id="L237">                country.setRegion(rset.getString(&quot;country.Region&quot;));</span>
+<span class="fc" id="L238">                country.setPopulation(rset.getInt(&quot;country.Population&quot;));</span>
+<span class="fc" id="L239">                country.setCapital(rset.getInt(&quot;country.Capital&quot;));</span>
+
+<span class="fc" id="L241">                Countries.add(country);</span>
+<span class="fc" id="L242">            }</span>
+<span class="fc" id="L243">        } catch (SQLException e) {</span>
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+<span class="fc" id="L245">            throw new RuntimeException(e);</span>
+<span class="fc" id="L246">        }</span>
+<span class="fc" id="L247">        return Countries;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
