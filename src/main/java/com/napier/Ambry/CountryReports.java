@@ -40,6 +40,10 @@ public class CountryReports {
         return CountryStandard(select);
     }
 
+    /**
+     * Epic 2: The top N populated countries in the world where N is provided by the user.
+     * Cameron Smith
+     */
     public static ArrayList<Country> TopNWorld(int n){
         //Created by: Cameron Smith
         //Epic 2, Task #5
@@ -47,6 +51,11 @@ public class CountryReports {
         String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
         return CountryStandard(select);
     }
+
+    /**
+     * Epic 2: The top N populated countries in a continent where N is provided by the user.
+     * Cameron Smith
+     */
     public static ArrayList<Country> TopNContinent(int n, String continent){
         //Created by: Cameron Smith
         //Epic 2, Task #6
@@ -54,6 +63,10 @@ public class CountryReports {
         return CountryStandard(select);
     }
 
+    /**
+     * Epic 2: The top N populated countries in a region where N is provided by the user.
+     * Cameron Smith
+     */
     public static ArrayList<Country> TopNRegion (int n, String region){
         //Created by: Cameron Smith
         //Epic 2, Task #7
