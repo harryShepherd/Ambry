@@ -7,8 +7,10 @@
  */
 
 package com.napier.Ambry;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
-import java.sql.*;
 
 public class Country {
     private String code;
