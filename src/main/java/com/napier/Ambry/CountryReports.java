@@ -74,6 +74,58 @@ public class CountryReports {
         return CountryStandard(select);
     }
 
+    /**
+     * Epic 7: The population of people, people living in cities, and people not living in cities in each country
+     * Harry Shepherd
+     */
+    public static int PopulationOfCountry(String country) {
+        int pop = 0;
+        String select = "SELECT * FROM country WHERE country.name='" + country + "'";
+        return CountryStandard(select).get(0).getPopulation();
+    }
+
+    public static int PopulationLivingInCities(String country) {
+        int pop = 0;
+        String select = "SELECT * FROM country WHERE country.name='" + country + "'";
+        Country selected_country = CountryStandard(select).get(0);
+        select = "SELECT SUM(city.Population) FROM city WHERE city.CountryCode='" + selected_country.getCode() + "'";
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+
+            while (rset.next()) {
+                pop = rset.getInt(1);
+            }
+        } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+            throw new RuntimeException(e);
+        }
+        return pop;
+    }
+
+    public static int PopulationNotLivingInCities(String country) {
+        int pop, city_pop = 0;
+        String select = "SELECT * FROM country WHERE country.name='" + country +"'";
+        Country selected_country = CountryStandard(select).get(0);
+        pop = selected_country.getPopulation();
+        select = "SELECT SUM(city.Population) FROM city WHERE city.CountryCode='" + selected_country.getCode() + "'";
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+
+            while (rset.next()) {
+                city_pop = rset.getInt(1);
+            }
+        } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+            throw new RuntimeException(e);
+        }
+
+        return pop-city_pop;
+    }
+
     // what is this
     public static String getCountryCode(String CountryCode){
         String countryName = null;
