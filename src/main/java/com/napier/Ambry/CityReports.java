@@ -193,6 +193,86 @@ public class CityReports {
         return CityStandard(select);
     }
 
+    /**
+     * Epic 7: Display the  population of people, people living in cities, and people not living in cities in each region
+     * Harry Shepherd
+     */
+    public static int PopulationInRegion(String region) {
+        int pop;
+        String select = "SELECT SUM(country.Population) FROM country WHERE country.Region='" + region + "'";
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next(); // this stops resultset having a massive fit
+            pop = rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return pop;
+    }
+
+    public static int PopulationLivingInCitiesRegion(String region) {
+        int pop = 0;
+        String select = "SELECT SUM(city.Population) FROM city JOIN country ON country.Code = city.CountryCode" +
+                " WHERE country.Region='" + region + "'";
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next(); // this stops resultset having a massive fit
+            pop = rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return pop;
+    }
+
+    public static int PopulationNotLivingInCitiesRegion(String region) {
+        int pop = PopulationInRegion(region);
+        int pop_in_city = PopulationLivingInCitiesRegion(region);
+
+        return pop - pop_in_city;
+    }
+
+    public static int PopulationInContinent(String continent) {
+        int pop = 0;
+
+        String select = "SELECT SUM(country.Population) FROM country WHERE country.Continent='" + continent + "'";
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next();
+            pop = rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return pop;
+    }
+
+    public static int PopulationLivingInCitiesContinent(String continent) {
+        int pop = 0;
+
+        String select = "SELECT SUM(city.Population) FROM city JOIN country ON city.CountryCode = country.Code" +
+        " WHERE country.Continent='" + continent + "'";
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next();
+            pop = rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return pop;
+    }
+
+    public static int PopulationNotLivingInCitiesContinent(String continent) {
+        int pop = PopulationInContinent(continent);
+        int pop_in_city = PopulationLivingInCitiesContinent(continent);
+
+        return pop - pop_in_city;
+    }
+
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
         ArrayList<City> Cities = new ArrayList<City>();

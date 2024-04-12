@@ -105,25 +105,10 @@ public class CountryReports {
     }
 
     public static int PopulationNotLivingInCities(String country) {
-        int pop, city_pop = 0;
-        String select = "SELECT * FROM country WHERE country.name='" + country +"'";
-        Country selected_country = CountryStandard(select).get(0);
-        pop = selected_country.getPopulation();
-        select = "SELECT SUM(city.Population) FROM city WHERE city.CountryCode='" + selected_country.getCode() + "'";
+        int pop = PopulationOfCountry(country);
+        int pop_in_city = PopulationLivingInCities(country);
 
-        try {
-            Statement stmt = Database.con.createStatement();
-            ResultSet rset = stmt.executeQuery(select);
-
-            while (rset.next()) {
-                city_pop = rset.getInt(1);
-            }
-        } catch (SQLException e) {
-            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
-            throw new RuntimeException(e);
-        }
-
-        return pop-city_pop;
+        return pop - pop_in_city;
     }
 
     // what is this

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 import static com.napier.Ambry.CountryReports.*;
+import static com.napier.Ambry.CityReports.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +26,30 @@ public class Main {
             pop = PopulationLivingInCities("United Kingdom");
 
             System.out.println("Population of uk living in cities:" + pop);
+
+            pop = PopulationInRegion("Eastern Europe");
+
+            System.out.println("Population of eastern europe:" + pop);
+
+            pop = PopulationLivingInCitiesRegion("Eastern Europe");
+
+            System.out.println("Population of eastern europe living in cities:" + pop);
+
+            pop = PopulationNotLivingInCitiesRegion("Eastern Europe");
+
+            System.out.println("Population of eastern europe not living in cities:" + pop);
+
+            pop = PopulationInContinent("Europe");
+
+            System.out.println("Population of Europe:" + pop);
+
+            pop = PopulationLivingInCitiesContinent("Europe");
+
+            System.out.println("Population of europe living in cities:" + pop);
+
+            pop = PopulationNotLivingInCitiesContinent("Europe");
+
+            System.out.println("Population of europe not living in cities:" + pop);
 
         } else {
             // Live
