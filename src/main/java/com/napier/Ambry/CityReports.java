@@ -1,6 +1,6 @@
 package com.napier.Ambry;
 
-/*
+/**
  * Filename:    CityReports.java
  * Author:      Cameron Smith
  * Last Edited: 21/03/2024
@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.sql.*;
 
 public class CityReports {
-    // Epic 3 - All cities organised by population descending.
-    // All cities in the world organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in the world organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList<City> WorldCities (){
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city ORDER BY population DESC";
@@ -20,7 +22,10 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    // Epic 3 - All cities in a region organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in a region organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList<City> RegionCities(String region){
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '" + region + "' ORDER BY city.population DESC";
@@ -28,7 +33,10 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    // Epic 3 - All cities in a country organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in a country organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList<City> CountryCities(String country){
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '" + country + "' ORDER BY city.population DESC";
@@ -36,17 +44,21 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    // Epic 3 - All cities in a district organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in a district organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList<City> DistrictCities(String district) {
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city WHERE District = '" + district + "' ORDER BY population DESC";
 
         return CityStandard(select);
     }
-    // Epic 3 - All the cities in a continent organised by largest population to smallest.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    //takes in a string for the continent and returns all cities within that continent organised by population
+
+    /**
+     * Epic 3: All the cities in a continent organised by largest population to smallest.
+     * Murdo Wallace
+     */
     public static ArrayList<City> ContinentCity(String continent) {
         //Stores the query to be sent to the database.
         String select = "SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '" + continent+ "'ORDER BY city.population DESC";
@@ -55,9 +67,8 @@ public class CityReports {
     }
 
 
-    /*
-     * Epic4: Top populated cities
-     * Top N populated cities in a world, with N provided by user
+    /**
+     * Epic4: Top N populated cities in a world, with N provided by user
      * Sam Wilson-Perkins
      */
     public static ArrayList<City> TopCitiesWorld (int N){
@@ -67,7 +78,7 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    /*
+    /**
      * Epic4: Top N populated cities in a continent, with N provided by user
      * Sam Wilson-Perkins
      */
@@ -81,11 +92,10 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    /*
+    /**
      * Epic4: Top N populated cities in a region, with N provided by user
      * Sam Wilson-Perkins
      */
-
     public static ArrayList<City> TopCitiesRegion (String region, int N){
         //Stores query that gets sent to database.
         String select = "SELECT * " +
@@ -96,7 +106,7 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    /*
+    /**
      * Epic4: Top N populated cities in a country, with N provided by user
      * Sam Wilson-Perkins
      */
@@ -111,7 +121,7 @@ public class CityReports {
     }
 
 
-    /*
+    /**
      * Epic4: Top N populated cities in a district, with N provided by user
      * Sam Wilson-Perkins
      */
@@ -125,38 +135,35 @@ public class CityReports {
     }
 
 
-    /*
-        Epic 5, task 1
-        Created by: Cameron
-        Date: 16/03/2024
+    /**
+     * Epic 5: All the capital cities in the world organised by largest population to smallest.
+     * Cameron Smith
     */
     public static ArrayList<City> CapitalWorld(){
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
         return CityStandard(select);
     }
-    /*
-        Epic 5, task 2
-        Created by: Cameron
-        Date: 16/03/2024
-    */
+    /**
+     * Epic 5: All the capital cities in a continent organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList<City> CapitalContinent(String continent){
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '" + continent + "' ORDER BY city.population DESC";
         return CityStandard(select);
     }
-    /*
-        Epic 5, task 3
-        Created by: Cameron
-        Date: 16/03/2024
-    */
+    /**
+     * Epic 5: All the capital cities in a region organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList<City> CapitalRegion(String region){
         String select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '" + region + "' ORDER BY city.population DESC";
         return CityStandard(select);
     }
 
-    //Task 24 (Epic 6): The top N populated capital cities in a continent where N is provided by the user.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    //takes in a continent as a string and the limit of cities show as a string
+    /**
+     * Epic 6: The top N populated capital cities in a continent where N is provided by the user.
+     * Murdo Wallace
+     */
     public static ArrayList<City> ContinentCapitals(String continent, int N) {
         //Stores the query to be sent to the database.
         String select = "SELECT * " +
@@ -167,10 +174,10 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    //Task 26 (Epic 6):The top N populated capital cities in the world where N is provided by the user.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    //Outputs capitals cities ordered by population. Takes in a string that will determine the limit of the output
+    /**
+     * Epic 6:The top N populated capital cities in the world where N is provided by the user
+     * Murdo Wallace
+     */
     public static ArrayList<City> WorldCapitals(int N) {
         //Stores the query to be sent to the database.
         String select = "SELECT * " +
@@ -179,10 +186,10 @@ public class CityReports {
         return CityStandard(select);
     }
 
-    //Task 41 (epic 6)The top N populated capital cities in a region where N is provided by the user.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    ///takes in a continent as a string and the limit of cities show as a string
+    /**
+     * Epic 6: The top N populated capital cities in a region where N is provided by the user.
+     * Murdo Wallace
+     */
     public static ArrayList<City> RegionCapitals(String Region, int N) {
         //Stores the query to be sent to the database.
         String select = "SELECT * " +

@@ -119,26 +119,6 @@ public class CountryReports {
         return pop - pop_in_city;
     }
 
-    // what is this
-    public static String getCountryCode(String CountryCode){
-        String countryName = null;
-        try {
-
-            Statement stmt = Database.con.createStatement();
-            String str_select =
-                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
-            ResultSet rset = stmt.executeQuery(str_select);
-
-            while (rset.next()) {
-                countryName = (rset.getString("country.Name"));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return countryName;
-    }
-
     public static ArrayList<Country> CountryStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<Country> Countries = new ArrayList<Country>();
