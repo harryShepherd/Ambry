@@ -1,4 +1,3 @@
-/*
 package com.napier.Ambry;
 
 import org.junit.jupiter.api.*;
@@ -118,4 +117,4 @@ public class AmbryIntegrationTest {
     void testContinentCities() {
         assertEquals("Mumbai (Bombay)", CityReports.ContinentCity("Asia").get(0).getName());
     }
-}*/
+}
