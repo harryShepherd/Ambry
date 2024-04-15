@@ -75,7 +75,7 @@ public class CountryReports {
     }
 
     /**
-     * Epic 7: The population of people, people living in cities, and people not living in cities in each country
+     * Epic 7: The population of people in each country
      * Harry Shepherd
      */
     public static int PopulationOfCountry(String country) {
@@ -84,6 +84,10 @@ public class CountryReports {
         return CountryStandard(select).get(0).getPopulation();
     }
 
+    /**
+     * Epic 7: The population of people living in cities in each country
+     * Harry Shepherd
+     */
     public static int PopulationLivingInCities(String country) {
         int pop = 0;
         String select = "SELECT * FROM country WHERE country.name='" + country + "'";
@@ -104,6 +108,10 @@ public class CountryReports {
         return pop;
     }
 
+    /**
+     * Epic 7: The population of people not living in cities in each country
+     * Harry Shepherd
+     */
     public static int PopulationNotLivingInCities(String country) {
         int pop = PopulationOfCountry(country);
         int pop_in_city = PopulationLivingInCities(country);

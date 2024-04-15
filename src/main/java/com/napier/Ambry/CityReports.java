@@ -193,8 +193,9 @@ public class CityReports {
         return CityStandard(select);
     }
 
+
     /**
-     * Epic 7: Display the  population of people, people living in cities, and people not living in cities in each region
+     * Epic 7: Display the population of people in each region
      * Harry Shepherd
      */
     public static int PopulationInRegion(String region) {
@@ -212,6 +213,11 @@ public class CityReports {
         return pop;
     }
 
+
+    /**
+     * Epic 7: Display the population of people living in cities in each region
+     * Harry Shepherd
+     */
     public static int PopulationLivingInCitiesRegion(String region) {
         int pop = 0;
         String select = "SELECT SUM(city.Population) FROM city JOIN country ON country.Code = city.CountryCode" +
@@ -227,6 +233,10 @@ public class CityReports {
         return pop;
     }
 
+    /**
+     * Epic 7: Display the population of people not living in cities in each region
+     * Harry Shepherd
+     */
     public static int PopulationNotLivingInCitiesRegion(String region) {
         int pop = PopulationInRegion(region);
         int pop_in_city = PopulationLivingInCitiesRegion(region);
@@ -234,6 +244,10 @@ public class CityReports {
         return pop - pop_in_city;
     }
 
+    /**
+     * Epic 7: Display the population of people in each continent
+     * Harry Shepherd
+     */
     public static int PopulationInContinent(String continent) {
         int pop = 0;
 
@@ -250,6 +264,10 @@ public class CityReports {
         return pop;
     }
 
+    /**
+     * Epic 7: Display the population of people living in cities in each continent
+     * Harry Shepherd
+     */
     public static int PopulationLivingInCitiesContinent(String continent) {
         int pop = 0;
 
@@ -266,6 +284,10 @@ public class CityReports {
         return pop;
     }
 
+    /**
+     * Epic 7: Display the population of people not living in cities in each continent
+     * Harry Shepherd
+     */
     public static int PopulationNotLivingInCitiesContinent(String continent) {
         int pop = PopulationInContinent(continent);
         int pop_in_city = PopulationLivingInCitiesContinent(continent);
