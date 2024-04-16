@@ -27,7 +27,10 @@ public class CountryReports {
      * Murdo Wallace / Harry Shepherd / Cameron Smith
      */
     public static ArrayList<Country> getAllCountryPerContinent(String cont) {
-        String select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY Population DESC";
+        String select = "";
+        if(cont != null) {
+            select = "SELECT * FROM country WHERE Continent='" + cont + "'ORDER BY Population DESC";
+        }
         return CountryStandard(select);
     }
     /**
@@ -36,7 +39,10 @@ public class CountryReports {
      * Murdo Wallace / Cameron Smith
      */
     public static ArrayList<Country> getAllCountryPerRegion(String region) {
-        String select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population DESC";
+        String select = "";
+        if(region != null) {
+            select = "SELECT * FROM country WHERE Region ='" + region + "'ORDER BY population DESC";
+        }
         return CountryStandard(select);
     }
 
@@ -48,7 +54,10 @@ public class CountryReports {
         //Created by: Cameron Smith
         //Epic 2, Task #5
 
-        String select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
+        String select = "";
+        if(n > 0) {
+            select = "SELECT * FROM country ORDER BY population DESC LIMIT " + n;
+        }
         return CountryStandard(select);
     }
 
@@ -59,7 +68,10 @@ public class CountryReports {
     public static ArrayList<Country> TopNContinent(int n, String continent){
         //Created by: Cameron Smith
         //Epic 2, Task #6
-        String select = "SELECT * FROM country WHERE country.continent='" + continent + "' ORDER BY population DESC LIMIT " + n;
+        String select = "";
+        if(n > 0 && continent != null) {
+            select = "SELECT * FROM country WHERE country.continent='" + continent + "' ORDER BY population DESC LIMIT " + n;
+        }
         return CountryStandard(select);
     }
 
@@ -70,28 +82,56 @@ public class CountryReports {
     public static ArrayList<Country> TopNRegion (int n, String region){
         //Created by: Cameron Smith
         //Epic 2, Task #7
-        String select = "SELECT * FROM country WHERE country.region='" + region + "' ORDER BY population DESC LIMIT " + n;
+        String select = "";
+        if(n > 0 && region != null) {
+            select = "SELECT * FROM country WHERE country.region='" + region + "' ORDER BY population DESC LIMIT " + n;
+        }
         return CountryStandard(select);
     }
 
-    // what is this
-    public static String getCountryCode(String CountryCode){
-        String countryName = null;
-        try {
+    /**
+     * Epic 7: The population of people in each country
+     * Harry Shepherd
+     */
+    public static int PopulationOfCountry(String country) {
+        int pop = 0;
+        String select = "SELECT * FROM country WHERE country.name='" + country + "'";
+        return CountryStandard(select).get(0).getPopulation();
+    }
 
+    /**
+     * Epic 7: The population of people living in cities in each country
+     * Harry Shepherd
+     */
+    public static int PopulationLivingInCities(String country) {
+        int pop = 0;
+        String select = "SELECT * FROM country WHERE country.name='" + country + "'";
+        Country selected_country = CountryStandard(select).get(0);
+        select = "SELECT SUM(city.Population) FROM city WHERE city.CountryCode='" + selected_country.getCode() + "'";
+
+        try {
             Statement stmt = Database.con.createStatement();
-            String str_select =
-                    "SELECT Name FROM country WHERE country.code = '" + CountryCode + "'";
-            ResultSet rset = stmt.executeQuery(str_select);
+            ResultSet rset = stmt.executeQuery(select);
 
             while (rset.next()) {
-                countryName = (rset.getString("country.Name"));
+                pop = rset.getInt(1);
             }
         } catch (SQLException e) {
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
             throw new RuntimeException(e);
         }
+        return pop;
+    }
 
-        return countryName;
+    /**
+     * Epic 7: The population of people not living in cities in each country
+     * Harry Shepherd
+     */
+    public static int PopulationNotLivingInCities(String country) {
+        int pop = PopulationOfCountry(country);
+        int pop_in_city = PopulationLivingInCities(country);
+
+        return pop - pop_in_city;
     }
 
     public static ArrayList<Country> CountryStandard(String select) {

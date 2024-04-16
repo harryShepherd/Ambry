@@ -1,8 +1,8 @@
-com\napier\Ambry\City.class
-com\napier\Ambry\Database.class
-com\napier\Ambry\CountryReports.class
-com\napier\Ambry\CityReports.class
-com\napier\Ambry\Country.class
-com\napier\Ambry\CountryLanguage.class
-com\napier\Ambry\CountryLanguageReports.class
-com\napier\Ambry\Main.class
+com/napier/Ambry/Country.class
+com/napier/Ambry/Database.class
+com/napier/Ambry/City.class
+com/napier/Ambry/CountryReports.class
+com/napier/Ambry/CountryLanguageReports.class
+com/napier/Ambry/CountryLanguage.class
+com/napier/Ambry/Main.class
+com/napier/Ambry/CityReports.class
