@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CountryLanguageReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">CountryLanguageReports.java</span></div><h1>CountryLanguageReports.java</h1><pre class="source lang-java linenums">package com.napier.Ambry;
+
+import java.util.ArrayList;
+import java.sql.*;
+
 /*
  * Filename:    CityReports.java
  * Author:      Cameron Smith
  * Last Edited: 14/2/2024 @ 18:00
  * Purpose:     This class exists to store the functions designed to interact primarily/exclusively with the CountryLanguage.java file/type.
  */
-<span class="nc" id="L8">public class CountryLanguageReports {</span>
+<span class="nc" id="L12">public class CountryLanguageReports {</span>
+
+    public static ArrayList&lt;CountryLanguage&gt; speaksChinese(){
+<span class="nc" id="L15">        String select = &quot;SELECT SUM(country.Population) FROM countrylanguage JOIN country ON country.Code = countrylanguage.CountryCode WHERE countrylanguage.Language='Chinese'&quot;;</span>
+<span class="nc" id="L16">        return CountryLanguageStandard(select);</span>
+    }
+
+    public static ArrayList&lt;CountryLanguage&gt; CountryLanguageStandard(String select) {
+        //Stores all countries returned by the input SQL statement.
+<span class="nc" id="L21">        ArrayList&lt;CountryLanguage&gt; CountryLanguages = new ArrayList&lt;CountryLanguage&gt;();</span>
+
+
+
+        try {
+            //Creates an SQL statement.
+<span class="nc" id="L27">            Statement stmt = Database.con.createStatement();</span>
+<span class="nc" id="L28">            ResultSet rset = stmt.executeQuery(select);</span>
+            //Executes the SQL statement input by a seperate function.
+
+            //Creates a new country, stores all relevant values.
+<span class="nc bnc" id="L32" title="All 2 branches missed.">            while (rset.next()) {</span>
+<span class="nc" id="L33">                CountryLanguage countryLanguage = new CountryLanguage();</span>
+<span class="nc" id="L34">                countryLanguage.setCountryCode(rset.getString(&quot;countryLanguage.CountryCode&quot;));</span>
+<span class="nc" id="L35">                countryLanguage.setLanguage(rset.getString(&quot;countryLanguage.Language&quot;));</span>
+<span class="nc" id="L36">                countryLanguage.setIsOfficial(rset.getString(&quot;countryLanguage.IsOfficial&quot;));</span>
+<span class="nc" id="L37">                countryLanguage.setPercentage(rset.getFloat(&quot;countryLanguage.Percentage&quot;));</span>
+
+
+<span class="nc" id="L40">                CountryLanguages.add(countryLanguage);</span>
+<span class="nc" id="L41">            }</span>
+<span class="nc" id="L42">        } catch (SQLException e) {</span>
+<span class="nc" id="L43">            throw new RuntimeException(e);</span>
+<span class="nc" id="L44">        }</span>
+<span class="nc" id="L45">        return CountryLanguages;</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
