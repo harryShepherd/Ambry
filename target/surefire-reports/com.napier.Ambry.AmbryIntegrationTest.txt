@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: com.napier.Ambry.AmbryIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 3, Errors: 7, Skipped: 0, Time elapsed: 31.91 sec <<< FAILURE! - in com.napier.Ambry.AmbryIntegrationTest
+testCountryStandard  Time elapsed: 0.307 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testCountryStandard(AmbryIntegrationTest.java:26)
+
+testGetAllCountryPerRegion  Time elapsed: 0.005 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testGetAllCountryPerRegion(AmbryIntegrationTest.java:60)
+
+testRegionCities  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testRegionCities(AmbryIntegrationTest.java:99)
+
+testTopNContinent  Time elapsed: 0.031 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10> but was: <0>
+	at com.napier.Ambry.AmbryIntegrationTest.testTopNContinent(AmbryIntegrationTest.java:76)
+
+testCountryCities  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testCountryCities(AmbryIntegrationTest.java:105)
+
+testTopNRegion  Time elapsed: 0.011 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <3> but was: <0>
+	at com.napier.Ambry.AmbryIntegrationTest.testTopNRegion(AmbryIntegrationTest.java:85)
+
+testTopNWorld  Time elapsed: 0.016 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10> but was: <0>
+	at com.napier.Ambry.AmbryIntegrationTest.testTopNWorld(AmbryIntegrationTest.java:67)
+
+testContinentCities  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testContinentCities(AmbryIntegrationTest.java:116)
+
+testGetAllCountryLargeToSmall  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testGetAllCountryLargeToSmall(AmbryIntegrationTest.java:48)
+
+testGetAllCountryPerContinent  Time elapsed: 0.007 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.napier.Ambry.AmbryIntegrationTest.testGetAllCountryPerContinent(AmbryIntegrationTest.java:54)
+
