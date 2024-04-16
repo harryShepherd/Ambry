@@ -23,6 +23,7 @@ public class Main {
             a.connect("db:3306", 30000);
         }
 
+
         // Disconnect from database
         a.disconnect();
     }
