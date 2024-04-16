@@ -341,21 +341,31 @@ public class CityReports {
      * Epic 8: Population of a district
      * Sam Wilson-Perkins
      */
-    public static ArrayList<City> DistrictPop (String district){
+    public static int DistrictPop (String district){
+        int pop = 0;
         //Stores the query to be sent to the database.
-        String select = "SELECT population FROM city WHERE district = '" + district + "' ";
+        String select = "SELECT SUM(Population) FROM city WHERE district = '" + district + "' ";
 
-        return CityStandard(select);
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next();
+            pop = rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return pop;
     }
     /**
      * Epic 8: Population of a city
      * Sam Wilson-Perkins
      */
-    public static ArrayList<City> CityPop (String city){
+    public static int CityPop (String city){
         //Stores the query to be sent to the database.
-        String select = "SELECT population FROM city WHERE city = '" + city + "' ";
+        String select = "SELECT * FROM city WHERE Name = '" + city + "' ";
 
-        return CityStandard(select);
+        return CityStandard(select).get(0).getPopulation();
     }
 
     public static ArrayList<City> CityStandard(String select){

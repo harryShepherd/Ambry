@@ -16,7 +16,11 @@ public class Main {
             a.connect("localhost:33060", 30000);
 
             //TODO: Fill this up with stuff that showcases
-            //TODO: that everything works.
+            //TODO: that everything works
+
+            System.out.println(CityPop("London"));
+
+            System.out.println(DistrictPop("Massachusetts"));
 
         } else {
             // Live

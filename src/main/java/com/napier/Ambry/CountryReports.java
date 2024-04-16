@@ -138,15 +138,15 @@ public class CountryReports {
      * Epic 8: Population of the world
      * Sam Wilson-Perkins
      */
-    public static int WorldPop(){
-        int pop=0;
+    public static long WorldPop(){
+        long pop=0;
         //Stores the query to be sent to the database.
         String select = "SELECT SUM(population) FROM country";
         try {
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
             rset.next();
-            pop = rset.getInt(1);
+            pop = rset.getLong(1);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
