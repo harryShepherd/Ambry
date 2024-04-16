@@ -337,6 +337,27 @@ public class CityReports {
         return pop - pop_in_city;
     }
 
+    /**
+     * Epic 8: Population of a district
+     * Sam Wilson-Perkins
+     */
+    public static ArrayList<City> DistrictPop (String district){
+        //Stores the query to be sent to the database.
+        String select = "SELECT population FROM city WHERE district = '" + district + "' ";
+
+        return CityStandard(select);
+    }
+    /**
+     * Epic 8: Population of a city
+     * Sam Wilson-Perkins
+     */
+    public static ArrayList<City> CityPop (String city){
+        //Stores the query to be sent to the database.
+        String select = "SELECT population FROM city WHERE city = '" + city + "' ";
+
+        return CityStandard(select);
+    }
+
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
         ArrayList<City> Cities = new ArrayList<>();
