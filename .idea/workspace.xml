@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="tidy up">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="totalChinesePopulation has been reinvented, just need to work out how to make it run">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryLanguageReports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryLanguageReports.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" afterDir="false" />
@@ -55,12 +43,12 @@
     &quot;assignee&quot;: &quot;harryShepherd&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/harryShepherd/Ambry",
-    "accountId": "01aa8a11-5d40-4b5a-ac82-1655ec64f5d6"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/harryShepherd/Ambry&quot;,
+    &quot;accountId&quot;: &quot;01aa8a11-5d40-4b5a-ac82-1655ec64f5d6&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
@@ -96,7 +84,6 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/Epic9&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Code Repository/Software Engineering Methods/Coursework/Ambry&quot;,
@@ -138,6 +125,7 @@
     <configuration name="db/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
+          <option name="buildOnly" value="true" />
           <option name="sourceFilePath" value="db/Dockerfile" />
         </settings>
       </deployment>
@@ -227,6 +215,7 @@
       <workItem from="1711023104294" duration="399000" />
       <workItem from="1712833583457" duration="148000" />
       <workItem from="1712833737772" duration="3698000" />
+      <workItem from="1713344803517" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
       <option name="closed" value="true" />
@@ -412,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711025943876</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="totalChinesePopulation has been reinvented, just need to work out how to make it run">
+      <option name="closed" value="true" />
+      <created>1713344537675</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1713344537676</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +447,8 @@
     <MESSAGE value="Adding epic 5 stuff" />
     <MESSAGE value="Added epic 6 stuff" />
     <MESSAGE value="tidy up" />
-    <option name="LAST_COMMIT_MESSAGE" value="tidy up" />
+    <MESSAGE value="totalChinesePopulation has been reinvented, just need to work out how to make it run" />
+    <option name="LAST_COMMIT_MESSAGE" value="totalChinesePopulation has been reinvented, just need to work out how to make it run" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

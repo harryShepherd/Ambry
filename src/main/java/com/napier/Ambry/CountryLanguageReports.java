@@ -11,7 +11,10 @@ import java.sql.*;
  */
 public class CountryLanguageReports {
 
-
+    /**
+     * Epic 9: population of all countries that speak chinese
+     * Murdo Wallace
+     */
     public static int totalChinesePopulation() {
         int pop = 0;
         String select = "SELECT SUM(country.Population) AS total_population_of_chinese_speakers " +
