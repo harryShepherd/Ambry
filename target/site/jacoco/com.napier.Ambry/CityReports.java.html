@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CityReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">CityReports.java</span></div><h1>CityReports.java</h1><pre class="source lang-java linenums">package com.napier.Ambry;
 
-/*
+/**
  * Filename:    CityReports.java
  * Author:      Cameron Smith
  * Last Edited: 21/03/2024
@@ -11,251 +11,390 @@ import java.util.ArrayList;
 import java.sql.*;
 
 <span class="nc" id="L13">public class CityReports {</span>
-    // Epic 3 - All cities organised by population descending.
-    // All cities in the world organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in the world organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList&lt;City&gt; WorldCities (){
         //Stores the query to be sent to the database.
-<span class="fc" id="L18">        String select = &quot;SELECT * FROM city ORDER BY population DESC&quot;;</span>
+<span class="fc" id="L20">        String select = &quot;SELECT * FROM city ORDER BY population DESC&quot;;</span>
 
-<span class="fc" id="L20">        return CityStandard(select);</span>
+<span class="fc" id="L22">        return CityStandard(select);</span>
     }
 
-    // Epic 3 - All cities in a region organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in a region organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList&lt;City&gt; RegionCities(String region){
         //Stores the query to be sent to the database.
-<span class="fc" id="L26">        String select = &quot;&quot;;</span>
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if(region != null) {</span>
-<span class="fc" id="L28">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '&quot; + region + &quot;' ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L31">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if(region != null) {</span>
+<span class="fc" id="L33">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE region = '&quot; + region + &quot;' ORDER BY city.population DESC&quot;;</span>
         }
 
-<span class="fc" id="L31">        return CityStandard(select);</span>
+<span class="fc" id="L36">        return CityStandard(select);</span>
     }
 
-    // Epic 3 - All cities in a country organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in a country organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList&lt;City&gt; CountryCities(String country){
         //Stores the query to be sent to the database.
-<span class="fc" id="L37">        String select = &quot;&quot;;</span>
-<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        if(country != null) {</span>
-<span class="fc" id="L39">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '&quot; + country + &quot;' ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L45">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        if(country != null) {</span>
+<span class="fc" id="L47">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE country.name = '&quot; + country + &quot;' ORDER BY city.population DESC&quot;;</span>
         }
-<span class="fc" id="L41">        return CityStandard(select);</span>
+<span class="fc" id="L49">        return CityStandard(select);</span>
     }
 
-    // Epic 3 - All cities in a district organised by largest population to smallest.
+    /**
+     * Epic 3: All cities in a district organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList&lt;City&gt; DistrictCities(String district) {
         //Stores the query to be sent to the database.
-<span class="fc" id="L47">        String select = &quot;&quot;;</span>
-<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if(district != null) {</span>
-<span class="fc" id="L49">            select = &quot;SELECT * FROM city WHERE District = '&quot; + district + &quot;' ORDER BY population DESC&quot;;</span>
+<span class="fc" id="L58">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if(district != null) {</span>
+<span class="fc" id="L60">            select = &quot;SELECT * FROM city WHERE District = '&quot; + district + &quot;' ORDER BY population DESC&quot;;</span>
         }
 
-<span class="fc" id="L52">        return CityStandard(select);</span>
+<span class="fc" id="L63">        return CityStandard(select);</span>
     }
-    // Epic 3 - All the cities in a continent organised by largest population to smallest.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    //takes in a string for the continent and returns all cities within that continent organised by population
+
+    /**
+     * Epic 3: All the cities in a continent organised by largest population to smallest.
+     * Murdo Wallace
+     */
     public static ArrayList&lt;City&gt; ContinentCity(String continent) {
         //Stores the query to be sent to the database.
-<span class="fc" id="L60">        String select = &quot;&quot;;</span>
-<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if(continent != null) {</span>
-<span class="fc" id="L62">            select = &quot;SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '&quot; + continent + &quot;'ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L72">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if(continent != null) {</span>
+<span class="fc" id="L74">            select = &quot;SELECT * FROM city INNER JOIN country ON country.code = city.countryCode WHERE country.Continent = '&quot; + continent + &quot;'ORDER BY city.population DESC&quot;;</span>
         }
-<span class="fc" id="L64">        return CityStandard(select);</span>
+<span class="fc" id="L76">        return CityStandard(select);</span>
     }
 
 
-    /*
-     * Epic4: Top populated cities
-     * Top N populated cities in a world, with N provided by user
+    /**
+     * Epic4: Top N populated cities in a world, with N provided by user
      * Sam Wilson-Perkins
      */
     public static ArrayList&lt;City&gt; TopCitiesWorld (int N){
         //Stores query that gets sent to database.
-<span class="nc" id="L75">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L76" title="All 2 branches missed.">        if(N &gt; 0) {</span>
-<span class="nc" id="L77">            select = &quot;SELECT * FROM city ORDER BY population DESC LIMIT &quot; + N;</span>
+<span class="fc" id="L86">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">        if(N &gt; 0) {</span>
+<span class="fc" id="L88">            select = &quot;SELECT * FROM city ORDER BY population DESC LIMIT &quot; + N;</span>
         }
-<span class="nc" id="L79">        return CityStandard(select);</span>
+<span class="fc" id="L90">        return CityStandard(select);</span>
     }
 
-    /*
+    /**
      * Epic4: Top N populated cities in a continent, with N provided by user
      * Sam Wilson-Perkins
      */
     public static ArrayList&lt;City&gt; TopCitiesContinent (String continent, int N){
         //Stores query that gets sent to database.
-<span class="nc" id="L88">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L89" title="All 4 branches missed.">        if(N &gt; 0 &amp;&amp; continent != null) {</span>
-<span class="nc" id="L90">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L99">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L100" title="2 of 4 branches missed.">        if(N &gt; 0 &amp;&amp; continent != null) {</span>
+<span class="fc" id="L101">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city INNER JOIN country ON country.Code = city.CountryCode &quot; +
                     &quot; WHERE country.Continent = '&quot; + continent
                     + &quot;' ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L95">        return CityStandard(select);</span>
+<span class="fc" id="L106">        return CityStandard(select);</span>
     }
 
-    /*
+    /**
      * Epic4: Top N populated cities in a region, with N provided by user
      * Sam Wilson-Perkins
      */
-
     public static ArrayList&lt;City&gt; TopCitiesRegion (String region, int N){
         //Stores query that gets sent to database.
-<span class="nc" id="L105">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L106" title="All 4 branches missed.">        if(N &gt; 0 &amp;&amp; region != null) {</span>
-<span class="nc" id="L107">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L115">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L116" title="2 of 4 branches missed.">        if(N &gt; 0 &amp;&amp; region != null) {</span>
+<span class="fc" id="L117">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city INNER JOIN country ON country.Code = city.CountryCode &quot; +
                     &quot; WHERE country.Region = '&quot; + region
                     + &quot;' ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L112">        return CityStandard(select);</span>
+<span class="fc" id="L122">        return CityStandard(select);</span>
     }
 
-    /*
+    /**
      * Epic4: Top N populated cities in a country, with N provided by user
      * Sam Wilson-Perkins
      */
     public static ArrayList&lt;City&gt; TopCitiesCountry (String country, int N){
         //Stores query that gets sent to database.
-<span class="nc" id="L121">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L122" title="All 4 branches missed.">        if(N &gt; 0 &amp;&amp; country != null) {</span>
-<span class="nc" id="L123">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L131">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L132" title="2 of 4 branches missed.">        if(N &gt; 0 &amp;&amp; country != null) {</span>
+<span class="fc" id="L133">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city INNER JOIN country ON country.Code = city.CountryCode &quot; +
                     &quot; WHERE country.name = '&quot; + country
                     + &quot;' ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L128">        return CityStandard(select);</span>
+<span class="fc" id="L138">        return CityStandard(select);</span>
     }
 
 
-    /*
+    /**
      * Epic4: Top N populated cities in a district, with N provided by user
      * Sam Wilson-Perkins
      */
     public static ArrayList&lt;City&gt; TopCitiesDistrict (String district, int N){
         //Stores query that gets sent to database.
-<span class="nc" id="L138">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L139" title="All 4 branches missed.">        if(N &gt; 0 &amp;&amp; district != null) {</span>
-<span class="nc" id="L140">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L148">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L149" title="2 of 4 branches missed.">        if(N &gt; 0 &amp;&amp; district != null) {</span>
+<span class="fc" id="L150">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city WHERE district = '&quot; + district
                     + &quot;' ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L144">        return CityStandard(select);</span>
+<span class="fc" id="L154">        return CityStandard(select);</span>
     }
 
 
-    /*
-        Epic 5, task 1
-        Created by: Cameron
-        Date: 16/03/2024
+    /**
+     * Epic 5: All the capital cities in the world organised by largest population to smallest.
+     * Cameron Smith
     */
     public static ArrayList&lt;City&gt; CapitalWorld(){
-<span class="nc" id="L154">        String select = &quot;&quot;;</span>
-<span class="nc" id="L155">        select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L163">        String select = &quot;&quot;;</span>
+<span class="fc" id="L164">        select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC&quot;;</span>
 
-<span class="nc" id="L157">        return CityStandard(select);</span>
+<span class="fc" id="L166">        return CityStandard(select);</span>
     }
 
-    /*
-        Epic 5, task 2
-        Created by: Cameron
-        Date: 16/03/2024
-    */
+    /**
+     * Epic 5: All the capital cities in a continent organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList&lt;City&gt; CapitalContinent(String continent){
-<span class="nc" id="L166">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L167" title="All 2 branches missed.">        if(continent != null) {</span>
-<span class="nc" id="L168">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '&quot; + continent + &quot;' ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L174">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L175" title="1 of 2 branches missed.">        if(continent != null) {</span>
+<span class="fc" id="L176">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Continent = '&quot; + continent + &quot;' ORDER BY city.population DESC&quot;;</span>
         }
-<span class="nc" id="L170">        return CityStandard(select);</span>
+<span class="fc" id="L178">        return CityStandard(select);</span>
     }
-
-    /*
-        Epic 5, task 3
-        Created by: Cameron
-        Date: 16/03/2024
-    */
+    /**
+     * Epic 5: All the capital cities in a region organised by largest population to smallest.
+     * Cameron Smith
+     */
     public static ArrayList&lt;City&gt; CapitalRegion(String region){
-<span class="nc" id="L179">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L180" title="All 2 branches missed.">        if(region != null) {</span>
-<span class="nc" id="L181">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '&quot; + region + &quot;' ORDER BY city.population DESC&quot;;</span>
+<span class="fc" id="L185">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L186" title="1 of 2 branches missed.">        if(region != null) {</span>
+<span class="fc" id="L187">            select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital AND country.Region = '&quot; + region + &quot;' ORDER BY city.population DESC&quot;;</span>
         }
-<span class="nc" id="L183">        return CityStandard(select);</span>
+<span class="fc" id="L189">        return CityStandard(select);</span>
     }
 
-    //Task 24 (Epic 6): The top N populated capital cities in a continent where N is provided by the user.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    //takes in a continent as a string and the limit of cities show as a string
+    /**
+     * Epic 6: The top N populated capital cities in a continent where N is provided by the user.
+     * Murdo Wallace
+     */
     public static ArrayList&lt;City&gt; ContinentCapitals(String continent, int N) {
         //Stores the query to be sent to the database.
-<span class="nc" id="L192">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L193" title="All 4 branches missed.">        if(N &gt; 0 &amp;&amp; continent != null) {</span>
-<span class="nc" id="L194">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L198">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L199" title="2 of 4 branches missed.">        if(N &gt; 0 &amp;&amp; continent != null) {</span>
+<span class="fc" id="L200">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city INNER JOIN country ON country.capital = city.ID &quot; +
                     &quot; WHERE country.Continent = '&quot; + continent
                     + &quot;' ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L199">        return CityStandard(select);</span>
+<span class="fc" id="L205">        return CityStandard(select);</span>
     }
 
-    //Task 26 (Epic 6):The top N populated capital cities in the world where N is provided by the user.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    //Outputs capitals cities ordered by population. Takes in a string that will determine the limit of the output
+    /**
+     * Epic 6:The top N populated capital cities in the world where N is provided by the user
+     * Murdo Wallace
+     */
     public static ArrayList&lt;City&gt; WorldCapitals(int N) {
         //Stores the query to be sent to the database.
-<span class="nc" id="L208">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L209" title="All 2 branches missed.">        if(N &gt; 0) {</span>
-<span class="nc" id="L210">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L214">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L215" title="1 of 2 branches missed.">        if(N &gt; 0) {</span>
+<span class="fc" id="L216">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city INNER JOIN country ON country.capital = city.ID ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L213">        return CityStandard(select);</span>
+<span class="fc" id="L219">        return CityStandard(select);</span>
     }
 
-    //Task 41 (epic 6)The top N populated capital cities in a region where N is provided by the user.
-    //Murdo Wallace
-    //Last edited 07/03/2024
-    ///takes in a continent as a string and the limit of cities show as a string
+    /**
+     * Epic 6: The top N populated capital cities in a region where N is provided by the user.
+     * Murdo Wallace
+     */
     public static ArrayList&lt;City&gt; RegionCapitals(String Region, int N) {
         //Stores the query to be sent to the database.
-<span class="nc" id="L222">        String select = &quot;&quot;;</span>
-<span class="nc bnc" id="L223" title="All 4 branches missed.">        if(N &gt; 0 &amp;&amp; Region != null) {</span>
-<span class="nc" id="L224">            select = &quot;SELECT * &quot; +</span>
+<span class="fc" id="L228">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L229" title="2 of 4 branches missed.">        if(N &gt; 0 &amp;&amp; Region != null) {</span>
+<span class="fc" id="L230">            select = &quot;SELECT * &quot; +</span>
                     &quot;FROM city INNER JOIN country ON country.capital = city.ID &quot; +
                     &quot; WHERE country.Region = '&quot; + Region
                     + &quot;' ORDER BY city.population DESC LIMIT &quot; + N;
         }
-<span class="nc" id="L229">        return CityStandard(select);</span>
+<span class="fc" id="L235">        return CityStandard(select);</span>
+    }
+
+
+    /**
+     * Epic 7: Display the population of people in each region
+     * Harry Shepherd
+     */
+    public static int PopulationInRegion(String region) {
+        int pop;
+<span class="fc" id="L245">        String select = &quot;SELECT SUM(country.Population) FROM country WHERE country.Region='&quot; + region + &quot;'&quot;;</span>
+
+        try {
+<span class="fc" id="L248">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L249">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L250">            rset.next(); // this stops resultset having a massive fit</span>
+<span class="fc" id="L251">            pop = rset.getInt(1);</span>
+<span class="nc" id="L252">        } catch (Exception e) {</span>
+<span class="nc" id="L253">            throw new RuntimeException(e);</span>
+<span class="fc" id="L254">        }</span>
+<span class="fc" id="L255">        return pop;</span>
+    }
+
+
+    /**
+     * Epic 7: Display the population of people living in cities in each region
+     * Harry Shepherd
+     */
+    public static int PopulationLivingInCitiesRegion(String region) {
+<span class="fc" id="L264">        int pop = 0;</span>
+<span class="fc" id="L265">        String select = &quot;SELECT SUM(city.Population) FROM city JOIN country ON country.Code = city.CountryCode&quot; +</span>
+                &quot; WHERE country.Region='&quot; + region + &quot;'&quot;;
+        try {
+<span class="fc" id="L268">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L269">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L270">            rset.next(); // this stops resultset having a massive fit</span>
+<span class="fc" id="L271">            pop = rset.getInt(1);</span>
+<span class="nc" id="L272">        } catch (Exception e) {</span>
+<span class="nc" id="L273">            throw new RuntimeException(e);</span>
+<span class="fc" id="L274">        }</span>
+<span class="fc" id="L275">        return pop;</span>
+    }
+
+    /**
+     * Epic 7: Display the population of people not living in cities in each region
+     * Harry Shepherd
+     */
+    public static int PopulationNotLivingInCitiesRegion(String region) {
+<span class="fc" id="L283">        int pop = PopulationInRegion(region);</span>
+<span class="fc" id="L284">        int pop_in_city = PopulationLivingInCitiesRegion(region);</span>
+
+<span class="fc" id="L286">        return pop - pop_in_city;</span>
+    }
+
+    /**
+     * Epic 7: Display the population of people in each continent
+     * Harry Shepherd
+     */
+    public static int PopulationInContinent(String continent) {
+<span class="fc" id="L294">        int pop = 0;</span>
+
+<span class="fc" id="L296">        String select = &quot;SELECT SUM(country.Population) FROM country WHERE country.Continent='&quot; + continent + &quot;'&quot;;</span>
+
+        try {
+<span class="fc" id="L299">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L300">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L301">            rset.next();</span>
+<span class="fc" id="L302">            pop = rset.getInt(1);</span>
+<span class="nc" id="L303">        } catch (Exception e) {</span>
+<span class="nc" id="L304">            throw new RuntimeException(e);</span>
+<span class="fc" id="L305">        }</span>
+<span class="fc" id="L306">        return pop;</span>
+    }
+
+    /**
+     * Epic 7: Display the population of people living in cities in each continent
+     * Harry Shepherd
+     */
+    public static int PopulationLivingInCitiesContinent(String continent) {
+<span class="fc" id="L314">        int pop = 0;</span>
+
+<span class="fc" id="L316">        String select = &quot;SELECT SUM(city.Population) FROM city JOIN country ON city.CountryCode = country.Code&quot; +</span>
+        &quot; WHERE country.Continent='&quot; + continent + &quot;'&quot;;
+        try {
+<span class="fc" id="L319">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L320">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L321">            rset.next();</span>
+<span class="fc" id="L322">            pop = rset.getInt(1);</span>
+<span class="nc" id="L323">        } catch (Exception e) {</span>
+<span class="nc" id="L324">            throw new RuntimeException(e);</span>
+<span class="fc" id="L325">        }</span>
+<span class="fc" id="L326">        return pop;</span>
+    }
+
+    /**
+     * Epic 7: Display the population of people not living in cities in each continent
+     * Harry Shepherd
+     */
+    public static int PopulationNotLivingInCitiesContinent(String continent) {
+<span class="fc" id="L334">        int pop = PopulationInContinent(continent);</span>
+<span class="fc" id="L335">        int pop_in_city = PopulationLivingInCitiesContinent(continent);</span>
+
+<span class="fc" id="L337">        return pop - pop_in_city;</span>
+    }
+
+    /**
+     * Epic 8: Population of a district
+     * Sam Wilson-Perkins
+     */
+    public static int DistrictPop (String district){
+<span class="nc" id="L345">        int pop = 0;</span>
+        //Stores the query to be sent to the database.
+<span class="nc" id="L347">        String select = &quot;SELECT SUM(Population) FROM city WHERE district = '&quot; + district + &quot;' &quot;;</span>
+
+        try {
+<span class="nc" id="L350">            Statement stmt = Database.con.createStatement();</span>
+<span class="nc" id="L351">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="nc" id="L352">            rset.next();</span>
+<span class="nc" id="L353">            pop = rset.getInt(1);</span>
+<span class="nc" id="L354">        } catch (Exception e) {</span>
+<span class="nc" id="L355">            throw new RuntimeException(e);</span>
+<span class="nc" id="L356">        }</span>
+
+<span class="nc" id="L358">        return pop;</span>
+    }
+    /**
+     * Epic 8: Population of a city
+     * Sam Wilson-Perkins
+     */
+    public static int CityPop (String city){
+        //Stores the query to be sent to the database.
+<span class="nc" id="L366">        String select = &quot;SELECT * FROM city WHERE Name = '&quot; + city + &quot;' &quot;;</span>
+
+<span class="nc" id="L368">        return CityStandard(select).get(0).getPopulation();</span>
     }
 
     public static ArrayList&lt;City&gt; CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
-<span class="fc" id="L234">        ArrayList&lt;City&gt; Cities = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L373">        ArrayList&lt;City&gt; Cities = new ArrayList&lt;&gt;();</span>
 
         try {
             //Creates the statement as an SQL statement.
-<span class="fc" id="L238">            Statement stmt = Database.con.createStatement();</span>
-<span class="fc" id="L239">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L377">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L378">            ResultSet rset = stmt.executeQuery(select);</span>
             //Executes the query to return all values to be stored.
 
             //Creates a new city and stores the relevant values before adding it to the ArrayList.
-<span class="fc bfc" id="L243" title="All 2 branches covered.">            while (rset.next()) {</span>
-<span class="fc" id="L244">                City city = new City();</span>
-<span class="fc" id="L245">                city.setName(rset.getString(&quot;city.Name&quot;));</span>
-<span class="fc" id="L246">                city.setCountryCode(rset.getString(&quot;city.CountryCode&quot;));</span>
+<span class="fc bfc" id="L382" title="All 2 branches covered.">            while (rset.next()) {</span>
+<span class="fc" id="L383">                City city = new City();</span>
+<span class="fc" id="L384">                city.setName(rset.getString(&quot;city.Name&quot;));</span>
+<span class="fc" id="L385">                city.setCountryCode(rset.getString(&quot;city.CountryCode&quot;));</span>
                 //Need to store Country but can only access via CountryCode
-<span class="fc" id="L248">                city.setDistrict(rset.getString(&quot;city.District&quot;));</span>
-<span class="fc" id="L249">                city.setPopulation(rset.getInt(&quot;city.Population&quot;));</span>
+<span class="fc" id="L387">                city.setDistrict(rset.getString(&quot;city.District&quot;));</span>
+<span class="fc" id="L388">                city.setPopulation(rset.getInt(&quot;city.Population&quot;));</span>
 
-<span class="fc" id="L251">                Cities.add(city);</span>
-<span class="fc" id="L252">            }</span>
-<span class="fc" id="L253">        } catch (SQLException e) {</span>
+<span class="fc" id="L390">                Cities.add(city);</span>
+<span class="fc" id="L391">            }</span>
+<span class="fc" id="L392">        } catch (SQLException e) {</span>
             //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
-<span class="fc" id="L255">            throw new RuntimeException(e);</span>
-<span class="fc" id="L256">        }</span>
+<span class="fc" id="L394">            throw new RuntimeException(e);</span>
+<span class="fc" id="L395">        }</span>
 
-<span class="fc" id="L258">        return Cities;</span>
+<span class="fc" id="L397">        return Cities;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

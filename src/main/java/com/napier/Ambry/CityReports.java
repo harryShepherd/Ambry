@@ -337,6 +337,37 @@ public class CityReports {
         return pop - pop_in_city;
     }
 
+    /**
+     * Epic 8: Population of a district
+     * Sam Wilson-Perkins
+     */
+    public static int DistrictPop (String district){
+        int pop = 0;
+        //Stores the query to be sent to the database.
+        String select = "SELECT SUM(Population) FROM city WHERE district = '" + district + "' ";
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next();
+            pop = rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return pop;
+    }
+    /**
+     * Epic 8: Population of a city
+     * Sam Wilson-Perkins
+     */
+    public static int CityPop (String city){
+        //Stores the query to be sent to the database.
+        String select = "SELECT * FROM city WHERE Name = '" + city + "' ";
+
+        return CityStandard(select).get(0).getPopulation();
+    }
+
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
         ArrayList<City> Cities = new ArrayList<>();

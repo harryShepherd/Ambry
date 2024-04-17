@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import static com.napier.Ambry.CityReports.DistrictPop;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AmbryIntegrationTest {
@@ -260,4 +261,27 @@ public class AmbryIntegrationTest {
         assertEquals(37186727, pop);
     }
 
+    @Test
+    void testWorldPop() {
+        long pop = CountryReports.WorldPop();
+        assertEquals(6078749450l, pop);
+    }
+
+    @Test
+    void testDistrictPop() {
+        int pop = CityReports.DistrictPop("England");
+        assertEquals(19978543, pop);
+    }
+
+    @Test
+    void testCityPop() {
+        int pop = CityReports.CityPop("London");
+        assertEquals(7285000, pop);
+    }
+
+    @Test
+    void testspeaksLanguage() {
+        int pop = CountryLanguageReports.speaksLanguage("Chinese");
+        assertEquals(1968265500, pop);
+    }
 }
