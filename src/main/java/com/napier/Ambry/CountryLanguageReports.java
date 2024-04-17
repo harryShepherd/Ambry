@@ -17,31 +17,24 @@ public class CountryLanguageReports {
      */
     public static int speaksLanguage(String language) {
         int pop = 0;
-        String select = "SELECT SUM(country.Population) AS total_population_of_chinese_speakers " +
+        String select = "SELECT SUM(country.Population) " +
                 "FROM countrylanguage " +
                 "JOIN country ON country.Code = countrylanguage.CountryCode " +
-                "WHERE countrylanguage.Language='Chinese' AND country.Name=?";
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password");
-             PreparedStatement stmt = conn.prepareStatement(select)) {
-            stmt.setString(1, language);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    pop = rs.getInt("total_population_of_chinese_speakers");
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+                "WHERE countrylanguage.Language='" + language + "'";
+
+        try {
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            rset.next();
+            return rset.getInt(1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        return pop;
     }
-
-
 
     public static ArrayList<CountryLanguage> CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<CountryLanguage> CountryLanguages = new ArrayList<CountryLanguage>();
-
-
 
         try {
             //Creates an SQL statement.

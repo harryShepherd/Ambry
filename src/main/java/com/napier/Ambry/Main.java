@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 import static com.napier.Ambry.CountryReports.*;
+import static com.napier.Ambry.CountryLanguageReports.*;
 import static com.napier.Ambry.CityReports.*;
 
 public class Main {
@@ -23,9 +24,6 @@ public class Main {
             a.connect("db:3306", 30000);
         }
 
-
-        System.out.println(CountryLanguageReports.speaksLanguage("Chinese"));
-        System.out.println("test");
         // Disconnect from database
         a.disconnect();
     }
