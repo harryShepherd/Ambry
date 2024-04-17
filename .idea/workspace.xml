@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="totalChinesePopulation has been reinvented, just need to work out how to make it run">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="totalChinesePopulation is finished, just needs confirmed on another machine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryLanguageReports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryLanguageReports.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,9 +171,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
         <item itemvalue="Docker.db/Dockerfile" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -215,7 +211,7 @@
       <workItem from="1711023104294" duration="399000" />
       <workItem from="1712833583457" duration="148000" />
       <workItem from="1712833737772" duration="3698000" />
-      <workItem from="1713344803517" duration="365000" />
+      <workItem from="1713344803517" duration="676000" />
     </task>
     <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
       <option name="closed" value="true" />
@@ -409,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713344537676</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="totalChinesePopulation is finished, just needs confirmed on another machine">
+      <option name="closed" value="true" />
+      <created>1713345192410</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713345192410</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +452,8 @@
     <MESSAGE value="Added epic 6 stuff" />
     <MESSAGE value="tidy up" />
     <MESSAGE value="totalChinesePopulation has been reinvented, just need to work out how to make it run" />
-    <option name="LAST_COMMIT_MESSAGE" value="totalChinesePopulation has been reinvented, just need to work out how to make it run" />
+    <MESSAGE value="totalChinesePopulation is finished, just needs confirmed on another machine" />
+    <option name="LAST_COMMIT_MESSAGE" value="totalChinesePopulation is finished, just needs confirmed on another machine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

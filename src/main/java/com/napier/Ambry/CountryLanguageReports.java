@@ -15,23 +15,26 @@ public class CountryLanguageReports {
      * Epic 9: population of all countries that speak chinese
      * Murdo Wallace
      */
-    public static int totalChinesePopulation() {
+    public static int speaksLanguage(String language) {
         int pop = 0;
         String select = "SELECT SUM(country.Population) AS total_population_of_chinese_speakers " +
                 "FROM countrylanguage " +
                 "JOIN country ON country.Code = countrylanguage.CountryCode " +
-                "WHERE countrylanguage.Language='Chinese'";
+                "WHERE countrylanguage.Language='Chinese' AND country.Name=?";
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password");
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(select)) {
-            if (rs.next()) {
-                pop = rs.getInt("total_population_of_chinese_speakers");
+             PreparedStatement stmt = conn.prepareStatement(select)) {
+            stmt.setString(1, language);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    pop = rs.getInt("total_population_of_chinese_speakers");
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return pop;
     }
+
 
 
     public static ArrayList<CountryLanguage> CountryLanguageStandard(String select) {
