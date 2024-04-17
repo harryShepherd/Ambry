@@ -4,31 +4,33 @@ import java.util.ArrayList;
 import java.sql.*;
 
 import static com.napier.Ambry.CountryReports.*;
+import static com.napier.Ambry.CityReports.*;
 
-<span class="nc" id="L8">public class Main {</span>
+<span class="nc" id="L9">public class Main {</span>
     public static void main(String[] args) {
         // Create new Application Instance
-<span class="nc" id="L11">        Database a = new Database();</span>
+<span class="nc" id="L12">        Database a = new Database();</span>
 
-<span class="nc bnc" id="L13" title="All 2 branches missed.">        if(args.length &lt; 1) {</span>
+<span class="nc bnc" id="L14" title="All 2 branches missed.">        if(args.length &lt; 1) {</span>
             // Debugging
-<span class="nc" id="L15">            a.connect(&quot;localhost:33060&quot;, 30000);</span>
+<span class="nc" id="L16">            a.connect(&quot;localhost:33060&quot;, 30000);</span>
 
-<span class="nc" id="L17">            int pop = PopulationOfCountry(&quot;France&quot;);</span>
+            //TODO: Fill this up with stuff that showcases
+            //TODO: that everything works
 
-<span class="nc" id="L19">            System.out.println(&quot;Population of france:&quot; + pop);</span>
+<span class="nc" id="L21">            System.out.println(CityPop(&quot;London&quot;));</span>
 
-<span class="nc" id="L21">            pop = PopulationNotLivingInCities(&quot;France&quot;);</span>
+<span class="nc" id="L23">            System.out.println(DistrictPop(&quot;Massachusetts&quot;));</span>
 
-<span class="nc" id="L23">            System.out.println(&quot;Population of france not living in cities:&quot; + pop);</span>
-<span class="nc" id="L24">        } else {</span>
+        } else {
             // Live
-<span class="nc" id="L26">            a.connect(&quot;db:3306&quot;, 30000);</span>
+<span class="nc" id="L27">            a.connect(&quot;db:3306&quot;, 30000);</span>
         }
 
+
         // Disconnect from database
-<span class="nc" id="L30">        a.disconnect();</span>
-<span class="nc" id="L31">    }</span>
+<span class="nc" id="L32">        a.disconnect();</span>
+<span class="nc" id="L33">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

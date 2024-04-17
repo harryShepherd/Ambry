@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Checkout_at_21_03_2024_12_41_[Changes]1" date="1711024895780" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_12_41_[Changes]1/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 21/03/2024 12:41 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="target/Ambry-0.1.0.1-jar-with-dependencies.jar" />
-    <option name="AFTER_PATH" value="target/Ambry-0.1.0.1-jar-with-dependencies.jar" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_12_41_[Changes]1/Ambry-0.1.0.1-jar-with-dependencies.jar" />
-  </binary>
-</changelist>
