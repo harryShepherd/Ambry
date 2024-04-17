@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 import static com.napier.Ambry.CountryReports.*;
+import static com.napier.Ambry.CountryLanguageReports.*;
 import static com.napier.Ambry.CityReports.*;
 
 public class Main {
@@ -26,7 +27,6 @@ public class Main {
             // Live
             a.connect("db:3306", 30000);
         }
-
 
         // Disconnect from database
         a.disconnect();
