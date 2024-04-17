@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>City.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">City.java</span></div><h1>City.java</h1><pre class="source lang-java linenums">/**
+ * Filename:    CountryLanguage.java
+ * Author:      Cameron Smith
+ * Last Edited: 14/2/2024 @ 18:00
+ * Purpose:     This class exists to store information about the city item
+ *              found in world.sql
+ */
+
+package com.napier.Ambry;
+import java.util.ArrayList;
+import java.sql.*;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+<span class="fc" id="L20">public class City {</span>
+    //Stores the City ID
+    private int ID;
+    public int getID(){
+        //Gets and returns the ID.
+<span class="fc" id="L25">        return ID;</span>
+    }
+    public void setID(int setID){
+        //Sets the ID from a given input.
+<span class="fc" id="L29">        this.ID = setID;</span>
+<span class="fc" id="L30">    }</span>
+    //Stores the City name
+    private String Name;
+    public String getName(){
+        //Gets and returns the City name.
+<span class="fc" id="L35">        return Name;</span>
+    }
+    public void setName(String setName){
+        //Sets the City name from the input.
+<span class="fc" id="L39">        this.Name = setName;</span>
+<span class="fc" id="L40">    }</span>
+    //Stores the City's Country Code.
+    private String CountryCode;
+    public String getCountryCode()
+    {
+        //Gets and returns the City's Country Code.
+<span class="fc" id="L46">        return CountryCode;</span>
+    }
+    public void setCountryCode(String setCode){
+        //Sets the City's country code from the input.
+<span class="fc" id="L50">        this.CountryCode = setCode;</span>
+<span class="fc" id="L51">    }</span>
+    //Stores the city's District.
+    private String District;
+    public String getDistrict(){
+        //Gets and returns the city's District.
+<span class="fc" id="L56">        return District;</span>
+    }
+    public void setDistrict(String setDistrict){
+        //Sets the city's District from the input.
+<span class="fc" id="L60">        this.District = setDistrict;</span>
+<span class="fc" id="L61">    }</span>
+    //stores the city's population.
+    private int population;
+    public int getPopulation(){
+        //Gets and returns the city's District.
+<span class="fc" id="L66">        return population;</span>
+    }
+    public void setPopulation(int setPopulation){
+        //Sets the city's Population from the input.
+<span class="fc" id="L70">        this.population = setPopulation;</span>
+<span class="fc" id="L71">    }</span>
+
+    public static ArrayList&lt;City&gt; CityStandard(String select){
+        //Stores the Cities relevant to the input SQL statement
+<span class="nc" id="L75">        ArrayList&lt;City&gt; Cities = new ArrayList&lt;City&gt;();</span>
+
+        try {
+            //Creates the statement as an SQL statement.
+<span class="nc" id="L79">            Statement stmt = Database.con.createStatement();</span>
+<span class="nc" id="L80">            ResultSet rset = stmt.executeQuery(select);</span>
+            //Executes the query to return all values to be stored.
+
+            //Creates a new city and stores the relevant values before adding it to the ArrayList.
+<span class="nc bnc" id="L84" title="All 2 branches missed.">            while (rset.next()) {</span>
+<span class="nc" id="L85">                City city = new City();</span>
+<span class="nc" id="L86">                city.setName(rset.getString(&quot;city.Name&quot;));</span>
+<span class="nc" id="L87">                city.setCountryCode(rset.getString(&quot;city.CountryCode&quot;));</span>
+                //Need to store Country but can only access via CountryCode
+<span class="nc" id="L89">                city.setDistrict(rset.getString(&quot;city.District&quot;));</span>
+<span class="nc" id="L90">                city.setPopulation(rset.getInt(&quot;city.Population&quot;));</span>
+
+<span class="nc" id="L92">                Cities.add(city);</span>
+<span class="nc" id="L93">            }</span>
+<span class="nc" id="L94">        } catch (SQLException e) {</span>
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+<span class="nc" id="L96">            throw new RuntimeException(e);</span>
+<span class="nc" id="L97">        }</span>
+
+<span class="nc" id="L99">        return Cities;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

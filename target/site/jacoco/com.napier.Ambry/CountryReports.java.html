@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CountryReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">CountryReports.java</span></div><h1>CountryReports.java</h1><pre class="source lang-java linenums">package com.napier.Ambry;
+
+/*
+ * Filename:    CountryReports.java
+ * Author:      Cameron Smith
+ * Last Edited: 21/03/2024
+ * Purpose:     This class exists to store the functions designed to interact primarily/exclusively with the Country.java file/type.
+ */
+
+import java.util.ArrayList;
+import java.sql.*;
+
+<span class="nc" id="L13">public class CountryReports {</span>
+    /**
+     * Epic1: Countries by Largest population to Smallest
+     * All the countries in the world organised by largest population to smallest.
+     * Murdo Wallace / Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; getAllCountryLargeToSmall() {
+        //connects to the database
+<span class="fc" id="L21">        String select = &quot;SELECT * FROM country ORDER BY Population DESC&quot;;</span>
+<span class="fc" id="L22">        return CountryStandard(select);</span>
+    }
+    /**
+     * Epic1: All the countries in a continent organised by largest population to smallest.
+     * returns All the countries in a continent organised by largest population to smallest.
+     * Murdo Wallace / Harry Shepherd / Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; getAllCountryPerContinent(String cont) {
+<span class="fc" id="L30">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if(cont != null) {</span>
+<span class="fc" id="L32">            select = &quot;SELECT * FROM country WHERE Continent='&quot; + cont + &quot;'ORDER BY Population DESC&quot;;</span>
+        }
+<span class="fc" id="L34">        return CountryStandard(select);</span>
+    }
+    /**
+     * Epic1: All the countries in a region organised by largest population to smallest.
+     * All the countries in a region organised by largest population to smallest.
+     * Murdo Wallace / Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; getAllCountryPerRegion(String region) {
+<span class="fc" id="L42">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if(region != null) {</span>
+<span class="fc" id="L44">            select = &quot;SELECT * FROM country WHERE Region ='&quot; + region + &quot;'ORDER BY population DESC&quot;;</span>
+        }
+<span class="fc" id="L46">        return CountryStandard(select);</span>
+    }
+
+    /**
+     * Epic 2: The top N populated countries in the world where N is provided by the user.
+     * Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; TopNWorld(int n){
+        //Created by: Cameron Smith
+        //Epic 2, Task #5
+
+<span class="fc" id="L57">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if(n &gt; 0) {</span>
+<span class="fc" id="L59">            select = &quot;SELECT * FROM country ORDER BY population DESC LIMIT &quot; + n;</span>
+        }
+<span class="fc" id="L61">        return CountryStandard(select);</span>
+    }
+
+    /**
+     * Epic 2: The top N populated countries in a continent where N is provided by the user.
+     * Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; TopNContinent(int n, String continent){
+        //Created by: Cameron Smith
+        //Epic 2, Task #6
+<span class="fc" id="L71">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L72" title="2 of 4 branches missed.">        if(n &gt; 0 &amp;&amp; continent != null) {</span>
+<span class="fc" id="L73">            select = &quot;SELECT * FROM country WHERE country.continent='&quot; + continent + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
+        }
+<span class="fc" id="L75">        return CountryStandard(select);</span>
+    }
+
+    /**
+     * Epic 2: The top N populated countries in a region where N is provided by the user.
+     * Cameron Smith
+     */
+    public static ArrayList&lt;Country&gt; TopNRegion (int n, String region){
+        //Created by: Cameron Smith
+        //Epic 2, Task #7
+<span class="fc" id="L85">        String select = &quot;&quot;;</span>
+<span class="pc bpc" id="L86" title="2 of 4 branches missed.">        if(n &gt; 0 &amp;&amp; region != null) {</span>
+<span class="fc" id="L87">            select = &quot;SELECT * FROM country WHERE country.region='&quot; + region + &quot;' ORDER BY population DESC LIMIT &quot; + n;</span>
+        }
+<span class="fc" id="L89">        return CountryStandard(select);</span>
+    }
+
+    /**
+     * Epic 7: The population of people in each country
+     * Harry Shepherd
+     */
+    public static int PopulationOfCountry(String country) {
+<span class="fc" id="L97">        int pop = 0;</span>
+<span class="fc" id="L98">        String select = &quot;SELECT * FROM country WHERE country.name='&quot; + country + &quot;'&quot;;</span>
+<span class="fc" id="L99">        return CountryStandard(select).get(0).getPopulation();</span>
+    }
+
+    /**
+     * Epic 7: The population of people living in cities in each country
+     * Harry Shepherd
+     */
+    public static int PopulationLivingInCities(String country) {
+<span class="fc" id="L107">        int pop = 0;</span>
+<span class="fc" id="L108">        String select = &quot;SELECT * FROM country WHERE country.name='&quot; + country + &quot;'&quot;;</span>
+<span class="fc" id="L109">        Country selected_country = CountryStandard(select).get(0);</span>
+<span class="fc" id="L110">        select = &quot;SELECT SUM(city.Population) FROM city WHERE city.CountryCode='&quot; + selected_country.getCode() + &quot;'&quot;;</span>
+
+        try {
+<span class="fc" id="L113">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L114">            ResultSet rset = stmt.executeQuery(select);</span>
+
+<span class="fc bfc" id="L116" title="All 2 branches covered.">            while (rset.next()) {</span>
+<span class="fc" id="L117">                pop = rset.getInt(1);</span>
+            }
+<span class="nc" id="L119">        } catch (SQLException e) {</span>
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+<span class="nc" id="L121">            throw new RuntimeException(e);</span>
+<span class="fc" id="L122">        }</span>
+<span class="fc" id="L123">        return pop;</span>
+    }
+
+    /**
+     * Epic 7: The population of people not living in cities in each country
+     * Harry Shepherd
+     */
+    public static int PopulationNotLivingInCities(String country) {
+<span class="fc" id="L131">        int pop = PopulationOfCountry(country);</span>
+<span class="fc" id="L132">        int pop_in_city = PopulationLivingInCities(country);</span>
+
+<span class="fc" id="L134">        return pop - pop_in_city;</span>
+    }
+
+    /**
+     * Epic 8: Population of the world
+     * Sam Wilson-Perkins
+     */
+    public static long WorldPop(){
+<span class="nc" id="L142">        long pop=0;</span>
+        //Stores the query to be sent to the database.
+<span class="nc" id="L144">        String select = &quot;SELECT SUM(population) FROM country&quot;;</span>
+        try {
+<span class="nc" id="L146">            Statement stmt = Database.con.createStatement();</span>
+<span class="nc" id="L147">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="nc" id="L148">            rset.next();</span>
+<span class="nc" id="L149">            pop = rset.getLong(1);</span>
+<span class="nc" id="L150">        } catch (Exception e) {</span>
+<span class="nc" id="L151">            throw new RuntimeException(e);</span>
+<span class="nc" id="L152">        }</span>
+
+<span class="nc" id="L154">        return pop;</span>
+    }
+
+
+    public static ArrayList&lt;Country&gt; CountryStandard(String select) {
+        //Stores all countries returned by the input SQL statement.
+<span class="fc" id="L160">        ArrayList&lt;Country&gt; Countries = new ArrayList&lt;Country&gt;();</span>
+
+        try {
+            //Creates an SQL statement.
+<span class="fc" id="L164">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L165">            ResultSet rset = stmt.executeQuery(select);</span>
+            //Executes the SQL statement input by a seperate function.
+
+            //Creates a new country, stores all relevant values.
+<span class="fc bfc" id="L169" title="All 2 branches covered.">            while (rset.next()) {</span>
+<span class="fc" id="L170">                Country country = new Country();</span>
+<span class="fc" id="L171">                country.setCode(rset.getString(&quot;country.Code&quot;));</span>
+<span class="fc" id="L172">                country.setName(rset.getString(&quot;country.Name&quot;));</span>
+<span class="fc" id="L173">                country.setContinent(rset.getString(&quot;country.Continent&quot;));</span>
+<span class="fc" id="L174">                country.setRegion(rset.getString(&quot;country.Region&quot;));</span>
+<span class="fc" id="L175">                country.setPopulation(rset.getInt(&quot;country.Population&quot;));</span>
+<span class="fc" id="L176">                country.setCapital(rset.getInt(&quot;country.Capital&quot;));</span>
+
+<span class="fc" id="L178">                Countries.add(country);</span>
+<span class="fc" id="L179">            }</span>
+<span class="fc" id="L180">        } catch (SQLException e) {</span>
+            //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
+<span class="fc" id="L182">            throw new RuntimeException(e);</span>
+<span class="fc" id="L183">        }</span>
+<span class="fc" id="L184">        return Countries;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
