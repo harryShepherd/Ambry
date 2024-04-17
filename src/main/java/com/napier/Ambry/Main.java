@@ -24,7 +24,7 @@ public class Main {
         }
 
 
-        System.out.println(CountryLanguageReports.speaksChinese());
+        System.out.println(CountryLanguageReports.totalChinesePopulation());
         System.out.println("test");
         // Disconnect from database
         a.disconnect();

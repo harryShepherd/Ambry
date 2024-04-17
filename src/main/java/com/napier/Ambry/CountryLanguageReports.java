@@ -11,10 +11,25 @@ import java.sql.*;
  */
 public class CountryLanguageReports {
 
-    public static ArrayList<CountryLanguage> speaksChinese(){
-        String select = "SELECT SUM(country.Population) FROM countrylanguage JOIN country ON country.Code = countrylanguage.CountryCode WHERE countrylanguage.Language='Chinese'";
-        return CountryLanguageStandard(select);
+
+    public static int totalChinesePopulation() {
+        int pop = 0;
+        String select = "SELECT SUM(country.Population) AS total_population_of_chinese_speakers " +
+                "FROM countrylanguage " +
+                "JOIN country ON country.Code = countrylanguage.CountryCode " +
+                "WHERE countrylanguage.Language='Chinese'";
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database", "username", "password");
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(select)) {
+            if (rs.next()) {
+                pop = rs.getInt("total_population_of_chinese_speakers");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pop;
     }
+
 
     public static ArrayList<CountryLanguage> CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
