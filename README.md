@@ -24,8 +24,10 @@
 | 3  | All countries in a region organized by largest population to smallest | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/0e7acc7c-b9db-40c6-b9db-2a508c706ec3) |
 | 4  | Top N populated countries in the world (N provided by user) | Yes  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/f4d08dd5-223c-4e62-916f-b3d6ece00126) |
 | 5  | Top N populated countries in a continent (N provided by user) | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/e0b294c9-84f2-4a0e-9618-6d14ccb0ce11)|
-| 6  | Top N populated countries in a region (N provided by user) | No  | [Screenshot](link_to_screenshot) |
-| 7  | All cities in the world organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
+| 6  | Top N populated countries in a region (N provided by user) | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/e5c931ae-6440-488d-ae69-3fd1e1cd333e)
+ |
+| 7  | All cities in the world organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/8f240231-ed92-4fdb-8e37-644cb1b2f220)
+ |
 | 8  | All cities in a continent organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 9  | All cities in a region organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 10 | All cities in a country organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
