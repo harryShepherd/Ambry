@@ -20,10 +20,10 @@
 | ID | Requirement Name | Met | Screenshot |
 |----|------------------|-----|------------|
 | 1  | All countries in the world organized by largest population to smallest | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/cb4f52b3-e4df-4247-a0a8-874a506dad97) |
-| 2  | All countries in a continent organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/a97315d0-84ed-4e3e-9220-fd4f96c8b991) |
-| 3  | All countries in a region organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/0e7acc7c-b9db-40c6-b9db-2a508c706ec3) |
-| 4  | Top N populated countries in the world (N provided by user) | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/f4d08dd5-223c-4e62-916f-b3d6ece00126) |
-| 5  | Top N populated countries in a continent (N provided by user) | No  | [Screenshot](link_to_screenshot) |
+| 2  | All countries in a continent organized by largest population to smallest | Yes  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/a97315d0-84ed-4e3e-9220-fd4f96c8b991) |
+| 3  | All countries in a region organized by largest population to smallest | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/0e7acc7c-b9db-40c6-b9db-2a508c706ec3) |
+| 4  | Top N populated countries in the world (N provided by user) | Yes  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/f4d08dd5-223c-4e62-916f-b3d6ece00126) |
+| 5  | Top N populated countries in a continent (N provided by user) | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/e0b294c9-84f2-4a0e-9618-6d14ccb0ce11)|
 | 6  | Top N populated countries in a region (N provided by user) | No  | [Screenshot](link_to_screenshot) |
 | 7  | All cities in the world organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 8  | All cities in a continent organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
