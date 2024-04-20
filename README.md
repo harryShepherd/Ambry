@@ -53,11 +53,8 @@
 | 32 | Number of people speaking Chinese (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/56f81c9e-cd4c-45f2-a58a-68f0cc344824) |
 | 33 | Number of people speaking English (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/2d020975-e7b1-46b0-ba77-efc8f8686119)
  |
-| 34 | Number of people speaking Hindi (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/1fe9c57e-e809-49b1-8f00-b278dabce9e7)
- |
-| 35 | Number of people speaking Spanish (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/7f78ba5b-729b-4336-be3f-6cb67ee0e775)
- |
-| 36 | Number of people speaking Arabic (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/4aa9f565-6e94-482d-b751-d09a685eff14)
- |
+| 34 | Number of people speaking Hindi (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/1fe9c57e-e809-49b1-8f00-b278dabce9e7) |
+| 35 | Number of people speaking Spanish (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/7f78ba5b-729b-4336-be3f-6cb67ee0e775) |
+| 36 | Number of people speaking Arabic (with percentage) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/4aa9f565-6e94-482d-b751-d09a685eff14) |
 
 
