@@ -22,7 +22,8 @@
 | 1  | All countries in the world organized by largest population to smallest | Yes |![image](https://github.com/harryShepherd/Ambry/assets/157709543/cb4f52b3-e4df-4247-a0a8-874a506dad97)
 | 2  | All countries in a continent organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/a97315d0-84ed-4e3e-9220-fd4f96c8b991)
 |
-| 3  | All countries in a region organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
+| 3  | All countries in a region organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/0e7acc7c-b9db-40c6-b9db-2a508c706ec3)
+|
 | 4  | Top N populated countries in the world (N provided by user) | No  | [Screenshot](link_to_screenshot) |
 | 5  | Top N populated countries in a continent (N provided by user) | No  | [Screenshot](link_to_screenshot) |
 | 6  | Top N populated countries in a region (N provided by user) | No  | [Screenshot](link_to_screenshot) |
