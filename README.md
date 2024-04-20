@@ -19,7 +19,8 @@
 
 | ID | Requirement Name | Met | Screenshot |
 |----|------------------|-----|------------|
-| 1  | All countries in the world organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
+| 1  | All countries in the world organized by largest population to smallest | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/
+a76bdfa6-8bad-453e-843d-0a0e79215047)|
 | 2  | All countries in a continent organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 3  | All countries in a region organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 4  | Top N populated countries in the world (N provided by user) | No  | [Screenshot](link_to_screenshot) |
