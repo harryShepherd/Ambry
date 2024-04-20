@@ -19,7 +19,7 @@
 
 | ID | Requirement Name | Met | Screenshot |
 |----|------------------|-----|------------|
-| 1  | All countries in the world organized by largest population to smallest | Yes [![image](https://github.com/harryShepherd/Ambry/assets/157709543/cb4f52b3-e4df-4247-a0a8-874a506dad97)]|
+| 1  | All countries in the world organized by largest population to smallest | Yes |[![image](https://github.com/harryShepherd/Ambry/assets/157709543/cb4f52b3-e4df-4247-a0a8-874a506dad97)]
 | 2  | All countries in a continent organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/a97315d0-84ed-4e3e-9220-fd4f96c8b991)
 |
 | 3  | All countries in a region organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
