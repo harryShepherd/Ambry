@@ -27,8 +27,7 @@
 | 6  | Top N populated countries in a region (N provided by user) | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/e5c931ae-6440-488d-ae69-3fd1e1cd333e) |
 | 7  | All cities in the world organized by largest population to smallest | Yes | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/8f240231-ed92-4fdb-8e37-644cb1b2f220) |
 
-| 8  | All cities in a continent organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/7e962fb8-f5e1-4b5c-827c-f50c41156af6)
- |
+| 8  | All cities in a continent organized by largest population to smallest | No  | ![image](https://github.com/harryShepherd/Ambry/assets/157709543/7e962fb8-f5e1-4b5c-827c-f50c41156af6) |
 | 9  | All cities in a region organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 10 | All cities in a country organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
 | 11 | All cities in a district organized by largest population to smallest | No  | [Screenshot](link_to_screenshot) |
