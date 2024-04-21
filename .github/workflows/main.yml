@@ -57,6 +57,7 @@ jobs:
           directory: ./target/site/jacoco
           flags: Integration Tests # optional
           verbose: true # optional (default = false)
+          slug: harryShepherd/Ambry
   UnitTests:
     name: Unit Tests
     runs-on: ubuntu-20.04
@@ -75,9 +76,10 @@ jobs:
           mvn package -DskipTests
           mvn -Dtest=com.napier.Ambry.AmbryTest test -e
       - name: CodeCov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # now required for public repos
           directory: ./target/site/jacoco
-          flags: Unit Tests # optional
+          flags: Integration Tests # optional
           verbose: true # optional (default = false)
+          slug: harryShepherd/Ambry
