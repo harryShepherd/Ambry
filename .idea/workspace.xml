@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Amended city comments to include more javadoc comments - as requested in code review 3.&#10;Added and altered some javadoc comments in CountryLanguageReports">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +219,8 @@
       <workItem from="1712833583457" duration="148000" />
       <workItem from="1712833737772" duration="3698000" />
       <workItem from="1713354214754" duration="312000" />
+      <workItem from="1713700610867" duration="437000" />
+      <workItem from="1713701224405" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
       <option name="closed" value="true" />
@@ -412,7 +414,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713283183018</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9.">
+      <option name="closed" value="true" />
+      <created>1713697723202</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713697723202</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +462,8 @@
     <MESSAGE value="tidy up" />
     <MESSAGE value="Created and tested all function for epic 8." />
     <MESSAGE value="Amended city comments to include more javadoc comments - as requested in code review 3.&#10;Added and altered some javadoc comments in CountryLanguageReports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Amended city comments to include more javadoc comments - as requested in code review 3.&#10;Added and altered some javadoc comments in CountryLanguageReports" />
+    <MESSAGE value="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
