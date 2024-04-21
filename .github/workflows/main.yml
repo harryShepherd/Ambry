@@ -54,7 +54,7 @@ jobs:
         uses: codecov/codecov-action@v4.3.0
         with:
           fail_ci_if_error: false # optional (default = false)
-          files: ./target/site/jacoco/jacoco.xml # optional
+          directory: ./target/site/jacoco/ # optional
           flags: unittests # optional
           name: codecov-umbrella # optional
           token: ${{ secrets.CODECOV_TOKEN }} # required
@@ -80,7 +80,7 @@ jobs:
         uses: codecov/codecov-action@v4.3.0
         with:
           fail_ci_if_error: false # optional (default = false)
-          files: ./target/site/jacoco/jacoco.xml # optional
+          directory: ./target/site/jacoco/ # optional
           flags: unittests # optional
           name: codecov-umbrella # optional
           token: ${{ secrets.CODECOV_TOKEN }} # required
