@@ -158,7 +158,7 @@ public class CityReports {
     /**
      * Epic 5: All the capital cities in the world organised by largest population to smallest.
      * Cameron Smith
-    */
+     */
     public static ArrayList<City> CapitalWorld(){
         String select = "";
         select = "SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC";
@@ -314,7 +314,7 @@ public class CityReports {
         int pop = 0;
 
         String select = "SELECT SUM(city.Population) FROM city JOIN country ON city.CountryCode = country.Code" +
-        " WHERE country.Continent='" + continent + "'";
+                " WHERE country.Continent='" + continent + "'";
         try {
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
@@ -368,6 +368,10 @@ public class CityReports {
         return CityStandard(select).get(0).getPopulation();
     }
 
+    /**
+     * Cameron Smith
+     * Gets the standard expected information for the city.
+     */
     public static ArrayList<City> CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
         ArrayList<City> Cities = new ArrayList<>();

@@ -1,9 +1,12 @@
 name: Workflow
-on: push
-
+on:
+  push:
+    branches:
+      - master
+      - develop
 jobs:
   build:
-    name: Build Application
+    name: Build Application and Deploy Release
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -19,6 +22,13 @@ jobs:
         run: |
           mvn package -DskipTests
           docker-compose up --abort-on-container-exit # Stop all services on finish
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+            repo_token: "${{secrets.GITHUB_TOKEN}}"
+            prerelease: false
+            automatic_release_tag: "latest"
+            files: |
+              ./target/*.jar
   IntegrationTests:
     name: Integration Tests
     runs-on: ubuntu-20.04
@@ -47,6 +57,7 @@ jobs:
           directory: ./target/site/jacoco
           flags: Integration Tests # optional
           verbose: true # optional (default = false)
+          #slug: harryShepherd/Ambry
   UnitTests:
     name: Unit Tests
     runs-on: ubuntu-20.04
