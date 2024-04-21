@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="attempt to fix codecov">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Turns out we were never ever running integration tests whoopsie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,7 +539,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713738069825</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="attempt to fix codecov">
+      <option name="closed" value="true" />
+      <created>1713738657317</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1713738657317</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Turns out we were never ever running integration tests whoopsie">
+      <option name="closed" value="true" />
+      <created>1713739364705</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1713739364705</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed information returns from function which were irrelevant to final functionality." />
     <MESSAGE value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
     <MESSAGE value="Added WorldCities, no input required." />
     <MESSAGE value="Added RegionCities, some error-checking needed" />
@@ -582,7 +597,8 @@
     <MESSAGE value="Uploading Jar files" />
     <MESSAGE value="Code covereage stuff" />
     <MESSAGE value="attempt to fix codecov" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempt to fix codecov" />
+    <MESSAGE value="Turns out we were never ever running integration tests whoopsie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turns out we were never ever running integration tests whoopsie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
