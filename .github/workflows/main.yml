@@ -56,7 +56,8 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }} # now required for public repos
           directory: ./target/site/jacoco
           flags: Integration Tests # optional
-          verbose: true # optional (default = false)
+          verbose: false # optional (default = false)
+          max_report_age: off
           slug: harryShepherd/Ambry
   UnitTests:
     name: Unit Tests
@@ -81,5 +82,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }} # now required for public repos
           directory: ./target/site/jacoco
           flags: Integration Tests # optional
-          verbose: true # optional (default = false)
+          verbose: false # optional (default = false)
+          max_report_age: off
           slug: harryShepherd/Ambry
