@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Uploading Jar files">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Code covereage stuff">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -446,7 +446,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713733144480</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Code covereage stuff">
+      <option name="closed" value="true" />
+      <created>1713733591482</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1713733591482</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables." />
     <MESSAGE value="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding." />
     <MESSAGE value="Removed information returns from function which were irrelevant to final functionality." />
     <MESSAGE value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
@@ -489,7 +496,8 @@
     <MESSAGE value="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9." />
     <MESSAGE value="Updates to workflow" />
     <MESSAGE value="Uploading Jar files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploading Jar files" />
+    <MESSAGE value="Code covereage stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code covereage stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
