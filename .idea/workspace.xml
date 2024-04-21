@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Created and tested all function for epic 8.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_12_41_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_12_41__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Uploading Jar files">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/City.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/City.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Country.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Country.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguage.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguage.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +31,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/Epic9" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +44,15 @@
     &quot;assignee&quot;: &quot;harryShepherd&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="develop" />
+        <option value="master" />
+        <option value="release" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -111,7 +96,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Epic8&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Code Repository/Software Engineering Methods/Coursework/Ambry&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -201,18 +186,18 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-f644763e9732-24fca987" />
+        <option value="jdk-17.0.10-temurin-17.0.10-f644763e9732-8a10ee56" />
       </set>
     </attachedChunks>
   </component>
@@ -242,6 +227,8 @@
       <workItem from="1712833583457" duration="148000" />
       <workItem from="1712833737772" duration="3698000" />
       <workItem from="1713354214754" duration="312000" />
+      <workItem from="1713700610867" duration="437000" />
+      <workItem from="1713701224405" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="Created City class with getters and setters for int ID, string Name, string CountryCode, String District, and int population. No other variables used beyond temporary variables.">
       <option name="closed" value="true" />
@@ -435,7 +422,31 @@
       <option name="project" value="LOCAL" />
       <updated>1713283183018</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9.">
+      <option name="closed" value="true" />
+      <created>1713697723202</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713697723202</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Updates to workflow">
+      <option name="closed" value="true" />
+      <created>1713733069190</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713733069190</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Uploading Jar files">
+      <option name="closed" value="true" />
+      <created>1713733144480</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1713733144480</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +485,11 @@
     <MESSAGE value="Added epic 6 stuff" />
     <MESSAGE value="tidy up" />
     <MESSAGE value="Created and tested all function for epic 8." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created and tested all function for epic 8." />
+    <MESSAGE value="Amended city comments to include more javadoc comments - as requested in code review 3.&#10;Added and altered some javadoc comments in CountryLanguageReports" />
+    <MESSAGE value="Made changes to main.yml and pom.xml so as to automate deployment. &#10;Methods used are as listed in practical 9." />
+    <MESSAGE value="Updates to workflow" />
+    <MESSAGE value="Uploading Jar files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploading Jar files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
