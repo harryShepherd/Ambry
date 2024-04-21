@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.sql.*;
 
 /*
- * Filename:    CityReports.java
- * Author:      Cameron Smith
- * Last Edited: 14/2/2024 @ 18:00
+ * Filename:    CountryLanguageReports.java
+ * Author:      Murdo Wallace
+ * Last Edited: 21/04/2024 @ 11:52
  * Purpose:     This class exists to store the functions designed to interact primarily/exclusively with the CountryLanguage.java file/type.
  */
 public class CountryLanguageReports {
@@ -16,7 +16,6 @@ public class CountryLanguageReports {
      * Murdo Wallace
      */
     public static int speaksLanguage(String language) {
-        int pop = 0;
         String select = "SELECT SUM(country.Population) " +
                 "FROM countrylanguage " +
                 "JOIN country ON country.Code = countrylanguage.CountryCode " +
@@ -32,9 +31,13 @@ public class CountryLanguageReports {
         }
     }
 
+    /**
+     * Murdo wallace
+     * Stores the relevant standard for a CountryLanguage report.
+     */
     public static ArrayList<CountryLanguage> CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
-        ArrayList<CountryLanguage> CountryLanguages = new ArrayList<CountryLanguage>();
+        ArrayList<CountryLanguage> CountryLanguages = new ArrayList<>();
 
         try {
             //Creates an SQL statement.
