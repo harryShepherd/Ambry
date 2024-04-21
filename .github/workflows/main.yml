@@ -51,14 +51,14 @@ jobs:
           docker rm world
           docker image rm database
       - name: CodeCov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v4.3.0
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # now required for public repos
-          directory: ./target/site/jacoco
-          flags: Integration Tests # optional
-          verbose: false # optional (default = false)
-          max_report_age: off
-          slug: harryShepherd/Ambry
+          fail_ci_if_error: false # optional (default = false)
+          files: ./target/site/jacoco/jacoco.xml # optional
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          token: ${{ secrets.CODECOV_TOKEN }} # required
+          verbose: true # optional (default = false)
   UnitTests:
     name: Unit Tests
     runs-on: ubuntu-20.04
@@ -77,11 +77,11 @@ jobs:
           mvn package -DskipTests
           mvn -Dtest=com.napier.Ambry.AmbryTest test -e
       - name: CodeCov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v4.3.0
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # now required for public repos
-          directory: ./target/site/jacoco
-          flags: Integration Tests # optional
-          verbose: false # optional (default = false)
-          max_report_age: off
-          slug: harryShepherd/Ambry
+          fail_ci_if_error: false # optional (default = false)
+          files: ./target/site/jacoco/jacoco.xml # optional
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          token: ${{ secrets.CODECOV_TOKEN }} # required
+          verbose: true # optional (default = false)
