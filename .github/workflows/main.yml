@@ -57,7 +57,7 @@ jobs:
           directory: ./target/site/jacoco
           flags: Integration Tests # optional
           verbose: true # optional (default = false)
-          slug: harryShepherd/Ambry
+          #slug: harryShepherd/Ambry
   UnitTests:
     name: Unit Tests
     runs-on: ubuntu-20.04
