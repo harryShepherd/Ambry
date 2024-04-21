@@ -4,60 +4,62 @@ import java.util.ArrayList;
 import java.sql.*;
 
 /*
- * Filename:    CityReports.java
- * Author:      Cameron Smith
- * Last Edited: 14/2/2024 @ 18:00
+ * Filename:    CountryLanguageReports.java
+ * Author:      Murdo Wallace
+ * Last Edited: 21/04/2024 @ 11:52
  * Purpose:     This class exists to store the functions designed to interact primarily/exclusively with the CountryLanguage.java file/type.
  */
 <span class="nc" id="L12">public class CountryLanguageReports {</span>
 
-
-    public static int totalChinesePopulation() {
-<span class="nc" id="L16">        int pop = 0;</span>
-<span class="nc" id="L17">        String select = &quot;SELECT SUM(country.Population) AS total_population_of_chinese_speakers &quot; +</span>
+    /**
+     * Epic 9: population of all countries that speak chinese
+     * Murdo Wallace
+     */
+    public static int speaksLanguage(String language) {
+<span class="fc" id="L19">        String select = &quot;SELECT SUM(country.Population) &quot; +</span>
                 &quot;FROM countrylanguage &quot; +
                 &quot;JOIN country ON country.Code = countrylanguage.CountryCode &quot; +
-                &quot;WHERE countrylanguage.Language='Chinese'&quot;;
-<span class="nc" id="L21">        try (Connection conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/your_database&quot;, &quot;username&quot;, &quot;password&quot;);</span>
-<span class="nc" id="L22">             Statement stmt = conn.createStatement();</span>
-<span class="nc" id="L23">             ResultSet rs = stmt.executeQuery(select)) {</span>
-<span class="nc bnc" id="L24" title="All 2 branches missed.">            if (rs.next()) {</span>
-<span class="nc" id="L25">                pop = rs.getInt(&quot;total_population_of_chinese_speakers&quot;);</span>
-            }
-<span class="nc" id="L27">        } catch (SQLException e) {</span>
-<span class="nc" id="L28">            e.printStackTrace();</span>
-<span class="nc" id="L29">        }</span>
-<span class="nc" id="L30">        return pop;</span>
+                &quot;WHERE countrylanguage.Language='&quot; + language + &quot;'&quot;;
+
+        try {
+<span class="fc" id="L25">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L26">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L27">            rset.next();</span>
+<span class="fc" id="L28">            return rset.getInt(1);</span>
+<span class="nc" id="L29">        } catch (Exception e) {</span>
+<span class="nc" id="L30">            throw new RuntimeException(e);</span>
+        }
     }
 
-
+    /**
+     * Murdo wallace
+     * Stores the relevant standard for a CountryLanguage report.
+     */
     public static ArrayList&lt;CountryLanguage&gt; CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
-<span class="nc" id="L36">        ArrayList&lt;CountryLanguage&gt; CountryLanguages = new ArrayList&lt;CountryLanguage&gt;();</span>
-
-
+<span class="nc" id="L40">        ArrayList&lt;CountryLanguage&gt; CountryLanguages = new ArrayList&lt;&gt;();</span>
 
         try {
             //Creates an SQL statement.
-<span class="nc" id="L42">            Statement stmt = Database.con.createStatement();</span>
-<span class="nc" id="L43">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="nc" id="L44">            Statement stmt = Database.con.createStatement();</span>
+<span class="nc" id="L45">            ResultSet rset = stmt.executeQuery(select);</span>
             //Executes the SQL statement input by a seperate function.
 
             //Creates a new country, stores all relevant values.
-<span class="nc bnc" id="L47" title="All 2 branches missed.">            while (rset.next()) {</span>
-<span class="nc" id="L48">                CountryLanguage countryLanguage = new CountryLanguage();</span>
-<span class="nc" id="L49">                countryLanguage.setCountryCode(rset.getString(&quot;countryLanguage.CountryCode&quot;));</span>
-<span class="nc" id="L50">                countryLanguage.setLanguage(rset.getString(&quot;countryLanguage.Language&quot;));</span>
-<span class="nc" id="L51">                countryLanguage.setIsOfficial(rset.getString(&quot;countryLanguage.IsOfficial&quot;));</span>
-<span class="nc" id="L52">                countryLanguage.setPercentage(rset.getFloat(&quot;countryLanguage.Percentage&quot;));</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">            while (rset.next()) {</span>
+<span class="nc" id="L50">                CountryLanguage countryLanguage = new CountryLanguage();</span>
+<span class="nc" id="L51">                countryLanguage.setCountryCode(rset.getString(&quot;countryLanguage.CountryCode&quot;));</span>
+<span class="nc" id="L52">                countryLanguage.setLanguage(rset.getString(&quot;countryLanguage.Language&quot;));</span>
+<span class="nc" id="L53">                countryLanguage.setIsOfficial(rset.getString(&quot;countryLanguage.IsOfficial&quot;));</span>
+<span class="nc" id="L54">                countryLanguage.setPercentage(rset.getFloat(&quot;countryLanguage.Percentage&quot;));</span>
 
 
-<span class="nc" id="L55">                CountryLanguages.add(countryLanguage);</span>
-<span class="nc" id="L56">            }</span>
-<span class="nc" id="L57">        } catch (SQLException e) {</span>
-<span class="nc" id="L58">            throw new RuntimeException(e);</span>
-<span class="nc" id="L59">        }</span>
-<span class="nc" id="L60">        return CountryLanguages;</span>
+<span class="nc" id="L57">                CountryLanguages.add(countryLanguage);</span>
+<span class="nc" id="L58">            }</span>
+<span class="nc" id="L59">        } catch (SQLException e) {</span>
+<span class="nc" id="L60">            throw new RuntimeException(e);</span>
+<span class="nc" id="L61">        }</span>
+<span class="nc" id="L62">        return CountryLanguages;</span>
     }
 
 }

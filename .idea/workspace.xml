@@ -4,9 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Code covereage stuff">
+    <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="attempt to fix codecov">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/City.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/City.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/City.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/City.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CityReports.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryLanguageReports.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/CountryReports.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713733591482</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="attempt to fix codecov">
+      <option name="closed" value="true" />
+      <created>1713734148635</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1713734148635</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Country class to return top N countries based on population. Need to change N to be input from the user and Population does not need to be returned, but is being returned for simplicity of understanding." />
     <MESSAGE value="Removed information returns from function which were irrelevant to final functionality." />
     <MESSAGE value="Altered functions to take an input of N/of continent. Added TopNRegion taking input of N and region." />
     <MESSAGE value="Added WorldCities, no input required." />
@@ -497,7 +525,8 @@
     <MESSAGE value="Updates to workflow" />
     <MESSAGE value="Uploading Jar files" />
     <MESSAGE value="Code covereage stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code covereage stuff" />
+    <MESSAGE value="attempt to fix codecov" />
+    <option name="LAST_COMMIT_MESSAGE" value="attempt to fix codecov" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
