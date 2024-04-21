@@ -158,7 +158,7 @@ import java.sql.*;
     /**
      * Epic 5: All the capital cities in the world organised by largest population to smallest.
      * Cameron Smith
-    */
+     */
     public static ArrayList&lt;City&gt; CapitalWorld(){
 <span class="fc" id="L163">        String select = &quot;&quot;;</span>
 <span class="fc" id="L164">        select = &quot;SELECT * FROM city JOIN country ON city.CountryCode = country.Code WHERE city.id = country.capital ORDER BY city.population DESC&quot;;</span>
@@ -314,7 +314,7 @@ import java.sql.*;
 <span class="fc" id="L314">        int pop = 0;</span>
 
 <span class="fc" id="L316">        String select = &quot;SELECT SUM(city.Population) FROM city JOIN country ON city.CountryCode = country.Code&quot; +</span>
-        &quot; WHERE country.Continent='&quot; + continent + &quot;'&quot;;
+                &quot; WHERE country.Continent='&quot; + continent + &quot;'&quot;;
         try {
 <span class="fc" id="L319">            Statement stmt = Database.con.createStatement();</span>
 <span class="fc" id="L320">            ResultSet rset = stmt.executeQuery(select);</span>
@@ -342,20 +342,20 @@ import java.sql.*;
      * Sam Wilson-Perkins
      */
     public static int DistrictPop (String district){
-<span class="nc" id="L345">        int pop = 0;</span>
+<span class="fc" id="L345">        int pop = 0;</span>
         //Stores the query to be sent to the database.
-<span class="nc" id="L347">        String select = &quot;SELECT SUM(Population) FROM city WHERE district = '&quot; + district + &quot;' &quot;;</span>
+<span class="fc" id="L347">        String select = &quot;SELECT SUM(Population) FROM city WHERE district = '&quot; + district + &quot;' &quot;;</span>
 
         try {
-<span class="nc" id="L350">            Statement stmt = Database.con.createStatement();</span>
-<span class="nc" id="L351">            ResultSet rset = stmt.executeQuery(select);</span>
-<span class="nc" id="L352">            rset.next();</span>
-<span class="nc" id="L353">            pop = rset.getInt(1);</span>
+<span class="fc" id="L350">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L351">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L352">            rset.next();</span>
+<span class="fc" id="L353">            pop = rset.getInt(1);</span>
 <span class="nc" id="L354">        } catch (Exception e) {</span>
 <span class="nc" id="L355">            throw new RuntimeException(e);</span>
-<span class="nc" id="L356">        }</span>
+<span class="fc" id="L356">        }</span>
 
-<span class="nc" id="L358">        return pop;</span>
+<span class="fc" id="L358">        return pop;</span>
     }
     /**
      * Epic 8: Population of a city
@@ -363,38 +363,42 @@ import java.sql.*;
      */
     public static int CityPop (String city){
         //Stores the query to be sent to the database.
-<span class="nc" id="L366">        String select = &quot;SELECT * FROM city WHERE Name = '&quot; + city + &quot;' &quot;;</span>
+<span class="fc" id="L366">        String select = &quot;SELECT * FROM city WHERE Name = '&quot; + city + &quot;' &quot;;</span>
 
-<span class="nc" id="L368">        return CityStandard(select).get(0).getPopulation();</span>
+<span class="fc" id="L368">        return CityStandard(select).get(0).getPopulation();</span>
     }
 
+    /**
+     * Cameron Smith
+     * Gets the standard expected information for the city.
+     */
     public static ArrayList&lt;City&gt; CityStandard(String select){
         //Stores the Cities relevant to the input SQL statement
-<span class="fc" id="L373">        ArrayList&lt;City&gt; Cities = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L377">        ArrayList&lt;City&gt; Cities = new ArrayList&lt;&gt;();</span>
 
         try {
             //Creates the statement as an SQL statement.
-<span class="fc" id="L377">            Statement stmt = Database.con.createStatement();</span>
-<span class="fc" id="L378">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L381">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L382">            ResultSet rset = stmt.executeQuery(select);</span>
             //Executes the query to return all values to be stored.
 
             //Creates a new city and stores the relevant values before adding it to the ArrayList.
-<span class="fc bfc" id="L382" title="All 2 branches covered.">            while (rset.next()) {</span>
-<span class="fc" id="L383">                City city = new City();</span>
-<span class="fc" id="L384">                city.setName(rset.getString(&quot;city.Name&quot;));</span>
-<span class="fc" id="L385">                city.setCountryCode(rset.getString(&quot;city.CountryCode&quot;));</span>
+<span class="fc bfc" id="L386" title="All 2 branches covered.">            while (rset.next()) {</span>
+<span class="fc" id="L387">                City city = new City();</span>
+<span class="fc" id="L388">                city.setName(rset.getString(&quot;city.Name&quot;));</span>
+<span class="fc" id="L389">                city.setCountryCode(rset.getString(&quot;city.CountryCode&quot;));</span>
                 //Need to store Country but can only access via CountryCode
-<span class="fc" id="L387">                city.setDistrict(rset.getString(&quot;city.District&quot;));</span>
-<span class="fc" id="L388">                city.setPopulation(rset.getInt(&quot;city.Population&quot;));</span>
+<span class="fc" id="L391">                city.setDistrict(rset.getString(&quot;city.District&quot;));</span>
+<span class="fc" id="L392">                city.setPopulation(rset.getInt(&quot;city.Population&quot;));</span>
 
-<span class="fc" id="L390">                Cities.add(city);</span>
-<span class="fc" id="L391">            }</span>
-<span class="fc" id="L392">        } catch (SQLException e) {</span>
+<span class="fc" id="L394">                Cities.add(city);</span>
+<span class="fc" id="L395">            }</span>
+<span class="fc" id="L396">        } catch (SQLException e) {</span>
             //Bypasses problems created by IntelliJ not thinking it's been integrated with SQL.
-<span class="fc" id="L394">            throw new RuntimeException(e);</span>
-<span class="fc" id="L395">        }</span>
+<span class="fc" id="L398">            throw new RuntimeException(e);</span>
+<span class="fc" id="L399">        }</span>
 
-<span class="fc" id="L397">        return Cities;</span>
+<span class="fc" id="L401">        return Cities;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

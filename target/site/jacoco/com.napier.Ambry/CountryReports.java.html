@@ -139,19 +139,19 @@ import java.sql.*;
      * Sam Wilson-Perkins
      */
     public static long WorldPop(){
-<span class="nc" id="L142">        long pop=0;</span>
+<span class="fc" id="L142">        long pop=0;</span>
         //Stores the query to be sent to the database.
-<span class="nc" id="L144">        String select = &quot;SELECT SUM(population) FROM country&quot;;</span>
+<span class="fc" id="L144">        String select = &quot;SELECT SUM(population) FROM country&quot;;</span>
         try {
-<span class="nc" id="L146">            Statement stmt = Database.con.createStatement();</span>
-<span class="nc" id="L147">            ResultSet rset = stmt.executeQuery(select);</span>
-<span class="nc" id="L148">            rset.next();</span>
-<span class="nc" id="L149">            pop = rset.getLong(1);</span>
+<span class="fc" id="L146">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L147">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L148">            rset.next();</span>
+<span class="fc" id="L149">            pop = rset.getLong(1);</span>
 <span class="nc" id="L150">        } catch (Exception e) {</span>
 <span class="nc" id="L151">            throw new RuntimeException(e);</span>
-<span class="nc" id="L152">        }</span>
+<span class="fc" id="L152">        }</span>
 
-<span class="nc" id="L154">        return pop;</span>
+<span class="fc" id="L154">        return pop;</span>
     }
 
 
