@@ -43,7 +43,7 @@ public class CountryLanguageReports {
             //Creates an SQL statement.
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
-            //Executes the SQL statement input by a seperate function.
+            //Executes the SQL statement input by a separate function.
 
             //Creates a new country, stores all relevant values.
             while (rset.next()) {
