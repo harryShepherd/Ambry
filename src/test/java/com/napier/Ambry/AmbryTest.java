@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AmbryTest {
     @BeforeAll
-    static void init(){
+    static void init() {
         // Runs on start
     }
 

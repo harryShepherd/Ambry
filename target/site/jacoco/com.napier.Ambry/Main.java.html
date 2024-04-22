@@ -8,213 +8,213 @@ import static com.napier.Ambry.CountryReports.*;
 import static com.napier.Ambry.CountryLanguageReports.*;
 import static com.napier.Ambry.CityReports.*;
 
-<span class="fc" id="L11">public class Main {</span>
+<span class="nc" id="L11">public class Main {</span>
     public static void main(String[] args) {
         // Create new Application Instance
-<span class="nc" id="L14">        Database a = new Database();</span>
+<span class="fc" id="L14">        Database a = new Database();</span>
 
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        if(args.length &lt; 1) {</span>
+<span class="pc bpc" id="L16" title="1 of 2 branches missed.">        if(args.length &lt; 1) {</span>
             // Debugging
-<span class="nc" id="L18">            a.connect(&quot;localhost:33060&quot;, 30000);</span>
+<span class="fc" id="L18">            a.connect(&quot;localhost:33060&quot;, 30000);</span>
 
-            // initializing some variables we'll use later
-            ArrayList&lt;Country&gt; countries;
-            ArrayList&lt;City&gt; cities;
-            int pop;
-
-<span class="nc" id="L25">            System.out.println(&quot;\nAll the countries in the world organised by largest population to smallest.&quot;);</span>
-<span class="nc" id="L26">            countries = getAllCountryLargeToSmall();</span>
-<span class="nc bnc" id="L27" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L28">                System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L31">            System.out.println(&quot;\nAll the countries in a continent organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L32">            countries = getAllCountryPerContinent(&quot;Europe&quot;);</span>
-<span class="nc bnc" id="L33" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L34">                System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L37">            System.out.println(&quot;\nAll the countries in a region organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L38">            countries = getAllCountryPerRegion(&quot;Western Europe&quot;);</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L40">                System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L43">            System.out.println(&quot;\nThe top N populated countries in the world where N is provided by the user&quot;);</span>
-<span class="nc" id="L44">            countries = TopNWorld(5);</span>
-<span class="nc bnc" id="L45" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L46">                System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L49">            System.out.println(&quot;\nThe top N populated countries in a continent where N is provided by the user&quot;);</span>
-<span class="nc" id="L50">            countries = TopNContinent(5, &quot;Africa&quot;);</span>
-<span class="nc bnc" id="L51" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L52">                System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L55">            System.out.println(&quot;\nThe top N populated countries in a region where N is provided by the user&quot;);</span>
-<span class="nc" id="L56">            countries = TopNRegion(5, &quot;Middle East&quot;);</span>
-<span class="nc bnc" id="L57" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L58">                System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L61">            System.out.println(&quot;\nAll cities in the world organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L62">            cities = WorldCities();</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L64">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L67">            System.out.println(&quot;\nAll cities in a region organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L68">            cities = RegionCities(&quot;Middle East&quot;);</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L70">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L73">            System.out.println(&quot;\nAll cities in a country organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L74">            cities = CountryCities(&quot;United Kingdom&quot;);</span>
-<span class="nc bnc" id="L75" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L76">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L79">            System.out.println(&quot;\nAll cities in a district organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L80">            cities = DistrictCities(&quot;England&quot;);</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L82">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L85">            System.out.println(&quot;\nAll the cities in a continent organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L86">            cities = ContinentCity(&quot;North America&quot;);</span>
-<span class="nc bnc" id="L87" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L88">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L91">            System.out.println(&quot;\nTop N populated cities in a world, with N provided by user&quot;);</span>
-<span class="nc" id="L92">            cities = TopCitiesWorld(5);</span>
-<span class="nc bnc" id="L93" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L94">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L97">            System.out.println(&quot;\nTop N populated cities in a continent, with N provided by user&quot;);</span>
-<span class="nc" id="L98">            cities = TopCitiesContinent(&quot;Asia&quot;,5);</span>
-<span class="nc bnc" id="L99" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L100">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L103">            System.out.println(&quot;\nTop N populated cities in a region, with N provided by user&quot;);</span>
-<span class="nc" id="L104">            cities = TopCitiesRegion(&quot;South America&quot;,5);</span>
-<span class="nc bnc" id="L105" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L106">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L109">            System.out.println(&quot;\nTop N populated cities in a country, with N provided by user&quot;);</span>
-<span class="nc" id="L110">            cities = TopCitiesCountry(&quot;France&quot;,5);</span>
-<span class="nc bnc" id="L111" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L112">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L115">            System.out.println(&quot;\nTop N populated cities in a district, with N provided by user&quot;);</span>
-<span class="nc" id="L116">            cities = TopCitiesDistrict(&quot;England&quot;,5);</span>
-<span class="nc bnc" id="L117" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L118">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L121">            System.out.println(&quot;\nAll the capital cities in the world organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L122">            cities = CapitalWorld();</span>
-<span class="nc bnc" id="L123" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L124">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L127">            System.out.println(&quot;\nAll the capital cities in a continent organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L128">            cities = CapitalContinent(&quot;Africa&quot;);</span>
-<span class="nc bnc" id="L129" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L130">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L133">            System.out.println(&quot;\nAll the capital cities in a region organised by largest population to smallest&quot;);</span>
-<span class="nc" id="L134">            cities = CapitalRegion(&quot;North America&quot;);</span>
-<span class="nc bnc" id="L135" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L136">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L139">            System.out.println(&quot;\nThe top N populated capital cities in a continent where N is provided by the user&quot;);</span>
-<span class="nc" id="L140">            cities = ContinentCapitals(&quot;Europe&quot;, 5);</span>
-<span class="nc bnc" id="L141" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L142">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L145">            System.out.println(&quot;\nThe top N populated capital cities in the world where N is provided by the user&quot;);</span>
-<span class="nc" id="L146">            cities = WorldCapitals(5);</span>
-<span class="nc bnc" id="L147" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L148">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L151">            System.out.println(&quot;\nThe top N populated capital cities in a region where N is provided by the user&quot;);</span>
-<span class="nc" id="L152">            cities = RegionCapitals(&quot;Caribbean&quot;, 5);</span>
-<span class="nc bnc" id="L153" title="All 2 branches missed.">            for(int i = 0; i &lt; 5; i++) {</span>
-<span class="nc" id="L154">                System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
-            }
-
-<span class="nc" id="L157">            System.out.println(&quot;\nDisplay the population of people in each region&quot;);</span>
-<span class="nc" id="L158">            pop = PopulationInRegion(&quot;Caribbean&quot;);</span>
-<span class="nc" id="L159">            System.out.println(&quot;Population of the Caribbean: &quot; + pop);</span>
-
-<span class="nc" id="L161">            System.out.println(&quot;\nDisplay the population of people living in cities in each region&quot;);</span>
-<span class="nc" id="L162">            pop = PopulationLivingInCitiesRegion(&quot;Caribbean&quot;);</span>
-<span class="nc" id="L163">            System.out.println(&quot;Population of the Caribbean living in cities: &quot; + pop);</span>
-
-<span class="nc" id="L165">            System.out.println(&quot;\nDisplay the population of people not living in cities in each region&quot;);</span>
-<span class="nc" id="L166">            pop = PopulationNotLivingInCitiesRegion(&quot;Caribbean&quot;);</span>
-<span class="nc" id="L167">            System.out.println(&quot;Population of the Caribbean not living in cities: &quot; + pop);</span>
-
-
-<span class="nc" id="L170">            System.out.println(&quot;\nDisplay the population of people in each continent&quot;);</span>
-<span class="nc" id="L171">            pop = PopulationInContinent(&quot;Oceania&quot;);</span>
-<span class="nc" id="L172">            System.out.println(&quot;Population of Oceania: &quot; + pop);</span>
-
-<span class="nc" id="L174">            System.out.println(&quot;\nDisplay the population of people living in cities in each continent&quot;);</span>
-<span class="nc" id="L175">            pop = PopulationLivingInCitiesContinent(&quot;Oceania&quot;);</span>
-<span class="nc" id="L176">            System.out.println(&quot;Population of Oceania living in cities: &quot; + pop);</span>
-
-<span class="nc" id="L178">            System.out.println(&quot;\nDisplay the population of people not living in cities in each continent&quot;);</span>
-<span class="nc" id="L179">            pop = PopulationNotLivingInCitiesContinent(&quot;Oceania&quot;);</span>
-<span class="nc" id="L180">            System.out.println(&quot;Population of Oceania not living in cities: &quot; + pop);</span>
-
-<span class="nc" id="L182">            System.out.println(&quot;\nThe population of people in each country&quot;);</span>
-<span class="nc" id="L183">            pop = PopulationOfCountry(&quot;Australia&quot;);</span>
-<span class="nc" id="L184">            System.out.println(&quot;Population of Australia : &quot; + pop);</span>
-
-<span class="nc" id="L186">            System.out.println(&quot;\nThe population of people living in cities in each country&quot;);</span>
-<span class="nc" id="L187">            pop = PopulationLivingInCities(&quot;Australia&quot;);</span>
-<span class="nc" id="L188">            System.out.println(&quot;Population of Australia living in cities : &quot; + pop);</span>
-
-<span class="nc" id="L190">            System.out.println(&quot;\nThe population of people in each country&quot;);</span>
-<span class="nc" id="L191">            pop = PopulationNotLivingInCities(&quot;Australia&quot;);</span>
-<span class="nc" id="L192">            System.out.println(&quot;Population of Australia not living in cities : &quot; + pop);</span>
-
-<span class="nc" id="L194">            System.out.println(&quot;\nThe population of the world&quot;);</span>
-<span class="nc" id="L195">            long long_pop = WorldPop();</span>
-<span class="nc" id="L196">            System.out.println(&quot;Population of the world : &quot; + long_pop);</span>
-
-<span class="nc" id="L198">            System.out.println(&quot;\nThe population of a district&quot;);</span>
-<span class="nc" id="L199">            pop = DistrictPop(&quot;England&quot;);</span>
-<span class="nc" id="L200">            System.out.println(&quot;Population of England : &quot; + pop);</span>
-
-<span class="nc" id="L202">            System.out.println(&quot;\nThe population of a city&quot;);</span>
-<span class="nc" id="L203">            pop = CityPop(&quot;London&quot;);</span>
-<span class="nc" id="L204">            System.out.println(&quot;Population of London : &quot; + pop);</span>
-
-<span class="nc" id="L206">            System.out.println(&quot;\nThe population of people that speak a language&quot;);</span>
-<span class="nc" id="L207">            pop = speaksLanguage(&quot;Chinese&quot;);</span>
-<span class="nc" id="L208">            System.out.println(&quot;Population of Chinese speakers : &quot; + pop);</span>
-
-<span class="nc" id="L210">        } else {</span>
+        } else {
             // Live
-<span class="nc" id="L212">            a.connect(&quot;db:3306&quot;, 30000);</span>
+<span class="nc" id="L22">            a.connect(&quot;db:3306&quot;, 30000);</span>
         }
 
+        // initializing some variables we'll use later
+        ArrayList&lt;Country&gt; countries;
+        ArrayList&lt;City&gt; cities;
+        int pop;
+
+<span class="fc" id="L30">        System.out.println(&quot;\nAll the countries in the world organised by largest population to smallest.&quot;);</span>
+<span class="fc" id="L31">        countries = getAllCountryLargeToSmall();</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L33">            System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L36">        System.out.println(&quot;\nAll the countries in a continent organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L37">        countries = getAllCountryPerContinent(&quot;Europe&quot;);</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L39">            System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L42">        System.out.println(&quot;\nAll the countries in a region organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L43">        countries = getAllCountryPerRegion(&quot;Western Europe&quot;);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L45">            System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L48">        System.out.println(&quot;\nThe top N populated countries in the world where N is provided by the user&quot;);</span>
+<span class="fc" id="L49">        countries = TopNWorld(5);</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L51">            System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L54">        System.out.println(&quot;\nThe top N populated countries in a continent where N is provided by the user&quot;);</span>
+<span class="fc" id="L55">        countries = TopNContinent(5, &quot;Africa&quot;);</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L57">            System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L60">        System.out.println(&quot;\nThe top N populated countries in a region where N is provided by the user&quot;);</span>
+<span class="fc" id="L61">        countries = TopNRegion(5, &quot;Middle East&quot;);</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L63">            System.out.println(countries.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L66">        System.out.println(&quot;\nAll cities in the world organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L67">        cities = WorldCities();</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L69">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L72">        System.out.println(&quot;\nAll cities in a region organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L73">        cities = RegionCities(&quot;Middle East&quot;);</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L75">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L78">        System.out.println(&quot;\nAll cities in a country organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L79">        cities = CountryCities(&quot;United Kingdom&quot;);</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L81">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L84">        System.out.println(&quot;\nAll cities in a district organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L85">        cities = DistrictCities(&quot;England&quot;);</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L87">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L90">        System.out.println(&quot;\nAll the cities in a continent organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L91">        cities = ContinentCity(&quot;North America&quot;);</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L93">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L96">        System.out.println(&quot;\nTop N populated cities in a world, with N provided by user&quot;);</span>
+<span class="fc" id="L97">        cities = TopCitiesWorld(5);</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L99">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L102">        System.out.println(&quot;\nTop N populated cities in a continent, with N provided by user&quot;);</span>
+<span class="fc" id="L103">        cities = TopCitiesContinent(&quot;Asia&quot;,5);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L105">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L108">        System.out.println(&quot;\nTop N populated cities in a region, with N provided by user&quot;);</span>
+<span class="fc" id="L109">        cities = TopCitiesRegion(&quot;South America&quot;,5);</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L111">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L114">        System.out.println(&quot;\nTop N populated cities in a country, with N provided by user&quot;);</span>
+<span class="fc" id="L115">        cities = TopCitiesCountry(&quot;France&quot;,5);</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L117">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L120">        System.out.println(&quot;\nTop N populated cities in a district, with N provided by user&quot;);</span>
+<span class="fc" id="L121">        cities = TopCitiesDistrict(&quot;England&quot;,5);</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L123">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L126">        System.out.println(&quot;\nAll the capital cities in the world organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L127">        cities = CapitalWorld();</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L129">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L132">        System.out.println(&quot;\nAll the capital cities in a continent organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L133">        cities = CapitalContinent(&quot;Africa&quot;);</span>
+<span class="fc bfc" id="L134" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L135">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L138">        System.out.println(&quot;\nAll the capital cities in a region organised by largest population to smallest&quot;);</span>
+<span class="fc" id="L139">        cities = CapitalRegion(&quot;North America&quot;);</span>
+<span class="fc bfc" id="L140" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L141">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L144">        System.out.println(&quot;\nThe top N populated capital cities in a continent where N is provided by the user&quot;);</span>
+<span class="fc" id="L145">        cities = ContinentCapitals(&quot;Europe&quot;, 5);</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L147">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L150">        System.out.println(&quot;\nThe top N populated capital cities in the world where N is provided by the user&quot;);</span>
+<span class="fc" id="L151">        cities = WorldCapitals(5);</span>
+<span class="fc bfc" id="L152" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L153">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L156">        System.out.println(&quot;\nThe top N populated capital cities in a region where N is provided by the user&quot;);</span>
+<span class="fc" id="L157">        cities = RegionCapitals(&quot;Caribbean&quot;, 5);</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        for(int i = 0; i &lt; 5; i++) {</span>
+<span class="fc" id="L159">            System.out.println(cities.get(i).getName() + &quot;'s population: &quot; + countries.get(i).getPopulation());</span>
+        }
+
+<span class="fc" id="L162">        System.out.println(&quot;\nDisplay the population of people in each region&quot;);</span>
+<span class="fc" id="L163">        pop = PopulationInRegion(&quot;Caribbean&quot;);</span>
+<span class="fc" id="L164">        System.out.println(&quot;Population of the Caribbean: &quot; + pop);</span>
+
+<span class="fc" id="L166">        System.out.println(&quot;\nDisplay the population of people living in cities in each region&quot;);</span>
+<span class="fc" id="L167">        pop = PopulationLivingInCitiesRegion(&quot;Caribbean&quot;);</span>
+<span class="fc" id="L168">        System.out.println(&quot;Population of the Caribbean living in cities: &quot; + pop);</span>
+
+<span class="fc" id="L170">        System.out.println(&quot;\nDisplay the population of people not living in cities in each region&quot;);</span>
+<span class="fc" id="L171">        pop = PopulationNotLivingInCitiesRegion(&quot;Caribbean&quot;);</span>
+<span class="fc" id="L172">        System.out.println(&quot;Population of the Caribbean not living in cities: &quot; + pop);</span>
+
+
+<span class="fc" id="L175">        System.out.println(&quot;\nDisplay the population of people in each continent&quot;);</span>
+<span class="fc" id="L176">        pop = PopulationInContinent(&quot;Oceania&quot;);</span>
+<span class="fc" id="L177">        System.out.println(&quot;Population of Oceania: &quot; + pop);</span>
+
+<span class="fc" id="L179">        System.out.println(&quot;\nDisplay the population of people living in cities in each continent&quot;);</span>
+<span class="fc" id="L180">        pop = PopulationLivingInCitiesContinent(&quot;Oceania&quot;);</span>
+<span class="fc" id="L181">        System.out.println(&quot;Population of Oceania living in cities: &quot; + pop);</span>
+
+<span class="fc" id="L183">        System.out.println(&quot;\nDisplay the population of people not living in cities in each continent&quot;);</span>
+<span class="fc" id="L184">        pop = PopulationNotLivingInCitiesContinent(&quot;Oceania&quot;);</span>
+<span class="fc" id="L185">        System.out.println(&quot;Population of Oceania not living in cities: &quot; + pop);</span>
+
+<span class="fc" id="L187">        System.out.println(&quot;\nThe population of people in each country&quot;);</span>
+<span class="fc" id="L188">        pop = PopulationOfCountry(&quot;Australia&quot;);</span>
+<span class="fc" id="L189">        System.out.println(&quot;Population of Australia : &quot; + pop);</span>
+
+<span class="fc" id="L191">        System.out.println(&quot;\nThe population of people living in cities in each country&quot;);</span>
+<span class="fc" id="L192">        pop = PopulationLivingInCities(&quot;Australia&quot;);</span>
+<span class="fc" id="L193">        System.out.println(&quot;Population of Australia living in cities : &quot; + pop);</span>
+
+<span class="fc" id="L195">        System.out.println(&quot;\nThe population of people in each country&quot;);</span>
+<span class="fc" id="L196">        pop = PopulationNotLivingInCities(&quot;Australia&quot;);</span>
+<span class="fc" id="L197">        System.out.println(&quot;Population of Australia not living in cities : &quot; + pop);</span>
+
+<span class="fc" id="L199">        System.out.println(&quot;\nThe population of the world&quot;);</span>
+<span class="fc" id="L200">        long long_pop = WorldPop();</span>
+<span class="fc" id="L201">        System.out.println(&quot;Population of the world : &quot; + long_pop);</span>
+
+<span class="fc" id="L203">        System.out.println(&quot;\nThe population of a district&quot;);</span>
+<span class="fc" id="L204">        pop = DistrictPop(&quot;England&quot;);</span>
+<span class="fc" id="L205">        System.out.println(&quot;Population of England : &quot; + pop);</span>
+
+<span class="fc" id="L207">        System.out.println(&quot;\nThe population of a city&quot;);</span>
+<span class="fc" id="L208">        pop = CityPop(&quot;London&quot;);</span>
+<span class="fc" id="L209">        System.out.println(&quot;Population of London : &quot; + pop);</span>
+
+<span class="fc" id="L211">        System.out.println(&quot;\nThe population of people that speak a language&quot;);</span>
+<span class="fc" id="L212">        pop = speaksLanguage(&quot;Chinese&quot;);</span>
+<span class="fc" id="L213">        System.out.println(&quot;Population of Chinese speakers : &quot; + pop);</span>
+
         // Disconnect from database
-<span class="nc" id="L216">        a.disconnect();</span>
-<span class="nc" id="L217">    }</span>
+<span class="fc" id="L216">        a.disconnect();</span>
+<span class="fc" id="L217">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

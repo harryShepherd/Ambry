@@ -41,12 +41,12 @@ import java.util.ArrayList;
                         &quot;root&quot;, &quot;example&quot;);
 <span class="fc" id="L42">                System.out.println(&quot;Successfully connected&quot;);</span>
 <span class="fc" id="L43">                break;</span>
-<span class="nc" id="L44">            } catch (SQLException sqle) {</span>
-<span class="nc" id="L45">                System.out.println(&quot;Failed to connect to database attempt &quot; +                                  Integer.toString(i));</span>
-<span class="nc" id="L46">                System.out.println(sqle.getMessage());</span>
+<span class="fc" id="L44">            } catch (SQLException sqle) {</span>
+<span class="fc" id="L45">                System.out.println(&quot;Failed to connect to database attempt &quot; +                                  Integer.toString(i));</span>
+<span class="fc" id="L46">                System.out.println(sqle.getMessage());</span>
 <span class="nc" id="L47">            } catch (InterruptedException ie) {</span>
 <span class="nc" id="L48">                System.out.println(&quot;Thread interrupted? Should not happen.&quot;);</span>
-<span class="nc" id="L49">            }</span>
+<span class="fc" id="L49">            }</span>
         }
 <span class="fc" id="L51">    }</span>
 
@@ -55,18 +55,18 @@ import java.util.ArrayList;
      */
     public void disconnect()
     {
-<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (con != null)</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (con != null)</span>
         {
             try
             {
                 // Close connection
-<span class="nc" id="L63">                con.close();</span>
+<span class="fc" id="L63">                con.close();</span>
             }
 <span class="nc" id="L65">            catch (Exception e)</span>
             {
 <span class="nc" id="L67">                System.out.println(&quot;Error closing connection to database&quot;);</span>
-<span class="nc" id="L68">            }</span>
+<span class="fc" id="L68">            }</span>
         }
-<span class="nc" id="L70">    }</span>
+<span class="fc" id="L70">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
