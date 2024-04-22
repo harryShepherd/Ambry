@@ -21,6 +21,13 @@ public class AmbryIntegrationTest {
     }
 
     @Test
+    void mainTest() {
+        String arr[] = { };
+        // this test is only supposed to be run in github actions
+        assertDoesNotThrow(() -> Main.main(arr));
+    }
+
+    @Test
     void testCountryStandard() {
         // Test to see if an error is thrown given a blank input
         assertThrows(RuntimeException.class, () -> CountryReports.CountryStandard(""));

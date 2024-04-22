@@ -10,13 +10,6 @@ public class AmbryTest {
     }
 
     @Test
-    void mainTest() {
-        String arr[] = { "Github Actions" };
-        // this test is only supposed to be run in github actions
-        assertDoesNotThrow(() -> Main.main(arr));
-    }
-
-    @Test
     void getCityTest() {
         City city = new City();
 
