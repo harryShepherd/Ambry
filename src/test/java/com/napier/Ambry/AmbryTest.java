@@ -78,12 +78,6 @@ public class AmbryTest {
         assertEquals(5.3F, cl.getPercentage());
     }
 
-
-    @Test
-    void testMain(){
-        Main m = new Main();
-    }
-
     /*
     Harry
         I don't think we really need these here, but not entirely sure just yet,
