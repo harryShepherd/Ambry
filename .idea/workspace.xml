@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="Turns out we were never ever running integration tests whoopsie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryLanguageReports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/CountryLanguageReports.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/napier/Ambry/AmbryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/napier/Ambry/AmbryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ambry-1.0.0.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ambry-1.0.0.0-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ambry-1.0.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ambry-1.0.0.0.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +116,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.napier.Ambry.Main" />
       <module name="Ambry" />
@@ -192,10 +195,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
