@@ -35,6 +35,8 @@ public class CountryLanguageReports {
      * Murdo wallace
      * Stores the relevant standard for a CountryLanguage report.
      */
+
+    /*
     public static ArrayList<CountryLanguage> CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<CountryLanguage> CountryLanguages = new ArrayList<>();
@@ -43,7 +45,7 @@ public class CountryLanguageReports {
             //Creates an SQL statement.
             Statement stmt = Database.con.createStatement();
             ResultSet rset = stmt.executeQuery(select);
-            //Executes the SQL statement input by a seperate function.
+            //Executes the SQL statement input by a separate function.
 
             //Creates a new country, stores all relevant values.
             while (rset.next()) {
@@ -61,5 +63,6 @@ public class CountryLanguageReports {
         }
         return CountryLanguages;
     }
+    */
 
 }

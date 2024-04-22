@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CountryLanguageReports.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">CountryLanguageReports.java</span></div><h1>CountryLanguageReports.java</h1><pre class="source lang-java linenums">package com.napier.Ambry;
+
+import java.util.ArrayList;
+import java.sql.*;
+
+/*
+ * Filename:    CountryLanguageReports.java
+ * Author:      Murdo Wallace
+ * Last Edited: 21/04/2024 @ 11:52
+ * Purpose:     This class exists to store the functions designed to interact primarily/exclusively with the CountryLanguage.java file/type.
+ */
+<span class="nc" id="L12">public class CountryLanguageReports {</span>
+
+    /**
+     * Epic 9: population of all countries that speak chinese
+     * Murdo Wallace
+     */
+    public static int speaksLanguage(String language) {
+<span class="fc" id="L19">        String select = &quot;SELECT SUM(country.Population) &quot; +</span>
+                &quot;FROM countrylanguage &quot; +
+                &quot;JOIN country ON country.Code = countrylanguage.CountryCode &quot; +
+                &quot;WHERE countrylanguage.Language='&quot; + language + &quot;'&quot;;
+
+        try {
+<span class="fc" id="L25">            Statement stmt = Database.con.createStatement();</span>
+<span class="fc" id="L26">            ResultSet rset = stmt.executeQuery(select);</span>
+<span class="fc" id="L27">            rset.next();</span>
+<span class="fc" id="L28">            return rset.getInt(1);</span>
+<span class="nc" id="L29">        } catch (Exception e) {</span>
+<span class="nc" id="L30">            throw new RuntimeException(e);</span>
+        }
+    }
+
+    /**
+     * Murdo wallace
+     * Stores the relevant standard for a CountryLanguage report.
+     */
+
+    /*
+    public static ArrayList&lt;CountryLanguage&gt; CountryLanguageStandard(String select) {
+        //Stores all countries returned by the input SQL statement.
+        ArrayList&lt;CountryLanguage&gt; CountryLanguages = new ArrayList&lt;&gt;();
+
+        try {
+            //Creates an SQL statement.
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
+            //Executes the SQL statement input by a separate function.
+
+            //Creates a new country, stores all relevant values.
+            while (rset.next()) {
+                CountryLanguage countryLanguage = new CountryLanguage();
+                countryLanguage.setCountryCode(rset.getString(&quot;countryLanguage.CountryCode&quot;));
+                countryLanguage.setLanguage(rset.getString(&quot;countryLanguage.Language&quot;));
+                countryLanguage.setIsOfficial(rset.getString(&quot;countryLanguage.IsOfficial&quot;));
+                countryLanguage.setPercentage(rset.getFloat(&quot;countryLanguage.Percentage&quot;));
+
+
+                CountryLanguages.add(countryLanguage);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return CountryLanguages;
+    }
+    */
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

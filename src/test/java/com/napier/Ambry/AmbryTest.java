@@ -1,7 +1,6 @@
 package com.napier.Ambry;
 
 import org.junit.jupiter.api.*;
-import static com.napier.Ambry.City.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AmbryTest {
@@ -70,6 +69,7 @@ public class AmbryTest {
         assertEquals("AU", country.getCode2());
     }
 
+    @Test
     void getCountryLanguageTest() {
         CountryLanguage cl = new CountryLanguage();
 

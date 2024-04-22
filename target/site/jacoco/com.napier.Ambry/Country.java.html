@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Country.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">Country.java</span></div><h1>Country.java</h1><pre class="source lang-java linenums">/**
+ * Filename:    Country.java
+ * Author:      Murdo Wallace
+ * Last Edited: 13/2/2024 @ 14:47
+ * Purpose:     This class exists to store information about the country item
+ *              found in world.sql
+ */
+
+package com.napier.Ambry;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+<span class="fc" id="L15">public class Country {</span>
+    private String code;
+    private String Name;
+    private String Continent;
+    private String Region;
+    private float SurfaceArea;
+    private int IndepYear;
+    private int Population;
+    private float LifeExpectancy;
+    private float GNP;
+    private float GNPOld;
+    private String LocalName;
+    private String GovernmentForm;
+    private String HeadOfState;
+    private int Capital;
+    private String Code2;
+
+    // Getter and setter for code
+    public String getCode() {
+<span class="fc" id="L34">        return code;</span>
+    }
+    public void setCode(String newCode) {
+<span class="fc" id="L37">        this.code = newCode;</span>
+<span class="fc" id="L38">    }</span>
+
+    // Getter and setter for name
+    public String getName() {
+<span class="fc" id="L42">        return Name;</span>
+    }
+    public void setName(String newName) {
+<span class="fc" id="L45">        this.Name = newName;</span>
+<span class="fc" id="L46">    }</span>
+
+    // Getter and setter for Continent
+    public String getContinent() {
+<span class="fc" id="L50">        return Continent;</span>
+    }
+    public void setContinent(String newContinent) {
+<span class="fc" id="L53">        this.Continent = newContinent;</span>
+<span class="fc" id="L54">    }</span>
+
+    // Getter and setter for Region
+    public String getRegion() {
+<span class="fc" id="L58">        return Region;</span>
+    }
+    public void setRegion(String newRegion) {
+<span class="fc" id="L61">        this.Region = newRegion;</span>
+<span class="fc" id="L62">    }</span>
+
+    // Getter and setter for SurfaceArea
+    public float getSurfaceArea() {
+<span class="fc" id="L66">        return SurfaceArea;</span>
+    }
+    public void setSurfaceArea(float newSurfaceArea) {
+<span class="fc" id="L69">        this.SurfaceArea = newSurfaceArea;</span>
+<span class="fc" id="L70">    }</span>
+
+    // Getter and setter for IndepYear
+    public int getIndepYear() {
+<span class="fc" id="L74">        return IndepYear;</span>
+    }
+    public void setIndepYear(int newIndepYear) {
+<span class="fc" id="L77">        this.IndepYear = newIndepYear;</span>
+<span class="fc" id="L78">    }</span>
+
+    // Getter and setter for Population
+    public int getPopulation() {
+<span class="fc" id="L82">        return Population;</span>
+    }
+    public void setPopulation(int newPopulation) {
+<span class="fc" id="L85">        this.Population = newPopulation;</span>
+<span class="fc" id="L86">    }</span>
+
+    // Getter and setter for LifeExpectancy
+    public float getLifeExpectancy() {
+<span class="fc" id="L90">        return LifeExpectancy;</span>
+    }
+    public void setLifeExpectancy(float newLifeExpectancy) {
+<span class="fc" id="L93">        this.LifeExpectancy = newLifeExpectancy;</span>
+<span class="fc" id="L94">    }</span>
+
+    // Getter and setter for GNP
+    public float getGNP() {
+<span class="fc" id="L98">        return GNP;</span>
+    }
+    public void setGNP(float newGNP) {
+<span class="fc" id="L101">        this.GNP = newGNP;</span>
+<span class="fc" id="L102">    }</span>
+
+    // Getter and setter for GNPOld
+    public float getGNPOld() {
+<span class="fc" id="L106">        return GNPOld;</span>
+    }
+    public void setGNPOld(float newGNPOld) {
+<span class="fc" id="L109">        this.GNPOld = newGNPOld;</span>
+<span class="fc" id="L110">    }</span>
+
+    // Getter and setter for LocalName
+    public String getLocalName() {
+<span class="fc" id="L114">        return LocalName;</span>
+    }
+    public void setLocalName(String newLocalName) {
+<span class="fc" id="L117">        this.LocalName = newLocalName;</span>
+<span class="fc" id="L118">    }</span>
+
+    // Getter and setter for GovernmentForm
+    public String getGovernmentForm() {
+<span class="fc" id="L122">        return GovernmentForm;</span>
+    }
+    public void setGovernmentForm(String newGovernmentForm) {
+<span class="fc" id="L125">        this.GovernmentForm = newGovernmentForm;</span>
+<span class="fc" id="L126">    }</span>
+
+    // Getter and setter for HeadOfState
+    public String getHeadOfState() {
+<span class="fc" id="L130">        return HeadOfState;</span>
+    }
+    public void setHeadOfState(String newHeadOfState) {
+<span class="fc" id="L133">        this.HeadOfState = newHeadOfState;</span>
+<span class="fc" id="L134">    }</span>
+
+    // Getter and setter for Capital
+    public int getCapital() {
+<span class="fc" id="L138">        return Capital;</span>
+    }
+    public void setCapital(int newCapital) {
+<span class="fc" id="L141">        this.Capital = newCapital;</span>
+<span class="fc" id="L142">    }</span>
+
+    // Getter and setter for Code2
+    public String getCode2() {
+<span class="fc" id="L146">        return Code2;</span>
+    }
+
+    public void setCode2(String newCode2) {
+<span class="fc" id="L150">        this.Code2 = newCode2;</span>
+<span class="fc" id="L151">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

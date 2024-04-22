@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>City.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ambry</a> &gt; <a href="index.source.html" class="el_package">com.napier.Ambry</a> &gt; <span class="el_source">City.java</span></div><h1>City.java</h1><pre class="source lang-java linenums">package com.napier.Ambry;
+
+/**
+ * Filename:    CountryLanguage.java
+ * Author:      Cameron Smith
+ * Last Edited: 14/2/2024 @ 18:00
+ * Purpose:     This class exists to store information about the city item
+ *              found in world.sql
+ */
+
+<span class="fc" id="L11">public class City {</span>
+    /**
+     * Cameron Smith
+     * Stores the city's ID.
+     */
+    private int ID;
+
+    /**
+     * Cameron Smith
+     * Gets and returns the ID value.
+     */
+    public int getID(){
+<span class="fc" id="L23">        return ID;</span>
+    }
+    /**
+     * Cameron Smith
+     * Sets the ID value from provided input.
+     */
+    public void setID(int setID){
+<span class="fc" id="L30">        this.ID = setID;</span>
+<span class="fc" id="L31">    }</span>
+    /**
+     * Cameron Smith
+     * Stores the city name
+     */
+    private String Name;
+
+    /**
+     * Cameron Smith
+     * Gets and returns the City name.
+     */
+    public String getName(){
+<span class="fc" id="L43">        return Name;</span>
+    }
+
+    /**
+     * Cameron Smith
+     * Sets the city name
+     */
+    public void setName(String setName){
+        //Sets the City name from the input.
+<span class="fc" id="L52">        this.Name = setName;</span>
+<span class="fc" id="L53">    }</span>
+
+    /**
+     * Cameron Smith
+     * Stores the CountryCode of the country the city is in.
+     */
+    private String CountryCode;
+
+    /**
+     * Cameron Smith
+     * Gets and returns the CountryCode.
+     */
+    public String getCountryCode()
+    {
+        //Gets and returns the City's Country Code.
+<span class="fc" id="L68">        return CountryCode;</span>
+    }
+    /**
+     * Cameron Smith
+     * Sets the CountryCode based on input.
+     */
+    public void setCountryCode(String setCode){
+        //Sets the City's country code from the input.
+<span class="fc" id="L76">        this.CountryCode = setCode;</span>
+<span class="fc" id="L77">    }</span>
+    /**
+     * Cameron Smith
+     * Stores the district the city is in.
+     */
+    private String District;
+
+    /**
+     * Cameron Smith
+     * Gets and returns the District.
+     */
+    public String getDistrict(){
+<span class="fc" id="L89">        return District;</span>
+    }
+    /**
+     * Cameron Smith
+     * Sets the District based on the input value.
+     */
+    public void setDistrict(String setDistrict){
+<span class="fc" id="L96">        this.District = setDistrict;</span>
+<span class="fc" id="L97">    }</span>
+
+    /**
+     * Cameron Smith
+     * Stores the population of the city.
+     */
+    private int population;
+
+    /**
+     * Cameron Smith
+     * Gets and returns the population of the city.
+     */
+    public int getPopulation(){
+        //Gets and returns the city's District.
+<span class="fc" id="L111">        return population;</span>
+    }
+
+    /**
+     * Cameron Smith
+     * Sets the population of the city.
+     */
+    public void setPopulation(int setPopulation){
+        //Sets the city's Population from the input.
+<span class="fc" id="L120">        this.population = setPopulation;</span>
+<span class="fc" id="L121">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
