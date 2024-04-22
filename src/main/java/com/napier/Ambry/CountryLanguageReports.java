@@ -35,6 +35,8 @@ public class CountryLanguageReports {
      * Murdo wallace
      * Stores the relevant standard for a CountryLanguage report.
      */
+
+    /*
     public static ArrayList<CountryLanguage> CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
         ArrayList<CountryLanguage> CountryLanguages = new ArrayList<>();
@@ -61,5 +63,6 @@ public class CountryLanguageReports {
         }
         return CountryLanguages;
     }
+    */
 
 }
