@@ -35,32 +35,35 @@ import java.sql.*;
      * Murdo wallace
      * Stores the relevant standard for a CountryLanguage report.
      */
+
+    /*
     public static ArrayList&lt;CountryLanguage&gt; CountryLanguageStandard(String select) {
         //Stores all countries returned by the input SQL statement.
-<span class="nc" id="L40">        ArrayList&lt;CountryLanguage&gt; CountryLanguages = new ArrayList&lt;&gt;();</span>
+        ArrayList&lt;CountryLanguage&gt; CountryLanguages = new ArrayList&lt;&gt;();
 
         try {
             //Creates an SQL statement.
-<span class="nc" id="L44">            Statement stmt = Database.con.createStatement();</span>
-<span class="nc" id="L45">            ResultSet rset = stmt.executeQuery(select);</span>
+            Statement stmt = Database.con.createStatement();
+            ResultSet rset = stmt.executeQuery(select);
             //Executes the SQL statement input by a separate function.
 
             //Creates a new country, stores all relevant values.
-<span class="nc bnc" id="L49" title="All 2 branches missed.">            while (rset.next()) {</span>
-<span class="nc" id="L50">                CountryLanguage countryLanguage = new CountryLanguage();</span>
-<span class="nc" id="L51">                countryLanguage.setCountryCode(rset.getString(&quot;countryLanguage.CountryCode&quot;));</span>
-<span class="nc" id="L52">                countryLanguage.setLanguage(rset.getString(&quot;countryLanguage.Language&quot;));</span>
-<span class="nc" id="L53">                countryLanguage.setIsOfficial(rset.getString(&quot;countryLanguage.IsOfficial&quot;));</span>
-<span class="nc" id="L54">                countryLanguage.setPercentage(rset.getFloat(&quot;countryLanguage.Percentage&quot;));</span>
+            while (rset.next()) {
+                CountryLanguage countryLanguage = new CountryLanguage();
+                countryLanguage.setCountryCode(rset.getString(&quot;countryLanguage.CountryCode&quot;));
+                countryLanguage.setLanguage(rset.getString(&quot;countryLanguage.Language&quot;));
+                countryLanguage.setIsOfficial(rset.getString(&quot;countryLanguage.IsOfficial&quot;));
+                countryLanguage.setPercentage(rset.getFloat(&quot;countryLanguage.Percentage&quot;));
 
 
-<span class="nc" id="L57">                CountryLanguages.add(countryLanguage);</span>
-<span class="nc" id="L58">            }</span>
-<span class="nc" id="L59">        } catch (SQLException e) {</span>
-<span class="nc" id="L60">            throw new RuntimeException(e);</span>
-<span class="nc" id="L61">        }</span>
-<span class="nc" id="L62">        return CountryLanguages;</span>
+                CountryLanguages.add(countryLanguage);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return CountryLanguages;
     }
+    */
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

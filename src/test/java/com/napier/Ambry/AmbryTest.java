@@ -1,7 +1,6 @@
 package com.napier.Ambry;
 
 import org.junit.jupiter.api.*;
-import static com.napier.Ambry.City.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AmbryTest {
@@ -77,6 +76,12 @@ public class AmbryTest {
         assertEquals("Dutch", cl.getLanguage());
         assertEquals("T", cl.getIsOfficial());
         assertEquals(5.3F, cl.getPercentage());
+    }
+
+
+    @Test
+    void testMain(){
+        Main m = new Main();
     }
 
     /*
