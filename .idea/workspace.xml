@@ -6,6 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="5f1b63bf-1b8f-45e5-978b-b3bce378bb7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/Ambry/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ambry-1.0.0.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ambry-1.0.0.0-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ambry-1.0.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ambry-1.0.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Database.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/Main.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/com.napier.Ambry/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryIntegrationTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.napier.Ambry.AmbryTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryIntegrationTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.napier.Ambry.AmbryTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +55,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
