@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 Ambry,com.napier.Ambry,Main,7,722,1,45,2,132,2,23,1,1
 Ambry,com.napier.Ambry,CountryReports,15,199,7,11,5,63,8,13,1,11
-Ambry,com.napier.Ambry,Database,27,40,2,2,11,16,2,4,0,4
+Ambry,com.napier.Ambry,Database,14,53,2,2,7,20,2,4,0,4
 Ambry,com.napier.Ambry,Country,0,108,0,0,0,46,0,31,0,31
 Ambry,com.napier.Ambry,City,0,38,0,0,0,16,0,11,0,11
 Ambry,com.napier.Ambry,CountryLanguage,0,31,0,0,0,13,0,9,0,9

@@ -41,12 +41,12 @@ import java.util.ArrayList;
                         &quot;root&quot;, &quot;example&quot;);
 <span class="fc" id="L42">                System.out.println(&quot;Successfully connected&quot;);</span>
 <span class="fc" id="L43">                break;</span>
-<span class="nc" id="L44">            } catch (SQLException sqle) {</span>
-<span class="nc" id="L45">                System.out.println(&quot;Failed to connect to database attempt &quot; +                                  Integer.toString(i));</span>
-<span class="nc" id="L46">                System.out.println(sqle.getMessage());</span>
+<span class="fc" id="L44">            } catch (SQLException sqle) {</span>
+<span class="fc" id="L45">                System.out.println(&quot;Failed to connect to database attempt &quot; +                                  Integer.toString(i));</span>
+<span class="fc" id="L46">                System.out.println(sqle.getMessage());</span>
 <span class="nc" id="L47">            } catch (InterruptedException ie) {</span>
 <span class="nc" id="L48">                System.out.println(&quot;Thread interrupted? Should not happen.&quot;);</span>
-<span class="nc" id="L49">            }</span>
+<span class="fc" id="L49">            }</span>
         }
 <span class="fc" id="L51">    }</span>
 

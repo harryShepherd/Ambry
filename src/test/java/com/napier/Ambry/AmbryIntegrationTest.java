@@ -19,14 +19,6 @@ public class AmbryIntegrationTest {
         db = new Database();
         db.connect("localhost:33060", 30000);
     }
-
-    @Test
-    void mainTest() {
-        String arr[] = { };
-        // this test is only supposed to be run in github actions
-        assertDoesNotThrow(() -> Main.main(arr));
-    }
-
     @Test
     void testCountryStandard() {
         // Test to see if an error is thrown given a blank input
@@ -291,4 +283,5 @@ public class AmbryIntegrationTest {
         int pop = CountryLanguageReports.speaksLanguage("Chinese");
         assertEquals(1968265500, pop);
     }
+
 }

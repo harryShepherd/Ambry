@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.napier.Ambry.AmbryIntegrationTest" time="30.206" tests="37" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.napier.Ambry.AmbryIntegrationTest" time="30.479" tests="37" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2023.3.2"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -60,36 +60,36 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testspeaksLanguage" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
-  <testcase name="testTopCitiesContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.013"/>
-  <testcase name="testPopulationLivingInCitiesRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
-  <testcase name="testCountryStandard" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.009"/>
+  <testcase name="testspeaksLanguage" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.033"/>
+  <testcase name="testTopCitiesContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.023"/>
+  <testcase name="testPopulationLivingInCitiesRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
+  <testcase name="testCountryStandard" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
   <testcase name="testGetAllCountryPerRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
-  <testcase name="testTopCitiesDistrict" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.016"/>
-  <testcase name="testRegionCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.01"/>
-  <testcase name="testTopCitiesCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.003"/>
-  <testcase name="testTopNContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.001"/>
-  <testcase name="testPopulationNotLivingInCitiesCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.003"/>
-  <testcase name="testPopulationNotLivingInCitiesRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.003"/>
-  <testcase name="testTopCitiesRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.003"/>
+  <testcase name="testTopCitiesDistrict" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
+  <testcase name="testRegionCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.018"/>
+  <testcase name="testTopCitiesCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.004"/>
+  <testcase name="testTopNContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
+  <testcase name="testPopulationNotLivingInCitiesCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.007"/>
+  <testcase name="testPopulationNotLivingInCitiesRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
+  <testcase name="testTopCitiesRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
   <testcase name="testDistrictCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
-  <testcase name="testWorldCapitals" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.003"/>
-  <testcase name="testCountryCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
-  <testcase name="testTopNRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
-  <testcase name="testWorldCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.009"/>
-  <testcase name="testPopulationNotLivingInCitiesContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.007"/>
-  <testcase name="testPopulationInCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.012"/>
-  <testcase name="testCapitalContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
+  <testcase name="testWorldCapitals" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.004"/>
+  <testcase name="testCountryCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
+  <testcase name="testTopNRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.001"/>
+  <testcase name="testWorldCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.022"/>
+  <testcase name="testPopulationNotLivingInCitiesContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
+  <testcase name="testPopulationInCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.009"/>
+  <testcase name="testCapitalContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.004"/>
   <testcase name="testTopNWorld" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.001"/>
-  <testcase name="testCityPop" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.001"/>
+  <testcase name="testCityPop" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
   <testcase name="testPopulationInRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
   <testcase name="testPopulationLivingInCitiesContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
-  <testcase name="testDistrictPop" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
-  <testcase name="testPopulationInContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.01"/>
-  <testcase name="testCapitalWorld" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.007"/>
+  <testcase name="testDistrictPop" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.001"/>
+  <testcase name="testPopulationInContinent" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
+  <testcase name="testCapitalWorld" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.006"/>
   <testcase name="testWorldPop" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.001"/>
-  <testcase name="testRegionCapitals" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.003"/>
-  <testcase name="testContinentCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.009"/>
+  <testcase name="testRegionCapitals" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
+  <testcase name="testContinentCities" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.008"/>
   <testcase name="testPopulationLivingInCitiesCountry" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
   <testcase name="testGetAllCountryLargeToSmall" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.002"/>
   <testcase name="testCapitalRegion" classname="com.napier.Ambry.AmbryIntegrationTest" time="0.005"/>
