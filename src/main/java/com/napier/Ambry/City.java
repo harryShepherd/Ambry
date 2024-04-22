@@ -1,41 +1,41 @@
 package com.napier.Ambry;
 
-/**
+/*
  * Filename:    CountryLanguage.java
  * Author:      Cameron Smith
- * Last Edited: 14/2/2024 @ 18:00
+ * Last Edited: 22/4/2024 @ 11:43
  * Purpose:     This class exists to store information about the city item
  *              found in world.sql
  */
 
 public class City {
-    /**
+    /*
      * Cameron Smith
      * Stores the city's ID.
      */
     private int ID;
 
-    /**
+    /*
      * Cameron Smith
      * Gets and returns the ID value.
      */
     public int getID(){
         return ID;
     }
-    /**
+    /*
      * Cameron Smith
      * Sets the ID value from provided input.
      */
     public void setID(int setID){
         this.ID = setID;
     }
-    /**
+    /*
      * Cameron Smith
      * Stores the city name
      */
     private String Name;
 
-    /**
+    /*
      * Cameron Smith
      * Gets and returns the City name.
      */
@@ -43,7 +43,7 @@ public class City {
         return Name;
     }
 
-    /**
+    /*
      * Cameron Smith
      * Sets the city name
      */
@@ -52,13 +52,13 @@ public class City {
         this.Name = setName;
     }
 
-    /**
+    /*
      * Cameron Smith
      * Stores the CountryCode of the country the city is in.
      */
     private String CountryCode;
 
-    /**
+    /*
      * Cameron Smith
      * Gets and returns the CountryCode.
      */
@@ -67,7 +67,7 @@ public class City {
         //Gets and returns the City's Country Code.
         return CountryCode;
     }
-    /**
+    /*
      * Cameron Smith
      * Sets the CountryCode based on input.
      */
@@ -75,20 +75,20 @@ public class City {
         //Sets the City's country code from the input.
         this.CountryCode = setCode;
     }
-    /**
+    /*
      * Cameron Smith
      * Stores the district the city is in.
      */
     private String District;
 
-    /**
+    /*
      * Cameron Smith
      * Gets and returns the District.
      */
     public String getDistrict(){
         return District;
     }
-    /**
+    /*
      * Cameron Smith
      * Sets the District based on the input value.
      */
@@ -96,13 +96,13 @@ public class City {
         this.District = setDistrict;
     }
 
-    /**
+    /*
      * Cameron Smith
      * Stores the population of the city.
      */
     private int population;
 
-    /**
+    /*
      * Cameron Smith
      * Gets and returns the population of the city.
      */
@@ -111,7 +111,7 @@ public class City {
         return population;
     }
 
-    /**
+    /*
      * Cameron Smith
      * Sets the population of the city.
      */
